@@ -1,13 +1,156 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Your Name — Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benjamin Schiller — Portfolio</title>
+    <meta name="description" content="CS + HCI/UX portfolio: case studies, projects, and contact." />
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <h1>Your Name</h1>
-    <p>CS + HCI/UX. Projects, case studies, and contact info.</p>
-    <p><a href="mailto:you@example.com">you@example.com</a></p>
+    <header class="container header">
+      <div class="brand">
+        <div class="name">Benjamin O. Schiller</div>
+        <div class="tagline">CS + HCI/UX @ University of Florida • Building thoughtful, usable products</div>
+      </div>
+
+      <nav class="nav">
+        <a href="#case-studies">Case Studies</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn primary" href="BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Portfolio</h1>
+        <p>
+          I’m a Computer Science student with a Sociology minor, focused on Human-Computer Interaction.
+          I like building polished interfaces and backing them with solid engineering.
+        </p>
+        <div class="hero-badges">
+          <span class="badge">UX / UI</span>
+          <span class="badge">Prototyping (Figma)</span>
+          <span class="badge">React / Web</span>
+          <span class="badge">User Research</span>
+        </div>
+      </section>
+
+      <section id="case-studies" class="section">
+        <div class="section-title">
+          <h2>UX Case Studies</h2>
+          <p>End-to-end process: problem → research → iterations → prototype.</p>
+        </div>
+
+        <div class="grid">
+          <a class="card" href="case-studies/grocerly.html">
+            <div class="card-top">
+              <h3>Grocerly</h3>
+              <span class="pill">Case Study</span>
+            </div>
+            <p>Interactive grocery + meal-planning app with calendar integration, pantry tracking, and dietary support.</p>
+            <div class="card-meta">Figma • Usability testing • Accessibility</div>
+          </a>
+
+          <a class="card" href="case-studies/travelez.html">
+            <div class="card-top">
+              <h3>TravelEZ</h3>
+              <span class="pill">Case Study</span>
+            </div>
+            <p>Study-abroad budget planner with a clean UI and personalized budget outputs.</p>
+            <div class="card-meta">React • HTML/CSS/JS • Agile sprints</div>
+          </a>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-title">
+          <h2>Dev Projects</h2>
+          <p>Code-first projects, repos, and technical builds.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="card-top">
+              <h3>WAD Library + FUSE Filesystem</h3>
+              <span class="pill">C++</span>
+            </div>
+            <p>Library + daemon to mount and edit WAD structures with file/directory semantics.</p>
+            <div class="links">
+              <a class="link" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">Repo</a>
+              <span class="dot">•</span>
+              <a class="link" href="#contact">Ask for demo</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <h3>More coming soon</h3>
+              <span class="pill">In progress</span>
+            </div>
+            <p>Add 2–4 more cards here as you polish projects (with repo + demo links).</p>
+            <div class="card-meta">Tip: keep each card 2–3 bullet highlights.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Quick context and what I’m looking for.</p>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3>Background</h3>
+            <ul>
+              <li>BS Computer Science, Sociology minor (UF)</li>
+              <li>HCI-focused coursework + product thinking</li>
+              <li>UX + front-end + research experience</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Currently</h3>
+            <ul>
+              <li>Looking for HCI/UX + front-end opportunities</li>
+              <li>Building case studies with clear outcomes and visuals</li>
+              <li>Keeping projects shippable and demoable</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Best way to reach me.</p>
+        </div>
+
+        <div class="contact">
+          <a class="btn primary" href="mailto:benotto1208@icloud.com">benotto1208@icloud.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+
+        <p class="footnote">
+          Phone: (863) 608-2588 • Resume link at top
+        </p>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <span>© <span id="y"></span> Benjamin Schiller</span>
+      <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+      </script>
+    </footer>
   </body>
 </html>
