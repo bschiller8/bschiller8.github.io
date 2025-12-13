@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Benjamin Schiller</title>
+    <meta name="description" content="About Benjamin Schiller — photos and fun facts." />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <div class="brand">
+        <a href="index.html" class="avatar-link" aria-label="Back to homepage">
+          <img class="avatar" src="assets/photos/headshot.jpg" alt="Benjamin Schiller" />
+        </a>
+        <div class="brand-text">
+          <div class="name">Benjamin O. Schiller</div>
+          <div class="tagline">CS + HCI/UX @ University of Florida • Building thoughtful, usable products</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html#case-studies">Case Studies</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn primary" href="BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>About Me</h1>
+        <p>
+          A little more personality: what I’m into outside of class/projects, and a few quick facts.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Photo highlights</h2>
+          <p>Travel, outdoors, and the stuff that keeps me balanced.</p>
+        </div>
+
+        <!-- Update filenames to match what you uploaded -->
+        <div class="photo-grid">
+          <img src="assets/photos/hike.jpg" alt="Hiking" />
+          <img src="assets/photos/ocean.jpg" alt="At the coast" />
+          <img src="assets/photos/raft.jpg" alt="Whitewater rafting" />
+          <img src="assets/photos/sunset.jpg" alt="Sunset view" />
+          <img src="assets/photos/ski.jpg" alt="Ski trip" />
+          <img src="assets/photos/wildflowers.jpg" alt="Wildflowers" />
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Fun facts</h2>
+          <p>Quick things you can bring up in an interview.</p>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3>Outside of school</h3>
+            <ul>
+              <li>I love traveling + taking photos (especially landscapes + friends).</li>
+              <li>I’m big on staying active (outdoors + gym) to keep my mental balance.</li>
+              <li>I’m always planning the next road trip.</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Random but true</h3>
+            <ul>
+              <li>I’m into human behavior + why people make the choices they do.</li>
+              <li>I like building “clean + modern” interfaces (Apple-ish vibes).</li>
+              <li>I’m happiest when I’m working on something I can ship + show.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <a class="btn" href="index.html">← Back to portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <span>© <span id="y"></span> Benjamin Schiller</span>
+      <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
