@@ -4,7 +4,12 @@
   --text: rgba(255, 255, 255, 0.92);
   --muted: rgba(255, 255, 255, 0.68);
   --line: rgba(255, 255, 255, 0.12);
-  --accent: rgba(120, 210, 255, 0.95);
+
+  /* Green / teal accent theme */
+  --accent: rgba(120, 255, 190, 0.95);
+  --accent-soft: rgba(120, 255, 190, 0.12);
+  --accent-line: rgba(120, 255, 190, 0.35);
+  --accent-focus: rgba(120, 255, 190, 0.55);
 }
 
 * { box-sizing: border-box; }
@@ -13,8 +18,8 @@ html, body { margin: 0; padding: 0; }
 body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   background:
-    radial-gradient(1200px 700px at 10% 0%, rgba(120, 210, 255, 0.12), transparent 60%),
-    radial-gradient(900px 600px at 100% 10%, rgba(170, 120, 255, 0.10), transparent 55%),
+    radial-gradient(1200px 700px at 10% 0%, rgba(120, 255, 190, 0.12), transparent 60%),
+    radial-gradient(900px 600px at 100% 10%, rgba(90, 210, 140, 0.10), transparent 55%),
     var(--bg);
   color: var(--text);
 }
@@ -86,8 +91,8 @@ a:hover { opacity: 0.9; }
 }
 
 .btn.primary {
-  border-color: rgba(120, 210, 255, 0.35);
-  background: rgba(120, 210, 255, 0.12);
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
 }
 
 /* ---------- Hero ---------- */
@@ -146,9 +151,9 @@ a:hover { opacity: 0.9; }
   font-size: 12px;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(120, 210, 255, 0.25);
-  background: rgba(120, 210, 255, 0.10);
-  color: rgba(200, 240, 255, 0.92);
+  border: 1px solid rgba(120, 255, 190, 0.25);
+  background: rgba(120, 255, 190, 0.10);
+  color: rgba(210, 255, 235, 0.92);
 }
 
 .links {
@@ -198,11 +203,15 @@ a:hover { opacity: 0.9; }
   .avatar{ width: 48px; height: 48px; }
 }
 
-
+/* ---------- Clickable avatar ---------- */
 .avatar-link { display: inline-flex; border-radius: 999px; }
 .avatar-link:hover { opacity: 1; }
-.avatar-link:focus { outline: 2px solid rgba(120,210,255,0.55); outline-offset: 3px; }
+.avatar-link:focus {
+  outline: 2px solid var(--accent-focus);
+  outline-offset: 3px;
+}
 
+/* ---------- About page photo grid ---------- */
 .photo-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -210,22 +219,48 @@ a:hover { opacity: 0.9; }
   margin-top: 16px;
 }
 
-.photo-grid img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+/* Each tile */
+.photo{
+  margin: 0;
+  position: relative;
+  overflow: hidden;
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.03);
 }
 
+.photo img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.01);
+  transition: transform 240ms ease;
+}
+
+.photo figcaption{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.88);
+  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+}
+
+.photo:hover img{
+  transform: scale(1.06);
+}
+
 @media (max-width: 900px){
   .photo-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .photo-grid img{ height: 200px; }
+  .photo img{ height: 220px; }
 }
 
 @media (max-width: 600px){
   .photo-grid{ grid-template-columns: 1fr; }
-  .photo-grid img{ height: 240px; }
+  .photo img{ height: 260px; }
 }
+
 
