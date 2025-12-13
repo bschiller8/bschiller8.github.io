@@ -219,7 +219,7 @@ a:hover { opacity: 0.9; }
   margin-top: 16px;
 }
 
-/* Each tile */
+/* Photo tile with hover overlay */
 .photo{
   margin: 0;
   position: relative;
@@ -234,25 +234,54 @@ a:hover { opacity: 0.9; }
   height: 240px;
   object-fit: cover;
   display: block;
-  transform: scale(1.01);
-  transition: transform 240ms ease;
+  transition: opacity 220ms ease, transform 320ms ease, filter 220ms ease;
 }
 
+/* Overlay caption (hidden by default) */
 .photo figcaption{
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 10px 12px;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 18px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  color: rgba(255,255,255,0.92);
+  background: radial-gradient(900px 300px at 20% 10%, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
+  text-align: left;
+}
+
+.photo figcaption h4{
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+.photo figcaption p{
+  margin: 0;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.35;
   font-size: 13px;
-  color: rgba(255,255,255,0.88);
-  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+  max-width: 32ch;
 }
 
-.photo:hover img{
-  transform: scale(1.06);
+/* Hover/focus: fade image back, show overlay */
+.photo:hover img,
+.photo:focus-within img{
+  opacity: 0.25;
+  filter: blur(1px);
+  transform: scale(1.03);
 }
 
+.photo:hover figcaption,
+.photo:focus-within figcaption{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive photo grid */
 @media (max-width: 900px){
   .photo-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .photo img{ height: 220px; }
@@ -263,4 +292,19 @@ a:hover { opacity: 0.9; }
   .photo img{ height: 260px; }
 }
 
+/* Mobile: no hover -> show text under image */
+@media (hover: none){
+  .photo figcaption{
+    position: static;
+    opacity: 1;
+    transform: none;
+    background: none;
+    padding: 10px 2px 0;
+  }
 
+  .photo img{
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
