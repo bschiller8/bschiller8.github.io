@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper — Benjamin Schiller</title>
+    <meta name="description" content="Minesweeper — project details and demo video." />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <div class="brand">
+        <a href="../index.html" class="avatar-link" aria-label="Back to homepage">
+          <img class="avatar" src="../assets/photos/headshot.jpg" alt="Benjamin Schiller" />
+        </a>
+
+        <div class="brand-text">
+          <div class="name">Benjamin O. Schiller</div>
+          <div class="tagline">CS + HCI/UX @ University of Florida • Building thoughtful, usable products</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="../index.html#case-studies">Case Studies</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../about.html">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn primary" href="../BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Minesweeper</h1>
+        <p>
+          A classic Minesweeper build focused on clean interactions, game-state logic, and a polished feel.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">JavaScript</span>
+          <span class="badge">Game logic</span>
+          <span class="badge">UI polish</span>
+        </div>
+
+        <div class="cta" style="margin-top: 16px;">
+          <!-- Update these links to your actual URLs -->
+          <a class="btn primary" href="#" target="_blank" rel="noreferrer">Play Live</a>
+          <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">View Repo</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Demo</h2>
+          <p>Short walkthrough showing gameplay + features.</p>
+        </div>
+
+        <div class="video-card">
+          <!-- Option A: YouTube/Vimeo embed (recommended) -->
+          <!-- Replace VIDEO_ID -->
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              title="Minesweeper demo video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <!-- Option B: Local mp4 (if you upload demo.mp4 to /assets/videos/) -->
+          <!--
+          <video class="video-native" controls>
+            <source src="../assets/videos/minesweeper-demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          -->
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>What I built</h2>
+          <p>Quick, readable highlights (great for recruiters).</p>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3>Core features</h3>
+            <ul>
+              <li>Grid generation + mine placement</li>
+              <li>Reveal propagation (flood fill) for empty tiles</li>
+              <li>Flagging + win/loss conditions</li>
+              <li>Reset + difficulty tweaks (optional)</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Why it matters</h3>
+            <ul>
+              <li>Shows state management + edge-case handling</li>
+              <li>Demonstrates UI feedback + interaction design</li>
+              <li>Readable, shippable project with a demo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <a class="btn" href="../index.html#projects">← Back to projects</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <span>© <span id="y"></span> Benjamin Schiller</span>
+      <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
