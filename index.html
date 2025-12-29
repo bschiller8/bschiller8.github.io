@@ -4,154 +4,141 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Benjamin Schiller — HCI/UX Portfolio</title>
-    <meta name="description" content="HCI/UX portfolio: case studies, projects, and contact." />
+    <meta
+      name="description"
+      content="Benjamin Schiller — HCI/UX portfolio with case studies and projects."
+    />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
 
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="container header">
-      <a class="brand" href="index.html" aria-label="Homepage">
-        <img class="avatar" src="IMG_4637.jpg" alt="Benjamin Schiller headshot" />
-        <div class="brand-text">
-          <div class="name">Benjamin O. Schiller</div>
-          <div class="tagline">CS + Sociology @ University of Florida • HCI/UX</div>
+    <!-- Sticky, simple nav (easy to return home / navigate) -->
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="logo" href="index.html" aria-label="Homepage">
+          <img class="avatar" src="IMG_4637.jpg" alt="Benjamin Schiller headshot" />
+          <span class="logo-text">
+            <span class="name">Benjamin O. Schiller</span>
+            <span class="role">HCI/UX • CS + Sociology @ UF</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="about.html">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="actions">
+          <a class="btn" href="BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a href="#case-studies">Case Studies</a>
-        <a href="#projects">Projects</a>
-        <a href="about.html">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a class="btn" href="BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Resume</a>
-        <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </header>
 
     <main id="main" class="container">
-      <!-- HERO (minimal, admissions-friendly) -->
+      <!-- Quiet hero: one sentence + 2 CTAs -->
       <section class="hero">
-        <h1>Designing usable systems people actually understand.</h1>
-        <p class="hero-sub">
-          I’m a CS student with a Sociology minor focused on Human-Computer Interaction. I build clean interfaces,
-          validate decisions with user-centered thinking, and ship working prototypes.
+        <p class="kicker">Applying for Master’s in HCI</p>
+        <h1>Designing usable systems with a research-informed process.</h1>
+        <p class="sub">
+          I’m a CS student with a Sociology minor at the University of Florida. I focus on HCI/UX—turning messy
+          problems into clear interaction flows, validated with user-centered thinking, and shipped as working prototypes.
         </p>
 
-        <div class="hero-actions">
-          <a class="btn primary" href="#case-studies">View case studies</a>
+        <div class="hero-cta">
+          <a class="btn primary" href="#work">View case studies</a>
           <a class="btn" href="BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Open resume</a>
         </div>
-
-        <div class="hero-chips" aria-label="Focus areas">
-          <span class="chip">User Research</span>
-          <span class="chip">Prototyping</span>
-          <span class="chip">Interaction Design</span>
-          <span class="chip">Front-end</span>
-        </div>
       </section>
 
-      <!-- CASE STUDIES (quiet cards, minimal text) -->
-      <section id="case-studies" class="section">
+      <!-- Case studies: big thumbnails, minimal copy -->
+      <section id="work" class="section">
         <div class="section-head">
-          <h2>Case studies</h2>
-          <p>Three best examples of my end-to-end HCI process.</p>
+          <h2>Selected case studies</h2>
+          <p>Three projects that best represent my HCI process.</p>
         </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-top">
-              <h3>Grocerly</h3>
-              <span class="pill">UX Case Study</span>
+        <div class="work-grid">
+          <a class="work-card" href="projects/grocerly.html" aria-label="Open Grocerly case study">
+            <div class="thumb">
+              <img src="assets/thumbnails/grocerly.jpg" alt="Grocerly case study thumbnail" loading="lazy" />
             </div>
-            <p class="card-desc">
-              Redesigning meal planning + grocery flow to reduce friction and improve wayfinding.
-            </p>
-            <div class="tag-row" aria-label="Grocerly tags">
-              <span class="tag">Information Architecture</span>
-              <span class="tag">Usability</span>
-              <span class="tag">UI System</span>
+            <div class="work-meta">
+              <div class="work-title-row">
+                <h3>Grocerly</h3>
+                <span class="pill">UX Case Study</span>
+              </div>
+              <p class="one-liner">Meal planning + grocery flow redesign to reduce friction and improve wayfinding.</p>
+              <div class="tags" aria-label="Grocerly tags">
+                <span>IA</span><span>Usability</span><span>Prototyping</span>
+              </div>
+              <span class="linkish">View case study →</span>
             </div>
-            <div class="card-actions">
-              <a class="btn primary" href="projects/grocerly.html">View case study</a>
-            </div>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="card-top">
-              <h3>TravelEZ</h3>
-              <span class="pill">UX Case Study</span>
+          <a class="work-card" href="projects/travelez.html" aria-label="Open TravelEZ case study">
+            <div class="thumb">
+              <img src="assets/thumbnails/travelez.jpg" alt="TravelEZ case study thumbnail" loading="lazy" />
             </div>
-            <p class="card-desc">
-              Helping students turn “I have $X” into a clear, actionable study-abroad budget plan.
-            </p>
-            <div class="tag-row" aria-label="TravelEZ tags">
-              <span class="tag">Decision Support</span>
-              <span class="tag">Visual Hierarchy</span>
-              <span class="tag">Interaction Flow</span>
+            <div class="work-meta">
+              <div class="work-title-row">
+                <h3>TravelEZ</h3>
+                <span class="pill">UX Case Study</span>
+              </div>
+              <p class="one-liner">Budget planning for study abroad: turning “I have $X” into an actionable plan.</p>
+              <div class="tags" aria-label="TravelEZ tags">
+                <span>Decision Support</span><span>Hierarchy</span><span>UI</span>
+              </div>
+              <span class="linkish">View case study →</span>
             </div>
-            <div class="card-actions">
-              <a class="btn primary" href="projects/travelez.html">View case study</a>
-            </div>
-          </article>
+          </a>
 
-          <article class="card">
-            <div class="card-top">
-              <h3>Doodlenaut</h3>
-              <span class="pill">UX Case Study</span>
+          <a class="work-card" href="projects/doodlenaut.html" aria-label="Open Doodlenaut case study">
+            <div class="thumb">
+              <img src="assets/thumbnails/doodlenaut.jpg" alt="Doodlenaut case study thumbnail" loading="lazy" />
             </div>
-            <p class="card-desc">
-              Designing a creative tool interaction model with strong feedback and learnability.
-            </p>
-            <div class="tag-row" aria-label="Doodlenaut tags">
-              <span class="tag">Affordances</span>
-              <span class="tag">Feedback</span>
-              <span class="tag">Flow</span>
+            <div class="work-meta">
+              <div class="work-title-row">
+                <h3>Doodlenaut</h3>
+                <span class="pill">UX Case Study</span>
+              </div>
+              <p class="one-liner">Creative tool interaction model with strong feedback and learnability.</p>
+              <div class="tags" aria-label="Doodlenaut tags">
+                <span>Affordances</span><span>Feedback</span><span>Flow</span>
+              </div>
+              <span class="linkish">View case study →</span>
             </div>
-            <div class="card-actions">
-              <a class="btn primary" href="projects/doodlenaut.html">View case study</a>
-            </div>
-          </article>
+          </a>
         </div>
       </section>
 
-      <!-- PROJECTS (kept small) -->
+      <!-- Small projects section -->
       <section id="projects" class="section">
         <div class="section-head">
-          <h2>Projects</h2>
-          <p>Engineering builds that support my HCI work.</p>
+          <h2>Other projects</h2>
+          <p>Engineering work that supports my HCI work.</p>
         </div>
 
-        <div class="grid-2">
-          <article class="card compact">
-            <div class="card-top">
-              <h3>Minesweeper</h3>
-              <span class="pill pill-alt">Dev</span>
-            </div>
-            <p class="card-desc">C++/SFML build that shows UI state handling and clean structure.</p>
-            <div class="card-actions">
-              <a class="btn" href="projects/minesweeper.html">View project</a>
-            </div>
-          </article>
+        <div class="mini-grid">
+          <a class="mini-card" href="projects/minesweeper.html">
+            <div class="mini-title">Minesweeper</div>
+            <div class="mini-desc">C++/SFML • UI state handling</div>
+            <span class="linkish">View →</span>
+          </a>
 
-          <article class="card compact">
-            <div class="card-top">
-              <h3>More on GitHub</h3>
-              <span class="pill pill-alt">Repos</span>
-            </div>
-            <p class="card-desc">Systems, data tools, and other builds.</p>
-            <div class="card-actions">
-              <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">Open GitHub</a>
-            </div>
-          </article>
+          <a class="mini-card" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">
+            <div class="mini-title">GitHub</div>
+            <div class="mini-desc">Systems • data tools • repos</div>
+            <span class="linkish">Open →</span>
+          </a>
         </div>
       </section>
 
-      <!-- CONTACT (simple) -->
+      <!-- Contact: one line -->
       <section id="contact" class="section">
         <div class="section-head">
           <h2>Contact</h2>
@@ -160,11 +147,11 @@
 
         <div class="contact-row">
           <a class="btn primary" href="mailto:benotto1208@icloud.com">benotto1208@icloud.com</a>
-          <a class="btn" href="about.html">About me</a>
+          <a class="btn" href="about.html">About</a>
           <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
 
-        <div class="small-note">Phone: (863) 608-2588</div>
+        <p class="small-note">Phone: (863) 608-2588</p>
       </section>
     </main>
 
