@@ -7,12 +7,14 @@
     <meta name="description" content="CS + HCI/UX portfolio: case studies, projects, and contact." />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
+
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="container header">
       <div class="brand">
         <!-- Clicking avatar goes to About -->
         <a class="avatar-link" href="about.html" aria-label="About me">
-          <!-- Put your headshot file in the repo root as IMG_4637.jpg OR change this path -->
           <img class="avatar" src="IMG_4637.jpg" alt="Benjamin Schiller headshot" />
         </a>
 
@@ -22,7 +24,7 @@
             CS + Sociology @ University of Florida • Building thoughtful, usable products
           </div>
 
-          <nav class="nav">
+          <nav class="nav" aria-label="Primary">
             <a href="#case-studies">Case Studies</a>
             <a href="#dev-projects">Projects</a>
             <a href="about.html">About Me</a>
@@ -32,94 +34,282 @@
       </div>
 
       <div class="cta">
-        <a class="btn primary" href="BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
-        <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn primary" href="BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer"
+          >Resume (PDF)</a
+        >
+        <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer"
+          >LinkedIn</a
+        >
         <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main" class="container">
       <section class="hero">
-        <h1>Portfolio</h1>
-        <p>
-          I’m a Computer Science student with a Sociology minor, focused on Human-Computer Interaction.
-          I like building polished interfaces and backing them with solid engineering.
-        </p>
+        <div class="hero-top">
+          <div>
+            <h1>Portfolio</h1>
+            <p>
+              I’m a Computer Science student with a Sociology minor, focused on Human-Computer Interaction.
+              I build polished interfaces and back them with solid engineering.
+            </p>
 
-        <div class="hero-badges">
-          <span class="badge">UX / UI</span>
-          <span class="badge">Prototyping (Figma)</span>
-          <span class="badge">React / Web</span>
-          <span class="badge">User Research</span>
+            <div class="hero-badges" aria-label="Core skills">
+              <span class="badge">UX / UI</span>
+              <span class="badge">User Research</span>
+              <span class="badge">Prototyping (Figma)</span>
+              <span class="badge">React / Web</span>
+              <span class="badge">Systems-minded</span>
+            </div>
+          </div>
+
+          <div class="hero-aside" aria-label="Quick highlights">
+            <div class="mini-card">
+              <div class="mini-title">What I care about</div>
+              <ul class="mini-list">
+                <li>Reducing friction</li>
+                <li>Designing for real behavior</li>
+                <li>Shipping usable work</li>
+              </ul>
+            </div>
+
+            <div class="mini-card">
+              <div class="mini-title">Best entry points</div>
+              <div class="mini-actions">
+                <a class="btn small" href="#case-studies">View case studies</a>
+                <a class="btn small" href="about.html">More about me</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- CASE STUDIES -->
       <section id="case-studies" class="section">
         <div class="section-title">
           <h2>UX Case Studies</h2>
           <p>End-to-end process: problem → research → iterations → prototype.</p>
         </div>
 
-        <div class="folder-grid">
-          <a class="folder-card" href="projects/grocerly.html" aria-label="Open Grocerly case study">
-            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-label">
-              <div class="folder-title">Grocerly</div>
-              <div class="folder-pill">Case Study</div>
+        <div class="project-grid">
+          <!-- Grocerly -->
+          <article class="project-card">
+            <div class="project-head">
+              <div>
+                <h3 class="project-title">Grocerly</h3>
+                <p class="project-subtitle">Meal planning + grocery flow redesign</p>
+              </div>
+              <span class="pill">Case Study</span>
             </div>
-          </a>
 
-          <a class="folder-card" href="projects/travelez.html" aria-label="Open TravelEZ case study">
-            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-label">
-              <div class="folder-title">TravelEZ</div>
-              <div class="folder-pill">Case Study</div>
-            </div>
-          </a>
+            <div class="project-body">
+              <div class="project-media" aria-hidden="true">
+                <div class="media-label">Research → IA → Prototype</div>
+              </div>
 
-          <a class="folder-card" href="projects/doodlenaut.html" aria-label="Open Doodlenaut case study">
-            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-label">
-              <div class="folder-title">Doodlenaut</div>
-              <div class="folder-pill">Case Study</div>
+              <div class="project-meta">
+                <span class="meta-item"><strong>Role:</strong> UX/UI</span>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="meta-item"><strong>Methods:</strong> wireframes, usability, iteration</span>
+              </div>
+
+              <p class="project-desc">
+                Designing a clearer grocery + planning experience by simplifying navigation, surfacing key
+                decisions earlier, and reducing “where do I click next?” moments.
+              </p>
+
+              <div class="tag-row" aria-label="Tags">
+                <span class="tag">Information Architecture</span>
+                <span class="tag">Usability</span>
+                <span class="tag">UI Systems</span>
+              </div>
+
+              <div class="outcome">
+                <span class="outcome-label">Outcome</span>
+                <span class="outcome-text">Clickable prototype + documented iterations</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn primary" href="projects/grocerly.html" aria-label="Open Grocerly case study"
+                  >View case study</a
+                >
+                <a class="btn" href="projects/grocerly.html#prototype" aria-label="Jump to Grocerly prototype section"
+                  >Prototype</a
+                >
+              </div>
             </div>
-          </a>
+          </article>
+
+          <!-- TravelEZ -->
+          <article class="project-card">
+            <div class="project-head">
+              <div>
+                <h3 class="project-title">TravelEZ</h3>
+                <p class="project-subtitle">Budget planning for study-abroad trips</p>
+              </div>
+              <span class="pill">Case Study</span>
+            </div>
+
+            <div class="project-body">
+              <div class="project-media" aria-hidden="true">
+                <div class="media-label">Interface → Data → Recommendations</div>
+              </div>
+
+              <div class="project-meta">
+                <span class="meta-item"><strong>Role:</strong> UI + Front-end</span>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="meta-item"><strong>Focus:</strong> clarity, hierarchy, affordability</span>
+              </div>
+
+              <p class="project-desc">
+                A student-friendly budget experience that turns “I have $X” into a usable plan with categories,
+                priorities, and recommendations—without overwhelming the user.
+              </p>
+
+              <div class="tag-row" aria-label="Tags">
+                <span class="tag">Decision Support</span>
+                <span class="tag">Visual Hierarchy</span>
+                <span class="tag">Interaction Design</span>
+              </div>
+
+              <div class="outcome">
+                <span class="outcome-label">Outcome</span>
+                <span class="outcome-text">Built UI + working demo workflow</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn primary" href="projects/travelez.html" aria-label="Open TravelEZ case study"
+                  >View case study</a
+                >
+                <a class="btn" href="projects/travelez.html#process" aria-label="Jump to TravelEZ process section"
+                  >Process</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Doodlenaut -->
+          <article class="project-card">
+            <div class="project-head">
+              <div>
+                <h3 class="project-title">Doodlenaut</h3>
+                <p class="project-subtitle">Creative tool concept + interaction flow</p>
+              </div>
+              <span class="pill">Case Study</span>
+            </div>
+
+            <div class="project-body">
+              <div class="project-media" aria-hidden="true">
+                <div class="media-label">Flow → Feedback → Delight</div>
+              </div>
+
+              <div class="project-meta">
+                <span class="meta-item"><strong>Role:</strong> Product + UX</span>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="meta-item"><strong>Focus:</strong> learnability + feedback</span>
+              </div>
+
+              <p class="project-desc">
+                Designed an interaction model that keeps users in flow: fewer confusing states, clearer tool
+                affordances, and feedback that helps people feel “in control.”
+              </p>
+
+              <div class="tag-row" aria-label="Tags">
+                <span class="tag">Affordances</span>
+                <span class="tag">Feedback</span>
+                <span class="tag">Flow</span>
+              </div>
+
+              <div class="outcome">
+                <span class="outcome-label">Outcome</span>
+                <span class="outcome-text">Concept + design rationale</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn primary" href="projects/doodlenaut.html" aria-label="Open Doodlenaut case study"
+                  >View case study</a
+                >
+                <a class="btn" href="projects/doodlenaut.html#insights" aria-label="Jump to Doodlenaut insights section"
+                  >Insights</a
+                >
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
+      <!-- DEV PROJECTS -->
       <section id="dev-projects" class="section">
         <div class="section-title">
           <h2>Dev Projects</h2>
-          <p>Code-first projects, repos, and technical builds.</p>
+          <p>Code-first builds that show engineering depth.</p>
         </div>
 
-        <div class="folder-grid">
-          <a class="folder-card" href="projects/minesweeper.html" aria-label="Open Minesweeper project">
-            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-label">
-              <div class="folder-title">Minesweeper</div>
-              <div class="folder-pill">C++</div>
+        <div class="project-grid project-grid--two">
+          <article class="project-card compact">
+            <div class="project-head">
+              <div>
+                <h3 class="project-title">Minesweeper</h3>
+                <p class="project-subtitle">C++ / SFML game build</p>
+              </div>
+              <span class="pill pill-alt">Dev</span>
             </div>
-          </a>
 
-          <a class="folder-card" href="https://github.com/bschiller8" target="_blank" rel="noreferrer" aria-label="Open GitHub profile">
-            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-label">
-              <div class="folder-title">More Projects</div>
-              <div class="folder-pill">GitHub</div>
-            </div>
-          </a>
+            <div class="project-body">
+              <p class="project-desc">
+                A classic project that shows clean structure, UI state handling, and attention to detail.
+              </p>
 
-          <a class="folder-card is-disabled" href="#" aria-label="More soon">
-            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-label">
-              <div class="folder-title">More Soon</div>
-              <div class="folder-pill">In progress</div>
+              <div class="tag-row" aria-label="Tags">
+                <span class="tag">C++</span>
+                <span class="tag">UI State</span>
+                <span class="tag">SFML</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn primary" href="projects/minesweeper.html" aria-label="Open Minesweeper project page"
+                  >View project</a
+                >
+              </div>
             </div>
-          </a>
+          </article>
+
+          <article class="project-card compact">
+            <div class="project-head">
+              <div>
+                <h3 class="project-title">More Projects</h3>
+                <p class="project-subtitle">Repos + technical builds</p>
+              </div>
+              <span class="pill pill-alt">GitHub</span>
+            </div>
+
+            <div class="project-body">
+              <p class="project-desc">
+                OS projects, data tools, and other builds—organized by repo.
+              </p>
+
+              <div class="tag-row" aria-label="Tags">
+                <span class="tag">Systems</span>
+                <span class="tag">Data</span>
+                <span class="tag">Tools</span>
+              </div>
+
+              <div class="project-actions">
+                <a
+                  class="btn primary"
+                  href="https://github.com/bschiller8"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Ben's GitHub profile"
+                  >Open GitHub</a
+                >
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
+      <!-- CONTACT -->
       <section id="contact" class="section">
         <div class="section-title">
           <h2>Contact</h2>
@@ -128,13 +318,13 @@
 
         <div class="contact">
           <a class="btn primary" href="mailto:benotto1208@icloud.com">benotto1208@icloud.com</a>
-          <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer"
+            >LinkedIn</a
+          >
           <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">GitHub</a>
         </div>
 
-        <p class="footnote">
-          Phone: (863) 608-2588 • Resume link at top
-        </p>
+        <p class="footnote">Phone: (863) 608-2588 • Resume link at top</p>
       </section>
     </main>
 
@@ -144,5 +334,37 @@
         document.getElementById("y").textContent = new Date().getFullYear();
       </script>
     </footer>
+
+    <script>
+      // Highlight active nav item while scrolling (small HCI touch)
+      const sections = ["case-studies", "dev-projects", "contact"]
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+
+      const navLinks = Array.from(document.querySelectorAll(".nav a")).filter((a) =>
+        (a.getAttribute("href") || "").startsWith("#")
+      );
+
+      const setActive = (id) => {
+        navLinks.forEach((a) => {
+          const isActive = a.getAttribute("href") === `#${id}`;
+          a.classList.toggle("is-active", isActive);
+          if (isActive) a.setAttribute("aria-current", "page");
+          else a.removeAttribute("aria-current");
+        });
+      };
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (visible?.target?.id) setActive(visible.target.id);
+        },
+        { rootMargin: "-30% 0px -55% 0px", threshold: [0.1, 0.2, 0.35] }
+      );
+
+      sections.forEach((s) => obs.observe(s));
+    </script>
   </body>
 </html>
