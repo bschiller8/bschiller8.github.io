@@ -10,25 +10,29 @@
   <body>
     <header class="container header">
       <div class="brand">
-        <a href="about.html" class="avatar-link" aria-label="About me">
-          <img class="avatar" src="assets/photos/headshot.jpg" alt="Benjamin Schiller" />
+        <!-- Clicking avatar goes to About -->
+        <a class="avatar-link" href="about.html" aria-label="About me">
+          <!-- Put your headshot file in the repo root as IMG_4637.jpg OR change this path -->
+          <img class="avatar" src="IMG_4637.jpg" alt="Benjamin Schiller headshot" />
         </a>
 
         <div class="brand-text">
           <div class="name">Benjamin O. Schiller</div>
-          <div class="tagline">CS + Sociology @ University of Florida • Building thoughtful, usable products</div>
+          <div class="tagline">
+            CS + Sociology @ University of Florida • Building thoughtful, usable products
+          </div>
+
+          <nav class="nav">
+            <a href="#case-studies">Case Studies</a>
+            <a href="#dev-projects">Projects</a>
+            <a href="about.html">About Me</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
       </div>
 
-      <nav class="nav">
-        <a href="#case-studies">Case Studies</a>
-        <a href="#projects">Projects</a>
-        <a href="about.html">About Me</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
       <div class="cta">
-        <a class="btn primary" href="assets/BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+        <a class="btn primary" href="BenjaminSchillerResumeSubmit.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
         <a class="btn" href="https://www.linkedin.com/in/benjaminschillerr" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn" href="https://github.com/bschiller8" target="_blank" rel="noreferrer">GitHub</a>
       </div>
@@ -50,75 +54,72 @@
         </div>
       </section>
 
-      <!-- CASE STUDIES -->
       <section id="case-studies" class="section">
         <div class="section-title">
           <h2>UX Case Studies</h2>
           <p>End-to-end process: problem → research → iterations → prototype.</p>
         </div>
 
-        <div class="folder-icon-grid">
-          <a class="folder-tile" href="projects/grocerly.html" aria-label="Open Grocerly case study">
-            <img class="folder-img" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-overlay">
-              <div class="folder-name">Grocerly</div>
-              <div class="folder-tag">Case Study</div>
+        <div class="folder-grid">
+          <a class="folder-card" href="projects/grocerly.html" aria-label="Open Grocerly case study">
+            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
+            <div class="folder-label">
+              <div class="folder-title">Grocerly</div>
+              <div class="folder-pill">Case Study</div>
             </div>
           </a>
 
-          <a class="folder-tile" href="projects/travelez.html" aria-label="Open TravelEZ case study">
-            <img class="folder-img" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-overlay">
-              <div class="folder-name">TravelEZ</div>
-              <div class="folder-tag">Case Study</div>
+          <a class="folder-card" href="projects/travelez.html" aria-label="Open TravelEZ case study">
+            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
+            <div class="folder-label">
+              <div class="folder-title">TravelEZ</div>
+              <div class="folder-pill">Case Study</div>
             </div>
           </a>
 
-          <a class="folder-tile" href="projects/doodlenaut.html" aria-label="Open Doodlenaut case study">
-            <img class="folder-img" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-overlay">
-              <div class="folder-name">Doodlenaut</div>
-              <div class="folder-tag">Case Study</div>
+          <a class="folder-card" href="projects/doodlenaut.html" aria-label="Open Doodlenaut case study">
+            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
+            <div class="folder-label">
+              <div class="folder-title">Doodlenaut</div>
+              <div class="folder-pill">Case Study</div>
             </div>
           </a>
         </div>
       </section>
 
-      <!-- DEV PROJECTS -->
-      <section id="projects" class="section">
+      <section id="dev-projects" class="section">
         <div class="section-title">
           <h2>Dev Projects</h2>
           <p>Code-first projects, repos, and technical builds.</p>
         </div>
 
-        <div class="folder-icon-grid">
-          <a class="folder-tile" href="projects/minesweeper.html" aria-label="Open Minesweeper project page">
-            <img class="folder-img" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-overlay">
-              <div class="folder-name">Minesweeper</div>
-              <div class="folder-tag">C++</div>
+        <div class="folder-grid">
+          <a class="folder-card" href="projects/minesweeper.html" aria-label="Open Minesweeper project">
+            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
+            <div class="folder-label">
+              <div class="folder-title">Minesweeper</div>
+              <div class="folder-pill">C++</div>
             </div>
           </a>
 
-          <a class="folder-tile" href="https://github.com/bschiller8" target="_blank" rel="noreferrer" aria-label="Open GitHub profile">
-            <img class="folder-img" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-overlay">
-              <div class="folder-name">More Projects</div>
-              <div class="folder-tag">GitHub</div>
+          <a class="folder-card" href="https://github.com/bschiller8" target="_blank" rel="noreferrer" aria-label="Open GitHub profile">
+            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
+            <div class="folder-label">
+              <div class="folder-title">More Projects</div>
+              <div class="folder-pill">GitHub</div>
             </div>
           </a>
 
-          <div class="folder-tile folder-disabled" aria-disabled="true" title="Coming soon">
-            <img class="folder-img" src="assets/folder-icon.png" alt="" aria-hidden="true" />
-            <div class="folder-overlay">
-              <div class="folder-name">More Soon</div>
-              <div class="folder-tag">In progress</div>
+          <a class="folder-card is-disabled" href="#" aria-label="More soon">
+            <img class="folder-icon" src="assets/folder-icon.png" alt="" aria-hidden="true" />
+            <div class="folder-label">
+              <div class="folder-title">More Soon</div>
+              <div class="folder-pill">In progress</div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section id="contact" class="section">
         <div class="section-title">
           <h2>Contact</h2>
