@@ -137,7 +137,10 @@ a:hover { opacity: 0.92; }
 .panel ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
 .panel li { margin: 8px 0; }
 
-/* ---------- Folder icons (THE NEW LOOK) ---------- */
+/* ==========================================================
+   FOLDERS (UPDATED: more like real Finder folders + glow)
+   ========================================================== */
+
 .folder-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -145,79 +148,126 @@ a:hover { opacity: 0.92; }
   margin-top: 16px;
 }
 
+/* Outer “folder body” */
 .folder{
   position: relative;
   display: block;
-  padding: 18px 16px 16px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.03);
+  padding: 26px 22px 18px;
+  border-radius: 28px;
   overflow: hidden;
-  min-height: 110px;
+
+  /* base shell */
+  background:
+    radial-gradient(900px 300px at 0% 0%, rgba(120,210,255,0.10), transparent 50%),
+    radial-gradient(800px 260px at 100% 0%, rgba(170,120,255,0.08), transparent 55%),
+    rgba(255,255,255,0.02);
+
+  border: 1px solid rgba(255,255,255,0.14);
+
+  /* depth like the screenshot */
+  box-shadow:
+    0 0 0 1px rgba(120,210,255,0.06) inset,
+    0 22px 70px rgba(0,0,0,0.55);
+
+  min-height: 132px;
   transform: translateY(0);
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
+/* Folder tab */
 .folder::before{
   content: "";
   position: absolute;
-  top: 12px;
-  left: 14px;
-  width: 56px;
-  height: 18px;
-  border-radius: 10px 10px 6px 6px;
-  background: rgba(120,210,255,0.16);
+  top: 14px;
+  left: 18px;
+  width: 108px;
+  height: 32px;
+
+  border-radius: 16px 16px 12px 12px;
+
+  background:
+    linear-gradient(180deg, rgba(120,210,255,0.18), rgba(120,210,255,0.10));
+
   border: 1px solid rgba(120,210,255,0.28);
-  box-shadow: 0 0 18px rgba(120,210,255,0.14);
+
+  box-shadow:
+    0 0 26px rgba(120,210,255,0.14),
+    0 10px 26px rgba(0,0,0,0.35);
 }
 
+/* Folder “face” panel (the big inner rounded rectangle) */
 .folder::after{
   content: "";
   position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  top: 26px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, rgba(120,210,255,0.10), rgba(255,255,255,0.02));
-  border: 1px solid rgba(120,210,255,0.18);
+
+  /* inset face like Finder */
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  top: 34px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+
+  border: 1px solid rgba(255,255,255,0.14);
+
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.06) inset,
-    0 18px 45px rgba(0,0,0,0.35);
+    0 0 0 1px rgba(120,210,255,0.12) inset,
+    0 18px 55px rgba(0,0,0,0.55);
 }
 
-.folder > *{ position: relative; z-index: 1; }
+/* keep text above pseudo-elements */
+.folder > * { position: relative; z-index: 1; }
 
 .folder-title{
   display: block;
-  margin-top: 18px;
-  font-size: 18px;
-  font-weight: 800;
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: 850;
   letter-spacing: 0.2px;
 }
 
 .folder-subtitle{
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 12px;
-  color: rgba(255,255,255,0.68);
-  padding: 6px 10px;
+  color: rgba(255,255,255,0.70);
+  padding: 7px 11px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.03);
+  background: rgba(0,0,0,0.12);
 }
 
+/* glow hover */
 .folder:hover{
   transform: translateY(-3px);
-  border-color: rgba(120,210,255,0.40);
+  border-color: rgba(120,210,255,0.42);
   box-shadow:
-    0 0 0 1px rgba(120,210,255,0.10),
-    0 16px 60px rgba(120,210,255,0.14);
+    0 0 0 1px rgba(120,210,255,0.12) inset,
+    0 0 46px rgba(120,210,255,0.14),
+    0 28px 85px rgba(0,0,0,0.60);
   opacity: 1;
 }
 
+/* make the tab + face glow slightly more on hover */
+.folder:hover::before{
+  border-color: rgba(120,210,255,0.42);
+  box-shadow:
+    0 0 34px rgba(120,210,255,0.18),
+    0 12px 30px rgba(0,0,0,0.40);
+}
+
+.folder:hover::after{
+  border-color: rgba(120,210,255,0.24);
+  box-shadow:
+    0 0 0 1px rgba(120,210,255,0.16) inset,
+    0 18px 55px rgba(0,0,0,0.55);
+}
+
 .folder-disabled{
-  opacity: 0.65;
+  opacity: 0.60;
   cursor: default;
   pointer-events: none;
 }
