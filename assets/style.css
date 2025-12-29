@@ -138,7 +138,7 @@ a:hover { opacity: 0.92; }
 .panel li { margin: 8px 0; }
 
 /* ==========================================================
-   FOLDERS (UPDATED: more like real Finder folders + glow)
+   FOLDERS (FIXED: tab sits BEHIND the folder face)
    ========================================================== */
 
 .folder-grid{
@@ -148,7 +148,7 @@ a:hover { opacity: 0.92; }
   margin-top: 16px;
 }
 
-/* Outer “folder body” */
+/* Outer shell */
 .folder{
   position: relative;
   display: block;
@@ -156,15 +156,12 @@ a:hover { opacity: 0.92; }
   border-radius: 28px;
   overflow: hidden;
 
-  /* base shell */
   background:
     radial-gradient(900px 300px at 0% 0%, rgba(120,210,255,0.10), transparent 50%),
     radial-gradient(800px 260px at 100% 0%, rgba(170,120,255,0.08), transparent 55%),
     rgba(255,255,255,0.02);
 
   border: 1px solid rgba(255,255,255,0.14);
-
-  /* depth like the screenshot */
   box-shadow:
     0 0 0 1px rgba(120,210,255,0.06) inset,
     0 22px 70px rgba(0,0,0,0.55);
@@ -174,56 +171,59 @@ a:hover { opacity: 0.92; }
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
-/* Folder tab */
+/* TAB — BEHIND */
 .folder::before{
   content: "";
   position: absolute;
-  top: 14px;
-  left: 18px;
-  width: 108px;
-  height: 32px;
+  top: 16px;
+  left: 26px;
+  width: 120px;
+  height: 34px;
 
-  border-radius: 16px 16px 12px 12px;
-
-  background:
-    linear-gradient(180deg, rgba(120,210,255,0.18), rgba(120,210,255,0.10));
-
+  border-radius: 18px 18px 12px 12px;
+  background: linear-gradient(180deg, rgba(120,210,255,0.20), rgba(120,210,255,0.10));
   border: 1px solid rgba(120,210,255,0.28);
 
+  /* put it behind the folder face */
+  z-index: 0;
+
   box-shadow:
-    0 0 26px rgba(120,210,255,0.14),
-    0 10px 26px rgba(0,0,0,0.35);
+    0 0 24px rgba(120,210,255,0.10),
+    0 12px 26px rgba(0,0,0,0.35);
 }
 
-/* Folder “face” panel (the big inner rounded rectangle) */
+/* FACE — IN FRONT */
 .folder::after{
   content: "";
   position: absolute;
 
-  /* inset face like Finder */
+  /* bring the face up over the tab a bit */
   left: 14px;
   right: 14px;
   bottom: 14px;
-  top: 34px;
+  top: 28px;
 
   border-radius: 24px;
-
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
   border: 1px solid rgba(255,255,255,0.14);
+
+  /* face sits above tab */
+  z-index: 1;
 
   box-shadow:
     0 0 0 1px rgba(120,210,255,0.12) inset,
     0 18px 55px rgba(0,0,0,0.55);
 }
 
-/* keep text above pseudo-elements */
-.folder > * { position: relative; z-index: 1; }
+/* Text stays on top of everything */
+.folder > *{
+  position: relative;
+  z-index: 2;
+}
 
 .folder-title{
   display: block;
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 20px;
   font-weight: 850;
   letter-spacing: 0.2px;
@@ -240,7 +240,7 @@ a:hover { opacity: 0.92; }
   background: rgba(0,0,0,0.12);
 }
 
-/* glow hover */
+/* Hover glow */
 .folder:hover{
   transform: translateY(-3px);
   border-color: rgba(120,210,255,0.42);
@@ -251,11 +251,10 @@ a:hover { opacity: 0.92; }
   opacity: 1;
 }
 
-/* make the tab + face glow slightly more on hover */
 .folder:hover::before{
   border-color: rgba(120,210,255,0.42);
   box-shadow:
-    0 0 34px rgba(120,210,255,0.18),
+    0 0 34px rgba(120,210,255,0.14),
     0 12px 30px rgba(0,0,0,0.40);
 }
 
@@ -271,6 +270,7 @@ a:hover { opacity: 0.92; }
   cursor: default;
   pointer-events: none;
 }
+
 
 /* ---------- Contact / Footer ---------- */
 .contact { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
