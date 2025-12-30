@@ -45,6 +45,11 @@ a:hover { opacity: 0.9; }
   flex-direction: column;
 }
 
+/* Hide header action buttons on non-home pages */
+body:not(.home) .cta{
+  display: none;
+}
+
 /* Avatar + name block */
 .brand{
   display: flex;
