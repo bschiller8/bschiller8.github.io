@@ -125,15 +125,12 @@ a:hover { opacity: 0.9; }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 860px){
-  .header{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .cta{
-    width: 100%;
+    position: static;     /* stops overlap on small screens */
+    width: auto;
+    margin-top: 16px;
     justify-content: flex-start;
-    margin-top: 12px;
+    flex-wrap: wrap;
   }
 }
 
