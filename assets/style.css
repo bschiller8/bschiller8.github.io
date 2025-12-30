@@ -175,24 +175,95 @@ body:not(.home) .cta{
   margin-top: 16px;
 }
 
-.card {
+/* ---------- Cards ---------- */
+.card{
+  position: relative;
+  display: block;
+  padding: 20px 22px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 16px;
-  background: var(--panel);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  color: var(--text);
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 260ms ease,
+    background 260ms ease;
 }
 
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+/* Glow overlay */
+.card::after{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 260ms ease;
+
+  box-shadow:
+    0 0 0 1px rgba(120, 255, 200, 0.35),
+    0 0 32px rgba(120, 255, 200, 0.35),
+    0 0 70px rgba(120, 255, 200, 0.2);
 }
 
-.card h3 { margin: 0; font-size: 18px; }
-.card p { margin: 10px 0 0; color: var(--muted); line-height: 1.45; }
-.card-meta { margin-top: 12px; color: rgba(255,255,255,0.55); font-size: 13px; }
+/* Hover state */
+.card:hover{
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent-line);
+  background: rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover::after{
+  opacity: 1;
+}
+
+/* Inner content motion */
+.card h3,
+.card p,
+.card .card-meta,
+.card .pill{
+  transition:
+    transform 260ms ease,
+    color 260ms ease,
+    opacity 260ms ease;
+}
+
+.card:hover h3{
+  transform: translateY(-2px);
+}
+
+.card:hover p{
+  transform: translateY(-2px);
+}
+
+.card:hover .card-meta{
+  opacity: 0.95;
+}
+
+/* Pressed (click) state */
+.card:active{
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* Keyboard accessibility */
+.card:focus-visible{
+  outline: none;
+  border-color: var(--accent-line);
+  box-shadow:
+    0 0 0 2px rgba(120, 255, 200, 0.6),
+    0 20px 60px rgba(0,0,0,0.5);
+}
+
 
 .pill {
   font-size: 12px;
