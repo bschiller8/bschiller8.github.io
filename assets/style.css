@@ -33,11 +33,7 @@ a:hover { opacity: 0.9; }
 .header{
   padding-top: 28px;
   padding-bottom: 10px;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
+  position: relative; /* allows absolute positioning */
 }
 
 /* Left column: brand + nav */
@@ -98,12 +94,15 @@ a:hover { opacity: 0.9; }
 .cta{
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+
+  position: absolute;
+  top: 28px;
+  right: 0;
 
   margin-top: 0;
-  justify-content: flex-end;
-  align-self: flex-start;
 }
+
 
 /* Buttons */
 .btn{
