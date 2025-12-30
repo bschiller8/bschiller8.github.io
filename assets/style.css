@@ -90,13 +90,50 @@ body:not(.home) .cta{
   margin-top: 16px;
 }
 
+/* ---------- Nav pills (make them feel clickable) ---------- */
 .nav a{
-  padding: 8px 10px;
-  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: 999px;
-  color: var(--muted);
+  color: rgba(255,255,255,0.78);
   font-size: 14px;
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+
+  transition:
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
 }
+
+.nav a:hover{
+  color: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(120,255,200,0.45); /* subtle green hint */
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(120,255,200,0.18),
+    0 0 26px rgba(120,255,200,0.18);
+}
+
+.nav a:active{
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Keyboard accessibility (also makes "clickable" obvious) */
+.nav a:focus-visible{
+  outline: none;
+  border-color: rgba(120,255,200,0.75);
+  box-shadow:
+    0 0 0 3px rgba(120,255,200,0.25),
+    0 10px 24px rgba(0,0,0,0.35);
+}
+
 
 /* Right-side buttons */
 .cta{
