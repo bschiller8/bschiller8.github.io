@@ -33,7 +33,7 @@ a:hover { opacity: 0.9; }
 .header{
   padding-top: 28px;
   padding-bottom: 10px;
-  position: relative; /* allows absolute positioning */
+  position: relative; /* anchor for absolute children */
 }
 
 /* Left column: brand + nav */
@@ -97,11 +97,12 @@ a:hover { opacity: 0.9; }
   flex-wrap: nowrap;
 
   position: absolute;
-  top: 28px;
-  right: 0;
+  top: 28px;     /* aligns with avatar/name */
+  right: 24px;   /* pushes to true top-right */
 
   margin-top: 0;
 }
+
 
 
 /* Buttons */
