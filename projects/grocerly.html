@@ -4,51 +4,380 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grocerly — Case Study</title>
+    <meta
+      name="description"
+      content="Grocerly case study — grocery shopping + meal planning UX with calendar integration, pantry tracking, and dietary support."
+    />
     <link rel="stylesheet" href="../assets/style.css" />
-  </head>
-  <body>
-    <main class="container">
-      <a class="btn" href="../index.html">← Back</a>
 
+    <!-- Page-specific styling (keeps your global CSS clean) -->
+    <style>
+      .hero-visual{
+        margin: 18px 0 22px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        box-shadow: 0 12px 42px rgba(0,0,0,0.35);
+      }
+      .hero-visual img{
+        width: 100%;
+        display: block;
+      }
+      .hero-visual .caption{
+        padding: 10px 14px;
+        color: rgba(255,255,255,0.68);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+      }
+
+      /* Responsive slides embed */
+      .slides-wrapper{
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 */
+        margin-top: 16px;
+
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      }
+      .slides-wrapper iframe{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Simple image gallery slots */
+      .gallery{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 14px;
+      }
+      figure.shot{
+        margin: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+      }
+      .shot img{
+        width: 100%;
+        display: block;
+      }
+      .shot figcaption{
+        padding: 10px 12px;
+        font-size: 13px;
+        color: rgba(255,255,255,0.68);
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 900px){
+        .gallery{ grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Minimal case study header (no homepage buttons) -->
+    <header class="container case-topbar" aria-label="Case study header">
+      <a class="back-btn" href="../index.html#case-studies" aria-label="Back to case studies">
+        ← Back
+      </a>
+
+      <div class="case-topbar-title">
+        <span class="case-topbar-kicker">Case Study</span>
+        <span class="case-topbar-name">Grocerly</span>
+      </div>
+    </header>
+
+    <main id="main" class="container case">
+      <!-- HERO -->
       <section class="hero">
+        <div class="breadcrumbs" aria-label="Breadcrumb">
+          <a class="link" href="../index.html#case-studies">Case Studies</a>
+          <span class="dot">•</span>
+          <span aria-current="page">Grocerly</span>
+        </div>
+
         <h1>Grocerly</h1>
         <p>
-          Interactive grocery shopping + meal-planning app focused on calendar integration, pantry tracking,
-          and dietary support. :contentReference[oaicite:1]{index=1}
+          Interactive grocery shopping + meal-planning experience focused on calendar integration, pantry tracking,
+          and dietary support. The goal was to reduce planning friction and make weekly meals feel easy and doable.
         </p>
-      </section>
 
-      <section class="section">
-        <div class="section-title">
-          <h2>What I did</h2>
-          <p>Replace these bullets with your real screenshots + details.</p>
+        <!-- Optional hero image (add later) -->
+        <div class="hero-visual">
+          <img
+            src="../assets/grocerly/hero.png"
+            alt="Grocerly overview screens: planner, pantry, and meal cards"
+            onerror="this.style.display='none'; this.parentElement.querySelector('.caption').textContent='Optional: add a hero image at assets/grocerly/hero.png (Figma export).';"
+          />
+          <div class="caption">Hero visual: key Grocerly screens (planner, pantry, meal cards).</div>
         </div>
 
-        <div class="two-col">
-          <div class="panel">
-            <h3>Role</h3>
-            <ul>
-              <li>UX research + ideation (SCAMPER, brain mapping)</li>
-              <li>Wireframes → prototype</li>
-              <li>Usability + accessibility iteration</li>
-            </ul>
+        <div class="hero-badges" aria-label="Tags">
+          <span class="badge">UX Design</span>
+          <span class="badge">Interaction Design</span>
+          <span class="badge">Prototyping</span>
+          <span class="badge">HCI Methods</span>
+        </div>
+
+        <div class="quick-scan" role="region" aria-label="Project quick scan">
+          <div class="qs-item">
+            <div class="qs-label">My role</div>
+            <div class="qs-value">UX research + wireframes + prototype iteration</div>
           </div>
-          <div class="panel">
-            <h3>Highlights</h3>
-            <ul>
-              <li>15+ wireframes in a 6-week sprint :contentReference[oaicite:2]{index=2}</li>
-              <li>Smart meal cards + 1-click weekly planner + allergy filtering :contentReference[oaicite:3]{index=3}</li>
-            </ul>
+          <div class="qs-item">
+            <div class="qs-label">Timeline</div>
+            <div class="qs-value">6-week sprint</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label">Deliverables</div>
+            <div class="qs-value">Wireframes, prototype, presentation</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label">Focus</div>
+            <div class="qs-value">Reducing planning friction + dietary support</div>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-title">
-          <h2>Next step</h2>
-          <p>Add images: export from Figma → put in /assets/ → embed here with &lt;img&gt;.</p>
+      <!-- Layout: TOC + content -->
+      <div class="case-layout">
+        <aside class="toc" aria-label="On this page">
+          <div class="toc-title">On this page</div>
+          <a href="#overview">Overview</a>
+          <a href="#problem">Problem</a>
+          <a href="#process">Process</a>
+          <a href="#solution">Solution</a>
+          <a href="#slides">Presentation</a>
+          <a href="#reflection">Reflection</a>
+        </aside>
+
+        <div class="case-content">
+          <!-- OVERVIEW -->
+          <section id="overview" class="section">
+            <div class="section-title">
+              <h2>Overview</h2>
+              <p>What Grocerly is and what I contributed.</p>
+            </div>
+
+            <div class="two-col">
+              <div class="panel">
+                <h3>What it is</h3>
+                <ul>
+                  <li>Meal planning + grocery support designed around weekly routines.</li>
+                  <li>Calendar integration for planning meals across days.</li>
+                  <li>Pantry tracking to reduce duplicate buying and food waste.</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>What I did</h3>
+                <ul>
+                  <li>UX research + ideation (SCAMPER, brain mapping)</li>
+                  <li>Wireframes → prototype iteration</li>
+                  <li>Usability/accessibility improvements based on feedback</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="callout subtle">
+              <h3>Design goal</h3>
+              <p>
+                Make it easier to answer: “What am I eating this week?” while supporting dietary constraints and reducing planning effort.
+              </p>
+            </div>
+          </section>
+
+          <!-- PROBLEM -->
+          <section id="problem" class="section">
+            <div class="section-title">
+              <h2>Problem</h2>
+              <p>Why meal planning feels hard — and what users need instead.</p>
+            </div>
+
+            <div class="grid">
+              <div class="card">
+                <div class="card-top">
+                  <h3>Planning friction</h3>
+                  <span class="pill">Pain point</span>
+                </div>
+                <p>
+                  Meal planning is often scattered across notes, apps, and memory. Users lose track of what they planned and what they already have.
+                </p>
+                <div class="card-meta">Cognitive load • Visibility of system status</div>
+              </div>
+
+              <div class="card">
+                <div class="card-top">
+                  <h3>Dietary constraints</h3>
+                  <span class="pill">Need</span>
+                </div>
+                <p>
+                  Filtering for allergies, preferences, or restrictions should be built into the experience, not an afterthought.
+                </p>
+                <div class="card-meta">Error prevention • Personalization</div>
+              </div>
+
+              <div class="card">
+                <div class="card-top">
+                  <h3>Pantry awareness</h3>
+                  <span class="pill">Opportunity</span>
+                </div>
+                <p>
+                  Users buy duplicates or forget ingredients. Pantry tracking can reduce waste and improve confidence when planning meals.
+                </p>
+                <div class="card-meta">Recognition over recall</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PROCESS -->
+          <section id="process" class="section">
+            <div class="section-title">
+              <h2>Process</h2>
+              <p>A quick look at how we moved from ideation to prototype.</p>
+            </div>
+
+            <div class="timeline" role="list">
+              <div class="step" role="listitem">
+                <div class="step-title">1) Ideation</div>
+                <div class="step-body">Brain mapping + SCAMPER to generate features and workflows.</div>
+              </div>
+              <div class="step" role="listitem">
+                <div class="step-title">2) Wireframes</div>
+                <div class="step-body">Low-fidelity screens mapping the end-to-end weekly planning flow.</div>
+              </div>
+              <div class="step" role="listitem">
+                <div class="step-title">3) Prototype</div>
+                <div class="step-body">Clickable interactions for planner, meal cards, pantry, and filters.</div>
+              </div>
+              <div class="step" role="listitem">
+                <div class="step-title">4) Iteration</div>
+                <div class="step-body">Refinements based on feedback: clarity, navigation, and accessibility.</div>
+              </div>
+            </div>
+
+            <!-- Optional screenshots -->
+            <div class="gallery">
+              <figure class="shot">
+                <img
+                  src="../assets/grocerly/wireframes.png"
+                  alt="Grocerly wireframes overview"
+                  onerror="this.style.display='none';"
+                />
+                <figcaption>Optional: wireframes overview (export from Figma).</figcaption>
+              </figure>
+
+              <figure class="shot">
+                <img
+                  src="../assets/grocerly/prototype.png"
+                  alt="Grocerly prototype screens"
+                  onerror="this.style.display='none';"
+                />
+                <figcaption>Optional: prototype key screens (planner, pantry, meal cards).</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- SOLUTION -->
+          <section id="solution" class="section">
+            <div class="section-title">
+              <h2>Solution</h2>
+              <p>Key interaction ideas and what makes Grocerly feel usable.</p>
+            </div>
+
+            <div class="two-col">
+              <div class="panel">
+                <h3>Key features</h3>
+                <ul>
+                  <li>Weekly planner with one-tap meal placement</li>
+                  <li>Meal cards with clear ingredients + dietary tags</li>
+                  <li>Allergy/restriction filters</li>
+                  <li>Pantry list with “already have” visibility</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>UX principles</h3>
+                <ul>
+                  <li>Reduce recall: show pantry + planned meals side-by-side</li>
+                  <li>Make state visible: what’s planned, what’s missing, what’s available</li>
+                  <li>Error prevention: restrictions filter before planning</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- SLIDES -->
+          <section id="slides" class="section">
+            <div class="section-title">
+              <h2>Presentation</h2>
+              <p>Embedded slides from the Grocerly presentation (PowerPoint Online).</p>
+            </div>
+
+            <div class="slides-wrapper">
+              <iframe
+                src="https://1drv.ms/p/c/397A85EFB6A0683B/IQRXYUirWrLiT6K07exl2pw8AUGLnKb3XtXkOopiRA-lCVA?em=2&amp;wdAr=1.7777777777777777"
+                title="Grocerly Presentation Slides"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="footnote" style="margin-top:10px;">
+              Prefer a full view? <a class="link" href="https://1drv.ms/p/c/397A85EFB6A0683B" target="_blank" rel="noreferrer">Open in PowerPoint</a>.
+            </p>
+          </section>
+
+          <!-- REFLECTION -->
+          <section id="reflection" class="section">
+            <div class="section-title">
+              <h2>Reflection</h2>
+              <p>What I learned and what I’d improve next.</p>
+            </div>
+
+            <div class="two-col">
+              <div class="panel">
+                <h3>What I learned</h3>
+                <ul>
+                  <li>Meal planning is less about features and more about reducing mental load.</li>
+                  <li>Small clarity improvements (labels, structure) strongly affect confidence.</li>
+                  <li>Dietary support needs to be “first-class,” not hidden.</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>Next improvements</h3>
+                <ul>
+                  <li>Add onboarding for first-time setup (diet, pantry, goals).</li>
+                  <li>Test planner interactions with real routines (busy weeks).</li>
+                  <li>Add accessibility checks (focus states, contrast, keyboard nav).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cta" style="margin-top:14px;">
+              <a class="btn" href="../index.html#case-studies">← Back to case studies</a>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
     </main>
+
+    <footer class="container footer">
+      <span>© <span id="y"></span> Benjamin Schiller</span>
+      <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+      </script>
+    </footer>
   </body>
 </html>
