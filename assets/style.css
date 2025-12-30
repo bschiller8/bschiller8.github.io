@@ -33,7 +33,10 @@ a:hover { opacity: 0.9; }
 .header{
   padding-top: 28px;
   padding-bottom: 10px;
-  position: relative; /* anchor for absolute children */
+  position: relative;
+
+  max-width: none;     /* override container width */
+  width: 100%;
 }
 
 /* Left column: brand + nav */
