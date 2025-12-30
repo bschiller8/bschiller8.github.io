@@ -30,7 +30,21 @@ a:hover { opacity: 0.9; }
 .container { max-width: 1040px; margin: 0 auto; padding: 24px; }
 
 /* ---------- Header ---------- */
-.header { padding-top: 28px; padding-bottom: 10px; }
+.header{
+  padding-top: 28px;
+  padding-bottom: 10px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* Left column: brand + nav */
+.header-left{
+  display: flex;
+  flex-direction: column;
+}
 
 /* Avatar + name block */
 .brand{
@@ -53,17 +67,26 @@ a:hover { opacity: 0.9; }
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
-.brand .name { font-size: 22px; font-weight: 700; letter-spacing: 0.2px; }
-.brand .tagline { margin-top: 6px; color: var(--muted); }
+.brand .name{
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
 
-.nav {
+.brand .tagline{
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+/* Navigation pills */
+.nav{
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 16px;
 }
 
-.nav a {
+.nav a{
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -71,14 +94,19 @@ a:hover { opacity: 0.9; }
   font-size: 14px;
 }
 
-.cta {
+/* Right-side buttons */
+.cta{
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 16px;
+
+  margin-top: 0;
+  justify-content: flex-end;
+  align-self: flex-start;
 }
 
-.btn {
+/* Buttons */
+.btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -90,9 +118,23 @@ a:hover { opacity: 0.9; }
   font-weight: 600;
 }
 
-.btn.primary {
+.btn.primary{
   border-color: var(--accent-line);
   background: var(--accent-soft);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 860px){
+  .header{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta{
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
 }
 
 /* ---------- Hero ---------- */
