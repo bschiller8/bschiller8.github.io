@@ -9,22 +9,145 @@
       content="Doodlenaut case study — character customization UX, usability testing, A/B comparison, and design implications."
     />
     <link rel="stylesheet" href="../assets/style.css" />
+
+    <!-- Page-specific polish (kept inside the file so you don’t have to touch style.css) -->
+    <style>
+      /* --- Hero visual + galleries --- */
+      .hero-visual{
+        margin: 18px 0 22px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        box-shadow: 0 12px 42px rgba(0,0,0,0.35);
+      }
+      .hero-visual img{
+        width: 100%;
+        display: block;
+      }
+      .hero-visual .caption{
+        padding: 10px 14px;
+        color: rgba(255,255,255,0.68);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-kicker{
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.03);
+        color: rgba(255,255,255,0.78);
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .kicon{
+        width: 18px;
+        height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        border: 1px solid var(--accent-line);
+        background: var(--accent-soft);
+        color: rgba(255,255,255,0.92);
+        font-weight: 900;
+        font-size: 12px;
+        line-height: 1;
+      }
+
+      .gallery{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 14px;
+      }
+      .shot{
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+      }
+      .shot img{
+        width: 100%;
+        display: block;
+      }
+      .shot figcaption{
+        padding: 10px 12px;
+        font-size: 13px;
+        color: rgba(255,255,255,0.68);
+        border-top: 1px solid var(--line);
+      }
+
+      /* --- Make “compare A vs B” instantly scannable --- */
+      .compare{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 12px;
+      }
+      .compare-card{
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 16px;
+        background: rgba(255,255,255,0.03);
+      }
+      .compare-card h3{
+        margin: 0 0 8px;
+      }
+      .compare-card ul{
+        margin: 0;
+        padding-left: 18px;
+      }
+      .compare-card .mini{
+        margin-top: 10px;
+        font-size: 13px;
+        color: rgba(255,255,255,0.68);
+      }
+
+      /* --- Make cards feel interactive (subtle) --- */
+      .card{
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+      .card:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 14px 50px rgba(0,0,0,0.35);
+      }
+
+      /* --- Make TOC a bit nicer to use --- */
+      .toc a{
+        transition: background 160ms ease, border-color 160ms ease;
+      }
+      .toc a:hover{
+        background: rgba(255,255,255,0.04);
+        border-color: var(--accent-line);
+      }
+
+      /* --- Mobile --- */
+      @media (max-width: 880px){
+        .gallery{ grid-template-columns: 1fr; }
+        .compare{ grid-template-columns: 1fr; }
+      }
+    </style>
   </head>
+
   <body>
     <!-- Accessibility: skip link -->
     <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="container case-topbar" aria-label="Case study header">
-  <a class="back-btn" href="../index.html#case-studies" aria-label="Back to case studies">
-    ← Back
-  </a>
+    <header class="container case-topbar" aria-label="Case study header">
+      <a class="back-btn" href="../index.html#case-studies" aria-label="Back to case studies">
+        ← Back
+      </a>
 
-  <div class="case-topbar-title">
-    <span class="case-topbar-kicker">Case Study</span>
-    <span class="case-topbar-name">Doodlenaut</span>
-  </div>
-</header>
-
+      <div class="case-topbar-title">
+        <span class="case-topbar-kicker">Case Study</span>
+        <span class="case-topbar-name">Doodlenaut</span>
+      </div>
+    </header>
 
     <main id="main" class="container case">
       <!-- HERO -->
@@ -42,6 +165,17 @@
           satisfaction, and time-on-task.
         </p>
 
+        <!-- NEW: big visual hook (add your image file) -->
+        <div class="hero-visual">
+          <!-- Put an image here: ../assets/doodlenaut/hero.png -->
+          <img
+            src="../assets/doodlenaut/hero.png"
+            alt="Doodlenaut interface overview: trait selection grid and sliders"
+            onerror="this.style.display='none'; this.parentElement.querySelector('.caption').textContent='Add a hero image at assets/doodlenaut/hero.png to make this page instantly more visual.';"
+          />
+          <div class="caption">Hero visual: Trait selection vs sliders (drop in a screenshot or GIF).</div>
+        </div>
+
         <div class="hero-badges" aria-label="Tags">
           <span class="badge">UX Research</span>
           <span class="badge">Usability Testing</span>
@@ -50,7 +184,9 @@
         </div>
 
         <div class="cta" style="margin-top:18px;">
-          <a class="btn primary" href="../assets/doodlenaut/final-report.pdf" target="_blank" rel="noreferrer">Open Final Report (PDF)</a>
+          <a class="btn primary" href="../assets/doodlenaut/final-report.pdf" target="_blank" rel="noreferrer">
+            Open Final Report (PDF)
+          </a>
           <a class="btn" href="#demo">Watch demo</a>
           <a class="btn" href="#results">Jump to results</a>
         </div>
@@ -94,6 +230,8 @@
         <div class="case-content">
           <!-- OVERVIEW -->
           <section id="overview" class="section">
+            <div class="section-kicker"><span class="kicon">◎</span> Overview</div>
+
             <div class="section-title">
               <h2>Overview</h2>
               <p>What it is, who it’s for, and what we tested.</p>
@@ -130,9 +268,20 @@
 
           <!-- PROBLEM -->
           <section id="problem" class="section">
+            <div class="section-kicker"><span class="kicon">?</span> Problem framing</div>
+
             <div class="section-title">
               <h2>Problem</h2>
               <p>Why this matters from an HCI perspective.</p>
+            </div>
+
+            <!-- NEW: “design question” callout (breaks the wall of text) -->
+            <div class="callout subtle">
+              <h3>Design question</h3>
+              <p>
+                In customization, do users value <strong>speed</strong> (quick selection) or <strong>control</strong> (fine-tuning)?
+                We tested which interaction better supports confidence and understanding.
+              </p>
             </div>
 
             <div class="grid">
@@ -142,7 +291,7 @@
                   <span class="pill">Speed vs control</span>
                 </div>
                 <p>
-                  In customization, “fast choices” can reduce friction, but “fine control” can increase confidence and satisfaction.
+                  “Fast choices” reduce friction, but “fine control” can increase confidence and satisfaction.
                   We wanted to learn which interaction style better supports the user’s mental model.
                 </p>
                 <div class="card-meta">Choice architecture • Feedback • Learnability</div>
@@ -164,12 +313,37 @@
 
           <!-- DESIGN VARIATIONS -->
           <section id="designs" class="section">
+            <div class="section-kicker"><span class="kicon">⇄</span> Compare designs</div>
+
             <div class="section-title">
               <h2>Design variations</h2>
               <p>Two ways to customize personality traits.</p>
             </div>
 
-            <div class="grid">
+            <!-- NEW: side-by-side summary block (super scannable) -->
+            <div class="compare">
+              <div class="compare-card">
+                <h3>Design A — Trait grid</h3>
+                <ul>
+                  <li>Quick picks (choose 5 of 10)</li>
+                  <li>Lower complexity for first-time users</li>
+                  <li>Faster completion overall</li>
+                </ul>
+                <div class="mini">Best for: speed, simple mental model, minimal tweaking.</div>
+              </div>
+
+              <div class="compare-card">
+                <h3>Design B — Sliders</h3>
+                <ul>
+                  <li>Fine-tuning between opposites</li>
+                  <li>Higher perceived control + clarity</li>
+                  <li>More time-on-task</li>
+                </ul>
+                <div class="mini">Best for: expression, confidence, “getting it right.”</div>
+              </div>
+            </div>
+
+            <div class="grid" style="margin-top: 16px;">
               <div class="card">
                 <div class="card-top">
                   <h3>Design A — Trait grid</h3>
@@ -180,13 +354,26 @@
                 </p>
                 <div class="card-meta">Selection limit • Add/remove traits • “Done” to finish</div>
 
-                <!-- Optional: add screenshots -->
-                <!--
-                <figure class="figure">
-                  <img src="../assets/doodlenaut/design-a.png" alt="Design A trait grid screen" />
-                  <figcaption>Design A: quick selection with a 5-trait cap.</figcaption>
-                </figure>
-                -->
+                <!-- NEW: screenshot slot -->
+                <div class="gallery">
+                  <figure class="shot">
+                    <img
+                      src="../assets/doodlenaut/design-a.png"
+                      alt="Design A trait grid screen"
+                      onerror="this.style.display='none';"
+                    />
+                    <figcaption>Design A: quick selection with a 5-trait cap.</figcaption>
+                  </figure>
+
+                  <figure class="shot">
+                    <img
+                      src="../assets/doodlenaut/design-a-detail.png"
+                      alt="Design A selected traits state"
+                      onerror="this.style.display='none';"
+                    />
+                    <figcaption>State change: selections become visible + removable.</figcaption>
+                  </figure>
+                </div>
               </div>
 
               <div class="card">
@@ -199,19 +386,34 @@
                 </p>
                 <div class="card-meta">Granular control • Adjust anytime • “Done” to finish</div>
 
-                <!-- Optional: add screenshots -->
-                <!--
-                <figure class="figure">
-                  <img src="../assets/doodlenaut/design-b.png" alt="Design B sliders screen" />
-                  <figcaption>Design B: fine-grained control with clear opposites.</figcaption>
-                </figure>
-                -->
+                <!-- NEW: screenshot slot -->
+                <div class="gallery">
+                  <figure class="shot">
+                    <img
+                      src="../assets/doodlenaut/design-b.png"
+                      alt="Design B sliders screen"
+                      onerror="this.style.display='none';"
+                    />
+                    <figcaption>Design B: sliders emphasize control and clarity.</figcaption>
+                  </figure>
+
+                  <figure class="shot">
+                    <img
+                      src="../assets/doodlenaut/design-b-detail.png"
+                      alt="Design B slider endpoints and labels"
+                      onerror="this.style.display='none';"
+                    />
+                    <figcaption>Clear endpoints help users interpret meaning.</figcaption>
+                  </figure>
+                </div>
               </div>
             </div>
           </section>
 
           <!-- METHOD -->
           <section id="method" class="section">
+            <div class="section-kicker"><span class="kicon">⌁</span> Research method</div>
+
             <div class="section-title">
               <h2>Method</h2>
               <p>How we ran the A/B comparison and what we captured.</p>
@@ -237,9 +439,9 @@
             </div>
 
             <div class="callout subtle">
-              <h3>What I’d highlight in a grad review</h3>
+              <h3>Why this matters</h3>
               <p>
-                This wasn’t just “which UI is prettier?”—it tested how interaction style changes perceived usability and confidence,
+                This wasn’t “which UI is prettier?”—it tested how interaction style changes perceived usability and confidence,
                 using mixed methods to connect numbers to user quotes/themes.
               </p>
             </div>
@@ -247,6 +449,8 @@
 
           <!-- RESULTS -->
           <section id="results" class="section">
+            <div class="section-kicker"><span class="kicon">★</span> Outcomes</div>
+
             <div class="section-title">
               <h2>Results</h2>
               <p>Key metrics + the story they tell.</p>
@@ -278,6 +482,27 @@
               </div>
             </div>
 
+            <!-- NEW: results visual slot -->
+            <div class="gallery" style="margin-top: 14px;">
+              <figure class="shot">
+                <img
+                  src="../assets/doodlenaut/results-chart.png"
+                  alt="Results chart comparing design A and design B"
+                  onerror="this.style.display='none';"
+                />
+                <figcaption>Optional: a chart screenshot from your report (makes results feel real).</figcaption>
+              </figure>
+
+              <figure class="shot">
+                <img
+                  src="../assets/doodlenaut/quote-card.png"
+                  alt="User quote highlight card"
+                  onerror="this.style.display='none';"
+                />
+                <figcaption>Optional: a quote card screenshot (adds human voice).</figcaption>
+              </figure>
+            </div>
+
             <div class="panel" style="margin-top:14px;">
               <h3>Qualitative themes</h3>
               <ul>
@@ -298,6 +523,8 @@
 
           <!-- DESIGN IMPLICATIONS -->
           <section id="insights" class="section">
+            <div class="section-kicker"><span class="kicon">✦</span> Design implications</div>
+
             <div class="section-title">
               <h2>Design implications</h2>
               <p>Concrete changes I’d make based on what we learned.</p>
@@ -352,6 +579,8 @@
 
           <!-- DEMO -->
           <section id="demo" class="section">
+            <div class="section-kicker"><span class="kicon">▶</span> Demo</div>
+
             <div class="section-title">
               <h2>Demo video</h2>
               <p>Walkthrough directly on the page.</p>
@@ -370,6 +599,8 @@
 
           <!-- FILES -->
           <section id="files" class="section">
+            <div class="section-kicker"><span class="kicon">⌘</span> Artifacts</div>
+
             <div class="section-title">
               <h2>Files</h2>
               <p>Artifacts from the project (PDFs, R analysis scripts, etc.).</p>
@@ -397,9 +628,20 @@
 
           <!-- REFLECTION -->
           <section id="reflection" class="section">
+            <div class="section-kicker"><span class="kicon">✎</span> Reflection</div>
+
             <div class="section-title">
               <h2>Reflection</h2>
               <p>What I’d do next if this were a real product.</p>
+            </div>
+
+            <!-- NEW: add one “human” moment -->
+            <div class="callout subtle">
+              <h3>What surprised me</h3>
+              <p>
+                I expected the faster trait grid to feel “better,” but users often preferred sliders because it helped them feel confident
+                they were choosing the “right” personality.
+              </p>
             </div>
 
             <div class="two-col">
