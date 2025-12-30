@@ -662,3 +662,42 @@ a:focus, button:focus, .btn:focus{
   color: rgba(255,255,255,0.88);
 }
 
+
+/* --- Doodlenaut hero compare (A vs B) --- */
+.hero-compare{
+  margin: 18px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.hero-shot{
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+  box-shadow: 0 12px 42px rgba(0,0,0,0.35);
+}
+
+.hero-shot img{
+  width: 100%;
+  display: block;
+}
+
+.hero-label{
+  padding: 10px 12px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.78);
+  border-bottom: 1px solid var(--line);
+  background: rgba(0,0,0,0.18);
+}
+
+/* Mobile: stack instead of side-by-side */
+@media (max-width: 900px){
+  .hero-compare{
+    grid-template-columns: 1fr;
+  }
+}
+
+
