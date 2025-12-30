@@ -179,6 +179,209 @@ body:not(.home) .cta{
   }
 }
 
+/* =========================
+   Landing hero (homepage)
+   ========================= */
+.landing-hero{
+  position: relative;
+  margin-top: 14px;
+  padding: 34px 0 26px;
+}
+
+.landing-hero::before{
+  content: "";
+  position: absolute;
+  inset: -40px -20px auto -20px;
+  height: 420px;
+  pointer-events: none;
+  background:
+    radial-gradient(600px 380px at 15% 35%, rgba(120,255,200,0.16), transparent 60%),
+    radial-gradient(520px 320px at 85% 25%, rgba(120,255,200,0.10), transparent 60%),
+    radial-gradient(420px 260px at 55% 85%, rgba(255,255,255,0.05), transparent 70%);
+  filter: blur(2px);
+  opacity: 1;
+}
+
+.landing-hero-inner{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.landing-kicker{
+  color: rgba(255,255,255,0.70);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.landing-title{
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.8px;
+  margin: 0 0 12px 0;
+}
+
+.landing-subtitle{
+  color: rgba(255,255,255,0.76);
+  font-size: 16px;
+  max-width: 62ch;
+  margin: 0 0 16px 0;
+}
+
+.landing-cta{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.landing-tags{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.tag-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+}
+
+.tag-pill.subtle{
+  color: rgba(255,255,255,0.62);
+  background: rgba(255,255,255,0.02);
+}
+
+/* Right-side highlight card */
+.landing-card{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+}
+
+.landing-card-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.landing-card-title{
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.landing-metrics{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.metric{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+  border-radius: 14px;
+  padding: 12px 12px;
+}
+
+.metric-num{
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.metric-label{
+  color: rgba(255,255,255,0.70);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.landing-mini{
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.mini-row{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: rgba(255,255,255,0.70);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.mini-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-top: 5px;
+  background: rgba(120,255,200,0.65);
+  box-shadow: 0 0 14px rgba(120,255,200,0.25);
+}
+
+/* Scroll cue */
+.scroll-cue{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  color: rgba(255,255,255,0.60);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.scroll-dot{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-dot::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: rgba(120,255,200,0.8);
+  animation: scrollPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollPulse{
+  0%{ transform: translate(-50%, 0); opacity: 0.7; }
+  60%{ transform: translate(-50%, 10px); opacity: 0.2; }
+  100%{ transform: translate(-50%, 0); opacity: 0.7; }
+}
+
+@media (max-width: 980px){
+  .landing-hero-inner{
+    grid-template-columns: 1fr;
+  }
+  .landing-card{
+    order: 2;
+  }
+}
+
+
 /* ---------- Hero ---------- */
 .hero { padding: 22px 0 8px; }
 .hero h1 { font-size: 46px; margin: 18px 0 10px; letter-spacing: -0.5px; }
