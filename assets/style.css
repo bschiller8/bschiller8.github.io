@@ -698,6 +698,44 @@ body:not(.home) .cta{
   /* ⬆️ KEEP EVERYTHING YOU HAD BEFORE ⬆️ */
 }
 
+/* --- Card image header (Minesweeper test) --- */
+.card-media{
+  position: relative;
+  height: 140px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.25);
+  margin-bottom: 10px;
+}
+
+.card-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 320ms ease;
+}
+
+/* dark blend + slight accent tint so it matches your theme */
+.card-media::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(800px 220px at 20% 0%, rgba(120,255,200,0.18), transparent 55%),
+    linear-gradient(to top, rgba(0,0,0,0.58), rgba(0,0,0,0.08));
+  pointer-events: none;
+}
+
+.card:hover .card-media img{
+  transform: scale(1.06);
+  opacity: 0.96;
+}
+
+
 /* card internal structure (leave as-is) */
 .card-top{
   display: flex;
