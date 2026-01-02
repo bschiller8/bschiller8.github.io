@@ -381,9 +381,41 @@ body:not(.home) .cta{
   }
 }
 
+
+
 /* =========================
    Landing hero motion
    ========================= */
+
+.wave {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.9em;
+  transform-origin: 70% 70%;
+  filter: drop-shadow(0 0 12px rgba(120,255,200,0.45));
+}
+
+/* Animate once on load */
+@keyframes waveHello {
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(14deg); }
+  30%  { transform: rotate(-8deg); }
+  45%  { transform: rotate(12deg); }
+  60%  { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wave {
+  animation: waveHello 1.4s ease-in-out 0.4s 1;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .wave {
+    animation: none;
+  }
+}
+
 
 /* Name emphasis */
 .landing-id{ margin-bottom: 10px; }
