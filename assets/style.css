@@ -1467,3 +1467,8 @@ a:focus, button:focus, .btn:focus{
   border-radius: 14px;
   display: block;
 }
+
+.landing-copy {
+  align-self: center;
+  transform: translateY(10px);
+}
