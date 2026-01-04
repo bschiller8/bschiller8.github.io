@@ -1434,3 +1434,21 @@ a:focus, button:focus, .btn:focus{
   width: 100%;
   height: 100%;
 }
+
+
+/* ===== HERO: make the big box hug its content ===== */
+.landing-hero{
+  padding: 18px 0 12px; /* reduces vertical space around the hero */
+}
+
+.landing-hero-inner{
+  padding: 22px;        /* smaller padding inside the big box */
+  height: auto;
+  min-height: 0;
+  align-items: start;   /* prevents any stretching behavior */
+}
+
+/* Scroll cue should sit below the big box, not inside it */
+.scroll-cue{
+  margin-top: 12px;
+}
