@@ -303,6 +303,16 @@ body:not(.home) .cta{
   }
 }
 
+.landing-headshot {
+  position: relative;
+  z-index: 2;
+}
+
+.landing-headshot img {
+  position: relative;
+  z-index: 2;
+}
+
 
 /* Right-side highlight card */
 .landing-card{
