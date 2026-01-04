@@ -1452,3 +1452,18 @@ a:focus, button:focus, .btn:focus{
 .scroll-cue{
   margin-top: 12px;
 }
+
+.hero-image {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 10px;
+  background: rgba(255,255,255,0.03);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
