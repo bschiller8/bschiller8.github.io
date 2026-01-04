@@ -740,7 +740,9 @@ body:not(.home) .cta{
 .landing-card.reveal{ transition-delay: 120ms; }
 .scroll-cue.reveal{ transition-delay: 240ms; }
 
-
+.landing-copy {
+  align-self: start;
+}
 
 /* ---------- Hero ---------- */
 .hero { padding: 22px 0 8px; }
