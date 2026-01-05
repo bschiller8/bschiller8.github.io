@@ -850,6 +850,13 @@ body:not(.home) .cta{
   border: 1px solid var(--line);
 }
 
+.card h3{
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  margin: 0 0 6px;
+}
+
 /* ================================================================== */
 /* === Hover + Glow Addon (NEW — does NOT affect layout or sizing) === */
 /* ================================================================== */
