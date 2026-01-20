@@ -372,7 +372,7 @@
             <div class="timeline" role="list">
               <div class="step" role="listitem">
                 <div class="step-title">1) Task</div>
-                <div class="step-body">Customize a character’s personality, then finish the flow.</div>
+                <div class="step-body">Customize a character’s personality</div>
               </div>
               <div class="step" role="listitem">
                 <div class="step-title">2) A/B exposure</div>
@@ -380,20 +380,12 @@
               </div>
               <div class="step" role="listitem">
                 <div class="step-title">3) Metrics</div>
-                <div class="step-body">SUS, ease (1–7), satisfaction (1–7), completion time, plus interview notes.</div>
+                <div class="step-body">SUS, ease (1–7), satisfaction (1–7), completion time, plus interview notes</div>
               </div>
               <div class="step" role="listitem">
                 <div class="step-title">4) Analysis</div>
-                <div class="step-body">Quantitative analysis in R + qualitative coding/themes in MAXQDA.</div>
+                <div class="step-body">Quantitative analysis in R + qualitative coding/themes in MAXQDA</div>
               </div>
-            </div>
-
-            <div class="callout subtle">
-              <h3>Why this matters</h3>
-              <p>
-                This wasn’t “which UI is prettier?”—it tested how interaction style changes perceived usability and confidence,
-                using mixed methods to connect numbers to user quotes/themes.
-              </p>
             </div>
           </section>
 
@@ -403,7 +395,6 @@
 
             <div class="section-title">
               <h2>Results</h2>
-              <p>Key metrics + the story they tell.</p>
             </div>
 
             <div class="stats">
@@ -432,98 +423,21 @@
               </div>
             </div>
 
-            <!-- NEW: results visual slot -->
-            <div class="gallery" style="margin-top: 14px;">
-              <figure class="shot">
-                <img
-                  src="../assets/doodlenaut/results-chart.png"
-                  alt="Results chart comparing design A and design B"
-                  onerror="this.style.display='none';"
-                />
-                <figcaption>Optional: a chart screenshot from your report (makes results feel real).</figcaption>
-              </figure>
-
-              <figure class="shot">
-                <img
-                  src="../assets/doodlenaut/quote-card.png"
-                  alt="User quote highlight card"
-                  onerror="this.style.display='none';"
-                />
-                <figcaption>Optional: a quote card screenshot (adds human voice).</figcaption>
-              </figure>
-            </div>
-
             <div class="panel" style="margin-top:14px;">
               <h3>Qualitative themes</h3>
               <ul>
                 <li>Users liked the art style + “fun” feel, but wanted clearer instructions.</li>
                 <li>Some features were confusing without guidance (quiz, sliders for some users).</li>
-                <li>Takeaway: speed isn’t everything—users preferred control + clarity.</li>
+                <li>Takeaway: speed isn’t everything. Users preferred control + clarity.</li>
               </ul>
             </div>
 
             <div class="callout">
               <h3>So what?</h3>
               <p>
-                The sliders increased perceived usability even with longer completion time—suggesting that for customization,
+                The sliders increased perceived usability even with longer completion time, suggesting that for customization,
                 <strong>confidence and clarity</strong> can matter more than speed.
               </p>
-            </div>
-          </section>
-
-          <!-- DESIGN IMPLICATIONS -->
-          <section id="insights" class="section">
-            <div class="section-kicker"><span class="kicon">✦</span> Design implications</div>
-
-            <div class="section-title">
-              <h2>Design implications</h2>
-              <p>Concrete changes I’d make based on what we learned.</p>
-            </div>
-
-            <div class="grid">
-              <div class="card">
-                <div class="card-top">
-                  <h3>Make meaning visible</h3>
-                  <span class="pill">Reduce uncertainty</span>
-                </div>
-                <p>
-                  Add microcopy and previews (“You’re leaning more creative than analytical”) leading to a stronger mental model.
-                </p>
-                <div class="card-meta">Feedback • Interpretation • Learnability</div>
-              </div>
-
-              <div class="card">
-                <div class="card-top">
-                  <h3>Progress + guidance</h3>
-                  <span class="pill">Lower cognitive load</span>
-                </div>
-                <p>
-                  Add a simple progress indicator and “What do I do?” helper for first-time users, especially younger players.
-                </p>
-                <div class="card-meta">Onboarding • Visibility of system status</div>
-              </div>
-
-              <div class="card">
-                <div class="card-top">
-                  <h3>Hybrid approach</h3>
-                  <span class="pill">Best of both</span>
-                </div>
-                <p>
-                  Start with trait chips (quick picks), then allow optional sliders for fine-tuning—supporting both speed and control.
-                </p>
-                <div class="card-meta">Progressive disclosure</div>
-              </div>
-
-              <div class="card">
-                <div class="card-top">
-                  <h3>Accessibility considerations</h3>
-                  <span class="pill">Inclusive UX</span>
-                </div>
-                <p>
-                  Ensure keyboard + screen reader support for sliders and clearly labeled endpoints (not just color/position).
-                </p>
-                <div class="card-meta">Focus states • Labels • Contrast</div>
-              </div>
             </div>
           </section>
 
@@ -531,7 +445,7 @@
           <section id="demo" class="section">
             <h2>Demo</h2>
             <p>
-              Short walkthrough of the Doodlenaut customization flow, showing both interaction styles.
+              Walkthrough of the Doodlenaut customization flow, showing both interaction styles.
             </p>
 
             <div class="video-wrapper">
@@ -581,10 +495,8 @@
 
             <div class="section-title">
               <h2>Reflection</h2>
-              <p>What I’d do next if this were a real product.</p>
             </div>
 
-            <!-- NEW: add one “human” moment -->
             <div class="callout subtle">
               <h3>What surprised me</h3>
               <p>
@@ -598,14 +510,13 @@
                 <h3>Limitations</h3>
                 <ul>
                   <li>Would benefit from a larger sample and more representative age distribution.</li>
-                  <li>Sliders may require extra onboarding for younger users.</li>
+                  <li>Sliders may require extra instructions for younger users.</li>
                 </ul>
               </div>
 
               <div class="panel">
                 <h3>Next steps</h3>
                 <ul>
-                  <li>Test a hybrid UI (chips → optional sliders) with progressive disclosure.</li>
                   <li>Add clearer instructions + a “preview personality” summary card.</li>
                   <li>Evaluate accessibility with keyboard-only + screen reader checks.</li>
                 </ul>
