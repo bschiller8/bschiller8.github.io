@@ -10,7 +10,6 @@
     />
     <link rel="stylesheet" href="../assets/style.css" />
 
-    <!-- Page-specific polish (kept inside the file so you don’t have to touch style.css) -->
     <style>
       /* --- Hero visual + galleries --- */
       .hero-visual{
@@ -160,8 +159,8 @@
 
         <h1>Doodlenaut</h1>
         <p>
-          A character customization flow where players shape a character’s personality.
-          We compared two interaction styles—<strong>trait selection</strong> vs <strong>sliders</strong>—and measured usability,
+          A character customization flow where users shape a character’s personality.
+          We compared two interaction styles(<strong>trait selection</strong> vs <strong>sliders</strong>)and measured usability,
           satisfaction, and time-on-task.
         </p>
 
@@ -175,17 +174,6 @@
             <div class="hero-label">Design B • Sliders</div>
             <img src="../assets/doodlenaut/designB.png" alt="Design B: slider-based personality interface" />
           </figure>
-        </div>
-
-        <!-- NEW: big visual hook (add your image file) -->
-        <div class="hero-visual">
-          <!-- Put an image here: ../assets/doodlenaut/hero.png -->
-          <img
-            src="../assets/doodlenaut/hero.png"
-            alt="Doodlenaut interface overview: trait selection grid and sliders"
-            onerror="this.style.display='none'; this.parentElement.querySelector('.caption').textContent='Add a hero image at assets/doodlenaut/hero.png to make this page instantly more visual.';"
-          />
-          <div class="caption">Hero visual: Trait selection vs sliders (drop in a screenshot or GIF).</div>
         </div>
 
         <div class="hero-badges" aria-label="Tags">
@@ -218,13 +206,12 @@
             <div class="qs-value">A/B test, SUS, timing, interviews</div>
           </div>
           <div class="qs-item">
-            <div class="qs-label">Tools</div>
-            <div class="qs-value">React, CSS, R, MAXQDA</div>
+            <div class="qs-label">Timeline</div>
+            <div class="qs-value">12-week sprint</div>
           </div>
         </div>
       </section>
 
-      <!-- Layout: TOC + content -->
       <div class="case-layout">
         <aside class="toc" aria-label="On this page">
           <div class="toc-title">On this page</div>
@@ -246,16 +233,16 @@
 
             <div class="section-title">
               <h2>Overview</h2>
-              <p>What it is, who it’s for, and what we tested.</p>
+              <p>What it is & what I did</p>
             </div>
 
             <div class="two-col">
               <div class="panel">
                 <h3>Product</h3>
                 <ul>
-                  <li>Web-based customization flow (landing → optional quiz → customization → completion).</li>
-                  <li>Designed to be fun + simple for kids ages 6–12.</li>
-                  <li>Built in React with UI styling in CSS.</li>
+                  <li>Web-based customization flow (landing page → optional quiz → customization → completion).</li>
+                  <li>Designed to be fun + simple for kids ages 6–12 to customize a video game character</li>
+                  <li>Built in React with UI styling in CSS</li>
                 </ul>
               </div>
 
@@ -263,31 +250,19 @@
                 <h3>Research question</h3>
                 <ul>
                   <li>Does a simpler “pick traits” UI feel more usable than a more precise “slider” UI?</li>
-                  <li>We measured SUS, ease, satisfaction, and completion time.</li>
-                  <li>Mixed-methods: quant metrics + qualitative feedback/themes.</li>
+                  <li>We measured SUS, satisfaction, and completion time</li>
+                  <li>Examined quant metrics + qualitative feedback/themes</li>
                 </ul>
               </div>
-            </div>
-
-            <div class="callout">
-              <h3>TL;DR</h3>
-              <p>
-                Users preferred the <strong>slider UI</strong> for clarity + control (higher SUS/ease/satisfaction),
-                even though the <strong>trait grid</strong> was faster.
-              </p>
             </div>
           </section>
 
           <!-- PROBLEM -->
           <section id="problem" class="section">
-            <div class="section-kicker"><span class="kicon">?</span> Problem framing</div>
-
             <div class="section-title">
               <h2>Problem</h2>
-              <p>Why this matters from an HCI perspective.</p>
             </div>
 
-            <!-- NEW: “design question” callout (breaks the wall of text) -->
             <div class="callout subtle">
               <h3>Design question</h3>
               <p>
@@ -299,40 +274,33 @@
             <div class="grid">
               <div class="card">
                 <div class="card-top">
-                  <h3>Design tension</h3>
                   <span class="pill">Speed vs control</span>
                 </div>
                 <p>
                   “Fast choices” reduce friction, but “fine control” can increase confidence and satisfaction.
                   We wanted to learn which interaction style better supports the user’s mental model.
                 </p>
-                <div class="card-meta">Choice architecture • Feedback • Learnability</div>
               </div>
 
               <div class="card">
                 <div class="card-top">
-                  <h3>Success criteria</h3>
-                  <span class="pill">Measurable</span>
                 </div>
                 <p>
                   A successful design should feel easy to use, help users understand what their choices mean, and reduce uncertainty
                   (especially for younger users).
                 </p>
-                <div class="card-meta">SUS • Ease • Satisfaction • Time-on-task</div>
               </div>
             </div>
           </section>
 
           <!-- DESIGN VARIATIONS -->
           <section id="designs" class="section">
-            <div class="section-kicker"><span class="kicon">⇄</span> Compare designs</div>
 
             <div class="section-title">
               <h2>Design variations</h2>
-              <p>Two ways to customize personality traits.</p>
+              <p>Two ways to customize personality traits</p>
             </div>
 
-            <!-- NEW: side-by-side summary block (super scannable) -->
             <div class="compare">
               <div class="compare-card">
                 <h3>Design A — Trait grid</h3>
@@ -341,7 +309,7 @@
                   <li>Lower complexity for first-time users</li>
                   <li>Faster completion overall</li>
                 </ul>
-                <div class="mini">Best for: speed, simple mental model, minimal tweaking.</div>
+                <div class="mini">Best for: speed & simple mental model</div>
               </div>
 
               <div class="compare-card">
@@ -351,20 +319,18 @@
                   <li>Higher perceived control + clarity</li>
                   <li>More time-on-task</li>
                 </ul>
-                <div class="mini">Best for: expression, confidence, “getting it right.”</div>
+                <div class="mini">Best for: expression & confidence</div>
               </div>
             </div>
 
             <div class="grid" style="margin-top: 16px;">
               <div class="card">
                 <div class="card-top">
-                  <h3>Design A — Trait grid</h3>
                   <span class="pill">Lower complexity</span>
                 </div>
                 <p>
                   Users select any 5 traits out of 10 from a grid. Selected traits appear in-order and can be removed.
                 </p>
-                <div class="card-meta">Selection limit • Add/remove traits • “Done” to finish</div>
 
                 <!-- NEW: screenshot slot -->
                 <div class="gallery">
@@ -390,13 +356,11 @@
 
               <div class="card">
                 <div class="card-top">
-                  <h3>Design B — Sliders</h3>
                   <span class="pill">Higher precision</span>
                 </div>
                 <p>
                   Users adjust sliders between opposing traits (e.g., Creative ↔ Analytical) to fine-tune personality.
                 </p>
-                <div class="card-meta">Granular control • Adjust anytime • “Done” to finish</div>
 
                 <!-- NEW: screenshot slot -->
                 <div class="gallery">
