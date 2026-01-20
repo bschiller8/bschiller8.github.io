@@ -1479,3 +1479,19 @@ a:focus, button:focus, .btn:focus{
   align-self: center;
   transform: translateY(10px);
 }
+
+
+#problem .card{
+  cursor: default;
+}
+
+#problem .card:hover{
+  transform: none;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+#problem .card:hover::after{
+  opacity: 0;
+}
+
