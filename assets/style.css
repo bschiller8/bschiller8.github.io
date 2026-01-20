@@ -1517,3 +1517,17 @@ a:focus, button:focus, .btn:focus{
   display: block;
   padding: 8px;
 }
+
+#designs .card{
+  cursor: default;
+}
+
+#designs .card:hover{
+  transform: none;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+#designs .card:hover::after{
+  opacity: 0;
+}
