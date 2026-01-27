@@ -1531,3 +1531,28 @@ a:focus, button:focus, .btn:focus{
 #designs .card:hover::after{
   opacity: 0;
 }
+
+
+/* =========================================
+   Minesweeper page: make cards static
+   ========================================= */
+body.minesweeper .card{
+  cursor: default;
+  transition: none;
+}
+
+body.minesweeper .card:hover{
+  transform: none;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+body.minesweeper .card::after{
+  opacity: 0 !important;
+  box-shadow: none;
+}
+
+body.minesweeper .card:hover::after{
+  opacity: 0 !important;
+}
+
