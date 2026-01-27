@@ -236,45 +236,98 @@
             </div>
           </section>
 
-          <!-- WHAT I BUILT -->
-          <section id="build" class="section">
-            <div class="section-kicker"><span class="kicon">⌁</span> Build</div>
+<!-- TECHNICAL HIGHLIGHTS -->
+<section id="highlights" class="section">
+  <div class="section-kicker"><span class="kicon">⌁</span> Technical highlights</div>
 
-            <div class="section-title">
-              <h2>What I built</h2>
-              <p>Quick, recruiter-friendly highlights.</p>
-            </div>
+  <div class="section-title">
+    <h2>Technical highlights</h2>
+    <p>What’s actually happening under the hood.</p>
+  </div>
 
-            <div class="grid">
-              <div class="card">
-                <div class="card-top"><span class="pill">Core mechanics</span></div>
-                <p>
-                  Grid generation, mine placement, number hints, flagging, and win/loss logic.
-                </p>
-              </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-top"><span class="pill">SFML UI + input loop</span></div>
+      <p>
+        Built the full game window with SFML, including render loop, event polling,
+        sprite drawing, and click handling for left/right input.
+      </p>
+    </div>
 
-              <div class="card">
-                <div class="card-top"><span class="pill">Reveal propagation</span></div>
-                <p>
-                  Flood-fill reveal behavior for empty tiles so the board opens naturally.
-                </p>
-              </div>
+    <div class="card">
+      <div class="card-top"><span class="pill">Tile state machine</span></div>
+      <p>
+        Modeled each tile with explicit states (Hidden / Revealed / Flagged) and
+        enforced rules like “don’t reveal flagged tiles.”
+      </p>
+    </div>
 
-              <div class="card">
-                <div class="card-top"><span class="pill">Interaction polish</span></div>
-                <p>
-                  Smooth feedback for hover/reveal/flag states and clear reset behavior.
-                </p>
-              </div>
+    <div class="card">
+      <div class="card-top"><span class="pill">Recursive flood-fill reveal</span></div>
+      <p>
+        Implemented reveal propagation for empty tiles using a recursive neighbor search,
+        similar to a flood-fill algorithm.
+      </p>
+    </div>
 
-              <div class="card">
-                <div class="card-top"><span class="pill">Edge cases</span></div>
-                <p>
-                  Defensive checks for repeated clicks, bounds, and preventing invalid actions.
-                </p>
-              </div>
-            </div>
-          </section>
+    <div class="card">
+      <div class="card-top"><span class="pill">Leaderboard + file I/O</span></div>
+      <p>
+        Stored scores in a text file, parsed records, sorted times, kept top entries,
+        and marked new scores with a “*”.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="pill">Timer + pause system</span></div>
+      <p>
+        Used chrono timers and a pause/resume model that freezes game state visually,
+        then restores timing accurately when unpaused.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="pill">Debug mode</span></div>
+      <p>
+        Added a debug toggle that reveals mines without ending the game—useful for testing
+        and validating mine placement and rendering.
+      </p>
+    </div>
+  </div>
+</section>
+
+          <!-- OOP + ARCHITECTURE -->
+<section id="oop" class="section">
+  <div class="section-kicker"><span class="kicon">◎</span> OOP + architecture</div>
+
+  <div class="section-title">
+    <h2>OOP + architecture</h2>
+    <p>How the code is structured for clarity and maintainability.</p>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <h3>Core classes</h3>
+      <ul>
+        <li><strong>GameWindow</strong>: owns the main loop, input handling, timers, score, and rendering.</li>
+        <li><strong>Tile</strong>: encapsulates tile state, textures, reveal/flag behavior, and draw logic.</li>
+        <li><strong>TextureManager</strong>: centralizes asset loading/caching so textures aren’t reloaded repeatedly.</li>
+        <li><strong>LeaderboardFunctions</strong>: clean separation for reading/writing/sorting leaderboard data.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>Design patterns / practices</h3>
+      <ul>
+        <li><strong>Separation of concerns</strong>: UI/game loop vs tile behavior vs persistence (leaderboard).</li>
+        <li><strong>Encapsulation</strong>: tile state and rules live inside <code>Tile</code>, not scattered.</li>
+        <li><strong>State-driven rendering</strong>: draw logic depends on tile state + game modes (paused/debug/end).</li>
+        <li><strong>Testability mindset</strong>: debug mode + isolated leaderboard functions make behavior easier to validate.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
           <!-- TECH NOTES -->
           <section id="tech" class="section">
