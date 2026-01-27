@@ -3,108 +3,369 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minesweeper — Benjamin Schiller</title>
-    <meta name="description" content="Minesweeper — project details and demo video." />
+    <title>Minesweeper — Project</title>
+    <meta name="description" content="Minesweeper — gameplay demo, implementation notes, and project highlights." />
     <link rel="stylesheet" href="../assets/style.css" />
+
+    <style>
+      /* Match Doodlenaut polish (small add-ons) */
+      .section-kicker{
+        display:inline-flex;
+        align-items:center;
+        gap:10px;
+        padding:8px 10px;
+        border:1px solid var(--line);
+        border-radius:999px;
+        background:rgba(255,255,255,0.03);
+        color:rgba(255,255,255,0.78);
+        font-size:13px;
+        margin-bottom:10px;
+      }
+      .kicon{
+        width:18px;height:18px;
+        display:inline-flex;
+        align-items:center;justify-content:center;
+        border-radius:8px;
+        border:1px solid var(--accent-line);
+        background:var(--accent-soft);
+        color:rgba(255,255,255,0.92);
+        font-weight:900;
+        font-size:12px;
+        line-height:1;
+      }
+
+      .hero-visual{
+        margin: 18px 0 22px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        box-shadow: 0 12px 42px rgba(0,0,0,0.35);
+      }
+      .hero-visual img{ width:100%; display:block; }
+      .hero-visual .caption{
+        padding: 10px 14px;
+        color: rgba(255,255,255,0.68);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+      }
+
+      .gallery{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:14px;
+        margin-top:14px;
+      }
+      .shot{
+        border-radius:16px;
+        overflow:hidden;
+        border:1px solid var(--line);
+        background:rgba(255,255,255,0.02);
+      }
+      .shot img{ width:100%; display:block; }
+      .shot figcaption{
+        padding:10px 12px;
+        font-size:13px;
+        color:rgba(255,255,255,0.68);
+        border-top:1px solid var(--line);
+      }
+
+      /* Subtle hover feel like your Doodlenaut cards */
+      .card{
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+      .card:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 14px 50px rgba(0,0,0,0.35);
+      }
+      .toc a{
+        transition: background 160ms ease, border-color 160ms ease;
+      }
+      .toc a:hover{
+        background: rgba(255,255,255,0.04);
+        border-color: var(--accent-line);
+      }
+
+      @media (max-width: 880px){
+        .gallery{ grid-template-columns: 1fr; }
+      }
+    </style>
   </head>
+
   <body>
-    <header class="container header">
-      <div class="brand">
-        <a href="../index.html" class="avatar-link" aria-label="Back to homepage">
-          <img class="avatar" src="../assets/photos/headshot.jpg" alt="Benjamin Schiller" />
-        </a>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <div class="brand-text">
-          <div class="name">Benjamin O. Schiller</div>
-          <div class="tagline">CS + Sociology @ University of Florida</div>
-        </div>
+    <!-- Topbar (matches Doodlenaut) -->
+    <header class="container case-topbar" aria-label="Project header">
+      <a class="back-btn" href="../index.html#projects" aria-label="Back to projects">
+        ← Back
+      </a>
+
+      <div class="case-topbar-title">
+        <span class="case-topbar-kicker">Project</span>
+        <span class="case-topbar-name">Minesweeper</span>
       </div>
-
-        <div style="margin-top:16px;">
-          <a class="btn" href="../index.html#projects">← Back</a>
-        </div>
     </header>
 
-    <main class="container">
+    <main id="main" class="container case">
+      <!-- HERO -->
       <section class="hero">
+        <div class="breadcrumbs" aria-label="Breadcrumb">
+          <a class="link" href="../index.html#projects">Projects</a>
+          <span class="dot">•</span>
+          <span aria-current="page">Minesweeper</span>
+        </div>
+
         <h1>Minesweeper</h1>
         <p>
           A classic Minesweeper build focused on clean interactions, game-state logic, and a polished feel.
         </p>
 
-        <div class="hero-badges">
+        <!-- Optional hero image (drop a screenshot in /assets/minesweeper/hero.png) -->
+        <div class="hero-visual" aria-label="Minesweeper hero visual">
+          <img src="../assets/minesweeper/hero.png" alt="Minesweeper gameplay screenshot" />
+          <div class="caption">Gameplay snapshot — reveal + flags + win/loss feedback.</div>
+        </div>
+
+        <div class="hero-badges" aria-label="Tags">
           <span class="badge">JavaScript</span>
           <span class="badge">Game logic</span>
           <span class="badge">UI polish</span>
         </div>
 
-        <div class="cta" style="margin-top: 16px;">
-          <!-- Update these links to your actual URLs -->
+        <div class="cta" style="margin-top:18px;">
+          <!-- Put your real links -->
           <a class="btn primary" href="#" target="_blank" rel="noreferrer">Play Live</a>
           <a class="btn" href="https://github.com/bschiller8/min3sweep" target="_blank" rel="noreferrer">View Repo</a>
+          <a class="btn" href="#demo">Watch demo</a>
+        </div>
+
+        <!-- Quick scan panel (matches Doodlenaut) -->
+        <div class="quick-scan" role="region" aria-label="Project quick scan">
+          <div class="qs-item">
+            <div class="qs-label">Built with</div>
+            <div class="qs-value">HTML/CSS + JavaScript</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label">Focus</div>
+            <div class="qs-value">State + edge cases</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label">Key mechanics</div>
+            <div class="qs-value">Flood-fill, flags, win/loss</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label">Deliverable</div>
+            <div class="qs-value">Playable demo + repo</div>
+          </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-title">
-          <h2>Demo</h2>
-          <p>Short walkthrough showing gameplay + features.</p>
+      <div class="case-layout">
+        <!-- TOC (matches Doodlenaut) -->
+        <aside class="toc" aria-label="On this page">
+          <div class="toc-title">On this page</div>
+          <a href="#overview">Overview</a>
+          <a href="#demo">Demo</a>
+          <a href="#build">What I built</a>
+          <a href="#tech">Tech notes</a>
+          <a href="#reflection">Reflection</a>
+          <a href="#files">Links</a>
+        </aside>
+
+        <div class="case-content">
+          <!-- OVERVIEW -->
+          <section id="overview" class="section">
+            <div class="section-kicker"><span class="kicon">◎</span> Overview</div>
+
+            <div class="section-title">
+              <h2>Overview</h2>
+              <p>What it is & what I focused on</p>
+            </div>
+
+            <div class="two-col">
+              <div class="panel">
+                <h3>Product</h3>
+                <ul>
+                  <li>Playable Minesweeper in the browser</li>
+                  <li>Left click reveals, right click flags (or your chosen control)</li>
+                  <li>Clear win/loss feedback + reset</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>What I cared about</h3>
+                <ul>
+                  <li>Reliable state management (tiles, mines, flags, revealed)</li>
+                  <li>Edge cases (first click safety if you implemented it, bounds, repeat clicks)</li>
+                  <li>Clean UI feedback (hover/reveal/flag states)</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Optional screenshots -->
+            <div class="gallery" aria-label="Screenshots">
+              <figure class="shot">
+                <img src="../assets/minesweeper/screen1.png" alt="Minesweeper start state screenshot" />
+                <figcaption>Start state: clean grid + clear controls.</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="../assets/minesweeper/screen2.png" alt="Minesweeper mid game screenshot" />
+                <figcaption>Mid-game: flags + reveals + number hints.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- DEMO -->
+          <section id="demo" class="section">
+            <div class="section-kicker"><span class="kicon">▶</span> Demo</div>
+
+            <div class="section-title">
+              <h2>Demo</h2>
+              <p>Short walkthrough showing gameplay + features.</p>
+            </div>
+
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID"
+                title="Minesweeper demo video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </section>
+
+          <!-- WHAT I BUILT -->
+          <section id="build" class="section">
+            <div class="section-kicker"><span class="kicon">⌁</span> Build</div>
+
+            <div class="section-title">
+              <h2>What I built</h2>
+              <p>Quick, recruiter-friendly highlights.</p>
+            </div>
+
+            <div class="grid">
+              <div class="card">
+                <div class="card-top"><span class="pill">Core mechanics</span></div>
+                <p>
+                  Grid generation, mine placement, number hints, flagging, and win/loss logic.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="card-top"><span class="pill">Reveal propagation</span></div>
+                <p>
+                  Flood-fill reveal behavior for empty tiles so the board opens naturally.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="card-top"><span class="pill">Interaction polish</span></div>
+                <p>
+                  Smooth feedback for hover/reveal/flag states and clear reset behavior.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="card-top"><span class="pill">Edge cases</span></div>
+                <p>
+                  Defensive checks for repeated clicks, bounds, and preventing invalid actions.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- TECH NOTES -->
+          <section id="tech" class="section">
+            <div class="section-kicker"><span class="kicon">⌘</span> Implementation</div>
+
+            <div class="section-title">
+              <h2>Tech notes</h2>
+              <p>How it works (high level).</p>
+            </div>
+
+            <div class="two-col">
+              <div class="panel">
+                <h3>State</h3>
+                <ul>
+                  <li>2D array of cell objects (mine, revealed, flagged, adjacentCount)</li>
+                  <li>Global counters (mines, flags, revealed cells)</li>
+                  <li>Game mode (playing / won / lost)</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>Algorithm</h3>
+                <ul>
+                  <li>Mine placement (random unique positions)</li>
+                  <li>Compute adjacent counts for each cell</li>
+                  <li>Flood-fill reveal for zero-adjacent cells</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- REFLECTION -->
+          <section id="reflection" class="section">
+            <div class="section-kicker"><span class="kicon">✎</span> Reflection</div>
+
+            <div class="section-title">
+              <h2>Reflection</h2>
+              <p>What I learned + what I’d do next.</p>
+            </div>
+
+            <div class="two-col">
+              <div class="panel">
+                <h3>What I learned</h3>
+                <ul>
+                  <li>Game UI is basically state management with strong feedback loops.</li>
+                  <li>Edge cases matter more than the “happy path.”</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>Next improvements</h3>
+                <ul>
+                  <li>Add difficulty selector + timer + best time tracking.</li>
+                  <li>Keyboard support + accessibility pass (focus states, ARIA).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cta" style="margin-top:14px;">
+              <a class="btn" href="../index.html#projects">← Back to projects</a>
+              <a class="btn primary" href="#" target="_blank" rel="noreferrer">Play Live</a>
+            </div>
+          </section>
+
+          <!-- FILES / LINKS -->
+          <section id="files" class="section">
+            <div class="section-kicker"><span class="kicon">⌘</span> Links</div>
+
+            <div class="section-title">
+              <h2>Links</h2>
+              <p>Project links for recruiters.</p>
+            </div>
+
+            <div class="two-col">
+              <div class="panel">
+                <h3>Live</h3>
+                <ul>
+                  <li><a class="link" href="#" target="_blank" rel="noreferrer">Play Minesweeper</a></li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>Code</h3>
+                <ul>
+                  <li><a class="link" href="https://github.com/bschiller8/min3sweep" target="_blank" rel="noreferrer">GitHub repo</a></li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
-
-        <div class="video-card">
-          <!-- Option A: YouTube/Vimeo embed (recommended) -->
-          <!-- Replace VIDEO_ID -->
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID"
-              title="Minesweeper demo video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <!-- Option B: Local mp4 (if you upload demo.mp4 to /assets/videos/) -->
-          <!--
-          <video class="video-native" controls>
-            <source src="../assets/videos/minesweeper-demo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          -->
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-title">
-          <h2>What I built</h2>
-          <p>Quick, readable highlights (great for recruiters).</p>
-        </div>
-
-        <div class="two-col">
-          <div class="panel">
-            <h3>Core features</h3>
-            <ul>
-              <li>Grid generation + mine placement</li>
-              <li>Reveal propagation (flood fill) for empty tiles</li>
-              <li>Flagging + win/loss conditions</li>
-              <li>Reset + difficulty tweaks (optional)</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <h3>Why it matters</h3>
-            <ul>
-              <li>Shows state management + edge-case handling</li>
-              <li>Demonstrates UI feedback + interaction design</li>
-              <li>Readable, shippable project with a demo</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="margin-top:16px;">
-          <a class="btn" href="../index.html#projects">← Back to projects</a>
-        </div>
-      </section>
+      </div>
     </main>
 
     <footer class="container footer">
