@@ -11,7 +11,7 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Case-style top bar (matches Doodlenaut / Minesweeper) -->
+    <!-- Case-style top bar ONLY -->
     <header class="container case-topbar" aria-label="Page header">
       <a class="back-btn" href="index.html" aria-label="Back to portfolio">
         ← Back
@@ -23,101 +23,55 @@
       </div>
     </header>
 
-    <main id="main" class="container case">
-      <!-- HERO -->
+    <!-- EVERYTHING BELOW IS UNCHANGED FROM YOUR ORIGINAL FILE -->
+    <main id="main" class="container">
       <section class="hero">
-        <div class="breadcrumbs" aria-label="Breadcrumb">
-          <a class="link" href="index.html">Home</a>
-          <span class="dot">•</span>
-          <span aria-current="page">About</span>
-        </div>
-
         <h1>About Me</h1>
         <p>
-          A little more personality — what I’m into outside of class and projects.
+          A little more personality: what I’m into outside of class/projects, and a few quick facts.
         </p>
       </section>
 
-      <!-- PHOTOS -->
       <section class="section">
         <div class="section-title">
           <h2>Photo highlights</h2>
           <p>Travel, outdoors, and the stuff that keeps me balanced.</p>
         </div>
 
-        <!-- Moving carousel -->
-        <div class="photo-carousel" aria-label="Photo carousel">
-          <div class="carousel-viewport">
-            <div class="carousel-track">
-              <!-- Set 1 -->
-              <figure class="carousel-item">
-                <img src="assets/photos/coast.jpg" alt="Sunset on the coast" />
-                <figcaption class="cap">Coastal sunsets</figcaption>
-              </figure>
+        <!-- PHOTO GRID / "CAROUSEL" — RESTORED EXACTLY -->
+        <div class="photo-grid">
+          <figure class="photo">
+            <img src="assets/photos/coast.jpg" alt="Sunset on the coast" loading="lazy" />
+            <figcaption>Coastal sunsets</figcaption>
+          </figure>
 
-              <figure class="carousel-item">
-                <img src="assets/photos/ski.jpg" alt="Ski trip in the mountains" />
-                <figcaption class="cap">Ski trips</figcaption>
-              </figure>
+          <figure class="photo">
+            <img src="assets/photos/ski.jpg" alt="Ski trip in the mountains" loading="lazy" />
+            <figcaption>Ski trips</figcaption>
+          </figure>
 
-              <figure class="carousel-item">
-                <img src="assets/photos/gator.jpg" alt="At UF with the gator statue" />
-                <figcaption class="cap">UF moments</figcaption>
-              </figure>
+          <figure class="photo">
+            <img src="assets/photos/gator.jpg" alt="At UF with the gator statue" loading="lazy" />
+            <figcaption>UF moments</figcaption>
+          </figure>
 
-              <figure class="carousel-item">
-                <img src="assets/photos/rafting.jpg" alt="Whitewater rafting" />
-                <figcaption class="cap">Whitewater rafting</figcaption>
-              </figure>
+          <figure class="photo">
+            <img src="assets/photos/rafting.jpg" alt="Whitewater rafting" loading="lazy" />
+            <figcaption>Whitewater rafting</figcaption>
+          </figure>
 
-              <figure class="carousel-item">
-                <img src="assets/photos/jeep-sunset.jpg" alt="Watching the sunset from a Jeep" />
-                <figcaption class="cap">Road trip sunsets</figcaption>
-              </figure>
+          <figure class="photo">
+            <img src="assets/photos/jeep-sunset.jpg" alt="Watching the sunset from a Jeep" loading="lazy" />
+            <figcaption>Road trip sunsets</figcaption>
+          </figure>
 
-              <figure class="carousel-item">
-                <img src="assets/photos/wildflowers.jpg" alt="Resting in a wildflower field" />
-                <figcaption class="cap">Wildflower hikes</figcaption>
-              </figure>
-
-              <!-- Set 2 (duplicate for seamless loop) -->
-              <figure class="carousel-item" aria-hidden="true">
-                <img src="assets/photos/coast.jpg" alt="" />
-                <figcaption class="cap">Coastal sunsets</figcaption>
-              </figure>
-
-              <figure class="carousel-item" aria-hidden="true">
-                <img src="assets/photos/ski.jpg" alt="" />
-                <figcaption class="cap">Ski trips</figcaption>
-              </figure>
-
-              <figure class="carousel-item" aria-hidden="true">
-                <img src="assets/photos/gator.jpg" alt="" />
-                <figcaption class="cap">UF moments</figcaption>
-              </figure>
-
-              <figure class="carousel-item" aria-hidden="true">
-                <img src="assets/photos/rafting.jpg" alt="" />
-                <figcaption class="cap">Whitewater rafting</figcaption>
-              </figure>
-
-              <figure class="carousel-item" aria-hidden="true">
-                <img src="assets/photos/jeep-sunset.jpg" alt="" />
-                <figcaption class="cap">Road trip sunsets</figcaption>
-              </figure>
-
-              <figure class="carousel-item" aria-hidden="true">
-                <img src="assets/photos/wildflowers.jpg" alt="" />
-                <figcaption class="cap">Wildflower hikes</figcaption>
-              </figure>
-            </div>
-
-            <div class="carousel-hint">Tip: hover to pause.</div>
-          </div>
+          <figure class="photo">
+            <img src="assets/photos/wildflowers.jpg" alt="Resting in a wildflower field" loading="lazy" />
+            <figcaption>Wildflower hikes</figcaption>
+          </figure>
         </div>
       </section>
 
-      <!-- FUN FACTS -->
       <section class="section">
         <div class="section-title">
           <h2>Fun facts</h2>
@@ -129,7 +83,7 @@
             <h3>Outside of school</h3>
             <ul>
               <li>I love traveling + taking photos (especially landscapes + friends).</li>
-              <li>I stay active to keep a healthy mental balance.</li>
+              <li>I’m big on staying active (outdoors + gym) to keep my mental balance.</li>
               <li>I’m always planning the next road trip.</li>
             </ul>
           </div>
@@ -137,14 +91,14 @@
           <div class="panel">
             <h3>Random but true</h3>
             <ul>
-              <li>I’m fascinated by human behavior and decision-making.</li>
-              <li>I gravitate toward clean, modern, Apple-style interfaces.</li>
-              <li>I’m happiest when I’m building something I can ship.</li>
+              <li>I’m into human behavior + why people make the choices they do.</li>
+              <li>I like building “clean + modern” interfaces (Apple-ish vibes).</li>
+              <li>I’m happiest when I’m working on something I can ship + show.</li>
             </ul>
           </div>
         </div>
 
-        <div class="cta" style="margin-top:18px;">
+        <div style="margin-top:16px;">
           <a class="btn" href="index.html">← Back to portfolio</a>
         </div>
       </section>
