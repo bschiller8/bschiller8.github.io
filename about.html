@@ -9,7 +9,7 @@
 
     <!-- Carousel add-on styles (safe to keep here or move into style.css) -->
     <style>
-      /* ===== Photo carousel (infinite scroll) ===== */
+      /* ===== Photo carousel (auto-scroll, infinite) ===== */
       .photo-carousel {
         margin-top: 16px;
         border: 1px solid var(--line);
@@ -43,20 +43,18 @@
         gap: 12px;
         width: max-content;
         align-items: center;
-
-        /* animation */
         animation: carouselScroll 26s linear infinite;
         will-change: transform;
       }
 
-      /* Pause on hover (feels premium) */
+      /* Pause on hover */
       .photo-carousel:hover .carousel-track{
         animation-play-state: paused;
       }
 
       @keyframes carouselScroll{
         from { transform: translateX(0); }
-        to   { transform: translateX(-50%); } /* because we duplicate the slides */
+        to   { transform: translateX(-50%); }
       }
 
       .carousel-item{
@@ -83,40 +81,82 @@
         background: rgba(0,0,0,0.18);
       }
 
-      /* nice hint text */
       .carousel-hint{
         margin-top: 10px;
         font-size: 13px;
         color: rgba(255,255,255,0.6);
       }
 
-      /* Responsive */
       @media (max-width: 700px){
         .carousel-item{ width: 210px; }
         .carousel-item img{ height: 150px; }
       }
 
-      /* Respect reduced motion */
       @media (prefers-reduced-motion: reduce){
         .carousel-track{ animation: none; }
       }
+
+      /* ===== Manual (user-scroll) carousel ===== */
+      .photo-carousel.manual .carousel-track{
+        animation: none;            /* IMPORTANT: no auto movement */
+        width: auto;                /* normal width */
+      }
+
+      .photo-carousel.manual .carousel-viewport{
+        /* horizontal scroll area */
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        padding: 14px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 0; /* track handles spacing */
+      }
+
+      /* Keep spacing between items */
+      .photo-carousel.manual .carousel-track{
+        display: flex;
+        gap: 12px;
+        padding-bottom: 6px; /* gives room for scrollbar */
+      }
+
+      /* Each card snaps nicely */
+      .photo-carousel.manual .carousel-item{
+        scroll-snap-align: start;
+      }
+
+      /* Make the scrollbar look clean (optional) */
+      .photo-carousel.manual .carousel-viewport::-webkit-scrollbar{
+        height: 10px;
+      }
+      .photo-carousel.manual .carousel-viewport::-webkit-scrollbar-track{
+        background: rgba(255,255,255,0.06);
+        border-radius: 999px;
+      }
+      .photo-carousel.manual .carousel-viewport::-webkit-scrollbar-thumb{
+        background: rgba(120,255,200,0.25);
+        border: 1px solid rgba(120,255,200,0.35);
+        border-radius: 999px;
+      }
+      .photo-carousel.manual .carousel-viewport::-webkit-scrollbar-thumb:hover{
+        background: rgba(120,255,200,0.35);
+      }
     </style>
   </head>
-  <body>
-    <header class="container header">
 
-      <div style="margin-top:16px;">
-        <a class="btn" href="index.html">← Back to portfolio</a>
+  <body>
+    <!-- Topbar style header (no big name header) -->
+    <header class="container case-topbar" aria-label="About header">
+      <a class="back-btn" href="index.html" aria-label="Back to portfolio">← Back</a>
+
+      <div class="case-topbar-title">
+        <span class="case-topbar-kicker">Page</span>
+        <span class="case-topbar-name">About</span>
       </div>
     </header>
 
     <main class="container">
-      <section class="hero">
-        <h1>About Me</h1>
-        <p>
-          A little more personality: what I’m into outside of class/projects, and a few quick facts.
-        </p>
-      </section>
+      <!-- (No hero, per your request) -->
 
       <section class="section">
         <div class="section-title">
@@ -192,6 +232,53 @@
             </div>
 
             <div class="carousel-hint">Tip: hover to pause.</div>
+          </div>
+        </div>
+
+        <!-- ===== MANUAL CAROUSEL (user scrolls) ===== -->
+        <div class="photo-carousel manual" aria-label="Photography carousel" style="margin-top:16px;">
+          <div class="section-title" style="margin-top:0;">
+            <h3 style="margin: 0;">Photography</h3>
+            <p style="margin: 8px 0 0;">A few favorite shots — scroll sideways.</p>
+          </div>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <!-- Replace these images/captions with your best photography -->
+              <figure class="carousel-item">
+                <img src="assets/photos/photo1.jpg" alt="Featured photo 1" loading="lazy" />
+                <figcaption class="cap">Golden hour • Coastal</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/photo2.jpg" alt="Featured photo 2" loading="lazy" />
+                <figcaption class="cap">Mountains • Texture</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/photo3.jpg" alt="Featured photo 3" loading="lazy" />
+                <figcaption class="cap">Portrait • Natural light</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/photo4.jpg" alt="Featured photo 4" loading="lazy" />
+                <figcaption class="cap">Street • Candid</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/photo5.jpg" alt="Featured photo 5" loading="lazy" />
+                <figcaption class="cap">Details • Macro</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/photo6.jpg" alt="Featured photo 6" loading="lazy" />
+                <figcaption class="cap">Night • Color</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="carousel-hint" style="padding: 0 14px 14px;">
+            Tip: scroll horizontally (trackpad / shift+scroll). On mobile, swipe.
           </div>
         </div>
       </section>
