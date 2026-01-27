@@ -6,25 +6,111 @@
     <title>About — Benjamin Schiller</title>
     <meta name="description" content="About Benjamin Schiller — photos and fun facts." />
     <link rel="stylesheet" href="assets/style.css" />
+
+    <!-- Carousel add-on styles (safe to keep here or move into style.css) -->
+    <style>
+      /* ===== Photo carousel (infinite scroll) ===== */
+      .photo-carousel {
+        margin-top: 16px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.03);
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+        position: relative;
+      }
+
+      /* subtle glow layer */
+      .photo-carousel::before{
+        content:"";
+        position:absolute;
+        inset:-30px;
+        background:
+          radial-gradient(520px 220px at 20% 20%, rgba(120,255,200,0.12), transparent 60%),
+          radial-gradient(420px 180px at 80% 30%, rgba(255,255,255,0.06), transparent 60%);
+        filter: blur(10px);
+        opacity: 0.9;
+        pointer-events: none;
+      }
+
+      .carousel-viewport{
+        position: relative;
+        padding: 14px;
+      }
+
+      .carousel-track{
+        display: flex;
+        gap: 12px;
+        width: max-content;
+        align-items: center;
+
+        /* animation */
+        animation: carouselScroll 26s linear infinite;
+        will-change: transform;
+      }
+
+      /* Pause on hover (feels premium) */
+      .photo-carousel:hover .carousel-track{
+        animation-play-state: paused;
+      }
+
+      @keyframes carouselScroll{
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); } /* because we duplicate the slides */
+      }
+
+      .carousel-item{
+        flex: 0 0 auto;
+        width: 260px;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(0,0,0,0.22);
+      }
+
+      .carousel-item img{
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .carousel-item .cap{
+        padding: 10px 12px;
+        font-size: 13px;
+        color: rgba(255,255,255,0.72);
+        border-top: 1px solid rgba(255,255,255,0.10);
+        background: rgba(0,0,0,0.18);
+      }
+
+      /* nice hint text */
+      .carousel-hint{
+        margin-top: 10px;
+        font-size: 13px;
+        color: rgba(255,255,255,0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 700px){
+        .carousel-item{ width: 210px; }
+        .carousel-item img{ height: 150px; }
+      }
+
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce){
+        .carousel-track{ animation: none; }
+      }
+    </style>
   </head>
-
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="container header">
 
-    <!-- Case-style top bar ONLY -->
-    <header class="container case-topbar" aria-label="Page header">
-      <a class="back-btn" href="index.html" aria-label="Back to portfolio">
-        ← Back
-      </a>
-
-      <div class="case-topbar-title">
-        <span class="case-topbar-kicker">Page</span>
-        <span class="case-topbar-name">About Me</span>
+      <div style="margin-top:16px;">
+        <a class="btn" href="index.html">← Back to portfolio</a>
       </div>
     </header>
 
-    <!-- EVERYTHING BELOW IS UNCHANGED FROM YOUR ORIGINAL FILE -->
-    <main id="main" class="container">
+    <main class="container">
       <section class="hero">
         <h1>About Me</h1>
         <p>
@@ -38,8 +124,79 @@
           <p>Travel, outdoors, and the stuff that keeps me balanced.</p>
         </div>
 
-        <!-- PHOTO GRID / "CAROUSEL" — RESTORED EXACTLY -->
-        <div class="photo-grid">
+        <!-- ===== MOVING CAROUSEL (auto-scroll, pauses on hover) ===== -->
+        <div class="photo-carousel" aria-label="Photo carousel">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <!-- Set 1 -->
+              <figure class="carousel-item">
+                <img src="assets/photos/coast.jpg" alt="Sunset on the coast" loading="lazy" />
+                <figcaption class="cap">Coastal sunsets</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/ski.jpg" alt="Ski trip in the mountains" loading="lazy" />
+                <figcaption class="cap">Ski trips</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/gator.jpg" alt="At UF with the gator statue" loading="lazy" />
+                <figcaption class="cap">UF moments</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/rafting.jpg" alt="Whitewater rafting" loading="lazy" />
+                <figcaption class="cap">Whitewater rafting</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/jeep-sunset.jpg" alt="Watching the sunset from a Jeep" loading="lazy" />
+                <figcaption class="cap">Road trip sunsets</figcaption>
+              </figure>
+
+              <figure class="carousel-item">
+                <img src="assets/photos/wildflowers.jpg" alt="Resting in a wildflower field" loading="lazy" />
+                <figcaption class="cap">Wildflower hikes</figcaption>
+              </figure>
+
+              <!-- Set 2 (duplicate for seamless loop) -->
+              <figure class="carousel-item" aria-hidden="true">
+                <img src="assets/photos/coast.jpg" alt="" loading="lazy" />
+                <figcaption class="cap">Coastal sunsets</figcaption>
+              </figure>
+
+              <figure class="carousel-item" aria-hidden="true">
+                <img src="assets/photos/ski.jpg" alt="" loading="lazy" />
+                <figcaption class="cap">Ski trips</figcaption>
+              </figure>
+
+              <figure class="carousel-item" aria-hidden="true">
+                <img src="assets/photos/gator.jpg" alt="" loading="lazy" />
+                <figcaption class="cap">UF moments</figcaption>
+              </figure>
+
+              <figure class="carousel-item" aria-hidden="true">
+                <img src="assets/photos/rafting.jpg" alt="" loading="lazy" />
+                <figcaption class="cap">Whitewater rafting</figcaption>
+              </figure>
+
+              <figure class="carousel-item" aria-hidden="true">
+                <img src="assets/photos/jeep-sunset.jpg" alt="" loading="lazy" />
+                <figcaption class="cap">Road trip sunsets</figcaption>
+              </figure>
+
+              <figure class="carousel-item" aria-hidden="true">
+                <img src="assets/photos/wildflowers.jpg" alt="" loading="lazy" />
+                <figcaption class="cap">Wildflower hikes</figcaption>
+              </figure>
+            </div>
+
+            <div class="carousel-hint">Tip: hover to pause.</div>
+          </div>
+        </div>
+
+        <!-- If you still want the grid below, keep it. Otherwise delete it. -->
+        <div class="photo-grid" style="margin-top:18px;">
           <figure class="photo">
             <img src="assets/photos/coast.jpg" alt="Sunset on the coast" loading="lazy" />
             <figcaption>Coastal sunsets</figcaption>
