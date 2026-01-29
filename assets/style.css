@@ -1568,3 +1568,19 @@ body.minesweeper .card:hover::after{
   position: relative;
   z-index: 2;
 }
+
+
+/* Remove stray section divider on portfolio code page */
+.portfolio-code .section::before,
+.portfolio-code .section::after,
+.portfolio-code .section {
+  border-top: none !important;
+}
+
+.portfolio-code .case-layout::before {
+  display: none !important;
+}
+
+.portfolio-code .panel{
+  margin-top: 40px;
+}
