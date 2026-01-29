@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This Portfolio — Project</title>
+    <meta
+      name="description"
+      content="A custom-built portfolio showcasing UX case studies and development projects."
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Top bar -->
+    <header class="container case-topbar" aria-label="Project header">
+      <a class="back-btn" href="../index.html#projects" aria-label="Back to projects">
+        ← Back
+      </a>
+
+      <div class="case-topbar-title">
+        <span class="case-topbar-kicker">Project</span>
+        <span class="case-topbar-name">This Portfolio</span>
+      </div>
+    </header>
+
+    <main id="main" class="container case">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="breadcrumbs">
+          <a class="link" href="../index.html#projects">Dev Projects</a>
+          <span class="dot">•</span>
+          <span aria-current="page">This Portfolio</span>
+        </div>
+
+        <h1>This Portfolio</h1>
+        <p>
+          A fully custom portfolio designed and coded from scratch to present my
+          UX case studies and development projects in a clear, scannable, and
+          professional way.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">GitHub Pages</span>
+          <span class="badge">Accessibility</span>
+          <span class="badge">Performance</span>
+        </div>
+
+        <!-- Primary CTAs -->
+        <div class="cta" style="margin-top:18px;">
+          <a
+            class="btn primary"
+            href="https://github.com/bschiller8/bschiller8.github.io"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View GitHub Repo
+          </a>
+          <a class="btn" href="../index.html">
+            Open Live Site
+          </a>
+        </div>
+
+        <!-- Quick scan -->
+        <div class="quick-scan">
+          <div class="qs-item">
+            <div class="qs-label">Purpose</div>
+            <div class="qs-value">Showcase UX + dev work</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label">Built with</div>
+            <div class="qs-value">HTML, CSS, minimal JS</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label">Focus</div>
+            <div class="qs-value">Clarity, hierarchy, polish</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label">Hosting</div>
+            <div class="qs-value">GitHub Pages</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-layout">
+        <!-- TOC -->
+        <aside class="toc">
+          <div class="toc-title">On this page</div>
+          <a href="#overview">Overview</a>
+          <a href="#structure">Structure</a>
+          <a href="#design">Design decisions</a>
+          <a href="#accessibility">Accessibility</a>
+          <a href="#performance">Performance</a>
+          <a href="#links">Links</a>
+        </aside>
+
+        <div class="case-content">
+          <!-- OVERVIEW -->
+          <section id="overview" class="section">
+            <div class="section-title">
+              <h2>Overview</h2>
+              <p>Why I built this portfolio</p>
+            </div>
+
+            <div class="two-col">
+              <div class="panel">
+                <h3>Problem</h3>
+                <ul>
+                  <li>Most portfolio templates felt generic or rigid.</li>
+                  <li>I wanted full control over layout and interaction.</li>
+                  <li>My UX work needed space to breathe and tell a story.</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h3>Solution</h3>
+                <ul>
+                  <li>A custom layout system for projects and case studies.</li>
+                  <li>Consistent components across every page.</li>
+                  <li>Designed for quick scanning by recruiters.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- STRUCTURE -->
+          <section id="structure" class="section">
+            <div class="section-title">
+              <h2>Structure</h2>
+              <p>How the site is organized</p>
+            </div>
+
+            <div class="panel">
+              <ul>
+                <li>Homepage cards link to dedicated project pages.</li>
+                <li>UX case studies use a deeper, research-focused layout.</li>
+                <li>Dev projects use a lighter but consistent structure.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- DESIGN -->
+          <section id="design" class="section">
+            <div class="section-title">
+              <h2>Design decisions</h2>
+              <p>What I focused on visually</p>
+            </div>
+
+            <div class="grid">
+              <div class="card">
+                <div class="card-top">
+                  <span class="pill">Hierarchy</span>
+                </div>
+                <p>
+                  Clear headings, spacing, and card layouts make pages easy to
+                  skim without losing important detail.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="card-top">
+                  <span class="pill">Consistency</span>
+                </div>
+                <p>
+                  Shared components (cards, badges, buttons) create a cohesive
+                  experience across the site.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="card-top">
+                  <span class="pill">Subtle motion</span>
+                </div>
+                <p>
+                  Lightweight reveal animations add polish without distraction.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ACCESSIBILITY -->
+          <section id="accessibility" class="section">
+            <div class="section-title">
+              <h2>Accessibility</h2>
+            </div>
+
+            <div class="panel">
+              <ul>
+                <li>Semantic HTML structure and landmarks.</li>
+                <li>Alt text on images and thumbnails.</li>
+                <li>Skip links and keyboard-friendly navigation.</li>
+                <li>Respects <code>prefers-reduced-motion</code>.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- PERFORMANCE -->
+          <section id="performance" class="section">
+            <div class="section-title">
+              <h2>Performance</h2>
+            </div>
+
+            <div class="panel">
+              <ul>
+                <li>Static hosting for fast load times.</li>
+                <li>Lazy-loaded images where possible.</li>
+                <li>Minimal JavaScript for interaction only.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- LINKS -->
+          <section id="links" class="section">
+            <div class="section-title">
+              <h2>Links</h2>
+              <p>Code and live site</p>
+            </div>
+
+            <div class="cta">
+              <a
+                class="btn primary"
+                href="https://github.com/bschiller8/bschiller8.github.io"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View GitHub Repo
+              </a>
+              <a class="btn" href="../index.html">
+                Open Live Site
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container footer">
+      <span>© <span id="y"></span> Benjamin Schiller</span>
+      <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
