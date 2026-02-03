@@ -1615,3 +1615,30 @@ body.minesweeper .card:hover::after{
   opacity: 1; /* prevents your global a:hover opacity from washing it out */
 }
 
+.about-more{
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.about-link{
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(120,255,190,0.35);
+  padding-bottom: 1px;
+  transition: border-color 180ms ease, color 180ms ease, opacity 180ms ease;
+}
+
+.about-link:hover{
+  color: rgba(210,255,235,0.95);
+  border-bottom-color: rgba(120,255,190,0.75);
+  opacity: 1; /* avoids global a:hover opacity washout */
+}
+
+.about-link:focus-visible{
+  outline: 2px solid var(--accent-focus);
+  outline-offset: 3px;
+  border-bottom-color: transparent;
+}
+
