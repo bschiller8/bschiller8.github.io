@@ -1584,3 +1584,34 @@ body.minesweeper .card:hover::after{
 .portfolio-code .panel{
   margin-top: 40px;
 }
+
+.about-cta {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* About section button (matches theme) */
+.about-cta{
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Optional: give it the same premium hover feel as other clickable things */
+.about-cta .btn{
+  transition:
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.about-cta .btn:hover{
+  transform: translateY(-2px);
+  border-color: var(--accent-line);
+  box-shadow:
+    0 16px 46px rgba(0,0,0,0.35),
+    0 0 26px rgba(120,255,200,0.14);
+  opacity: 1; /* prevents your global a:hover opacity from washing it out */
+}
+
