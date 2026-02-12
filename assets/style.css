@@ -5,7 +5,7 @@
   --muted: rgba(255, 255, 255, 0.68);
   --line: rgba(255, 255, 255, 0.12);
 
-  /* Green / teal accent theme */
+
   --accent: rgba(120, 255, 190, 0.95);
   --accent-soft: rgba(120, 255, 190, 0.12);
   --accent-line: rgba(120, 255, 190, 0.35);
@@ -29,28 +29,28 @@ a:hover { opacity: 0.9; }
 
 .container { max-width: 1040px; margin: 0 auto; padding: 24px; }
 
-/* ---------- Header ---------- */
+
 .header{
   padding-top: 28px;
   padding-bottom: 10px;
   position: relative;
 
-  max-width: none;     /* override container width */
+  max-width: none;   
   width: 100%;
 }
 
-/* Left column: brand + nav */
+
 .header-left{
   display: flex;
   flex-direction: column;
 }
 
-/* Hide header action buttons on non-home pages */
+
 body:not(.home) .cta{
   display: none;
 }
 
-/* Avatar + name block */
+
 .brand{
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@ body:not(.home) .cta{
   color: var(--muted);
 }
 
-/* Navigation pills */
+
 .nav{
   display: flex;
   gap: 14px;
@@ -90,7 +90,7 @@ body:not(.home) .cta{
   margin-top: 16px;
 }
 
-/* ---------- Nav pills (make them feel clickable) ---------- */
+
 .nav a{
   padding: 10px 14px;
   border: 1px solid rgba(255,255,255,0.18);
@@ -113,7 +113,7 @@ body:not(.home) .cta{
 .nav a:hover{
   color: rgba(255,255,255,0.92);
   background: rgba(255,255,255,0.06);
-  border-color: rgba(120,255,200,0.45); /* subtle green hint */
+  border-color: rgba(120,255,200,0.45); 
   transform: translateY(-2px);
   box-shadow:
     0 10px 24px rgba(0,0,0,0.35),
@@ -125,7 +125,7 @@ body:not(.home) .cta{
   transform: translateY(0px) scale(0.98);
 }
 
-/* Keyboard accessibility (also makes "clickable" obvious) */
+
 .nav a:focus-visible{
   outline: none;
   border-color: rgba(120,255,200,0.75);
@@ -135,22 +135,22 @@ body:not(.home) .cta{
 }
 
 
-/* Right-side buttons */
+
 .cta{
   display: flex;
   gap: 10px;
   flex-wrap: nowrap;
 
   position: absolute;
-  top: 28px;     /* aligns with avatar/name */
-  right: 24px;   /* pushes to true top-right */
+  top: 28px;     
+  right: 24px;   
 
   margin-top: 0;
 }
 
 
 
-/* Buttons */
+
 .btn{
   display: inline-flex;
   align-items: center;
@@ -168,10 +168,10 @@ body:not(.home) .cta{
   background: var(--accent-soft);
 }
 
-/* ---------- Mobile ---------- */
+
 @media (max-width: 860px){
   .cta{
-    position: static;     /* stops overlap on small screens */
+    position: static;     
     width: auto;
     margin-top: 16px;
     justify-content: flex-start;
@@ -179,9 +179,7 @@ body:not(.home) .cta{
   }
 }
 
-/* =========================
-   Landing hero (homepage)
-   ========================= */
+
 .landing-hero{
   position: relative;
   margin-top: 14px;
@@ -262,7 +260,7 @@ body:not(.home) .cta{
   background: rgba(255,255,255,0.02);
 }
 
-/* Right side of hero: headshot on top, quick highlights under */
+
 .hero-right{
   display: flex;
   flex-direction: column;
@@ -270,7 +268,7 @@ body:not(.home) .cta{
   min-width: 0;
 }
 
-/* Headshot box (inside the big hero panel) */
+
 .hero-headshot{
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -279,7 +277,7 @@ body:not(.home) .cta{
   overflow: hidden;
   box-shadow: 0 18px 60px rgba(0,0,0,0.35);
   position: relative;
-  z-index: 2; /* keeps it above glow layers */
+  z-index: 2; 
 }
 
 .hero-headshot img{
@@ -290,12 +288,12 @@ body:not(.home) .cta{
   display: block;
 }
 
-/* Make sure Quick highlights is a normal single-column card */
+
 .landing-card{
-  display: block; /* overrides your earlier grid-based landing-card */
+  display: block; 
 }
 
-/* Mobile stack */
+
 @media (max-width: 980px){
   .hero-headshot img{
     height: 240px;
@@ -303,7 +301,7 @@ body:not(.home) .cta{
 }
 
 
-/* Make the Quick Highlights card a 2-column layout */
+
 .landing-card {
   display: grid;
   grid-template-columns: 1fr 260px;
@@ -311,12 +309,12 @@ body:not(.home) .cta{
   align-items: center;
 }
 
-/* Keep the left side above/clean */
+
 .landing-card-content {
   min-width: 0;
 }
 
-/* Right side headshot */
+
 .landing-headshot {
   display: flex;
   justify-content: center;
@@ -326,13 +324,13 @@ body:not(.home) .cta{
 .landing-headshot img {
   width: 100%;
   max-width: 240px;
-  height: 220px;            /* controls how tall it is */
+  height: 220px;           
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
 
-/* Responsive: stack nicely on small screens */
+
 @media (max-width: 900px) {
   .landing-card {
     grid-template-columns: 1fr;
@@ -355,7 +353,7 @@ body:not(.home) .cta{
 }
 
 
-/* Right-side highlight card */
+
 .landing-card{
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.03);
@@ -426,7 +424,7 @@ body:not(.home) .cta{
   box-shadow: 0 0 14px rgba(120,255,200,0.25);
 }
 
-/* Scroll cue */
+
 .scroll-cue{
   display: inline-flex;
   align-items: center;
@@ -476,9 +474,7 @@ body:not(.home) .cta{
 
 
 
-/* =========================
-   Landing hero motion
-   ========================= */
+
 
 .wave {
   display: inline-block;
@@ -488,7 +484,7 @@ body:not(.home) .cta{
   filter: drop-shadow(0 0 12px rgba(120,255,200,0.45));
 }
 
-/* Animate once on load */
+
 @keyframes waveHello {
   0%   { transform: rotate(0deg); }
   15%  { transform: rotate(14deg); }
@@ -502,7 +498,7 @@ body:not(.home) .cta{
   animation: waveHello 1.4s ease-in-out 0.4s 1;
 }
 
-/* Respect reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
   .wave {
     animation: none;
@@ -510,7 +506,6 @@ body:not(.home) .cta{
 }
 
 
-/* Name emphasis */
 .landing-id{ margin-bottom: 10px; }
 .landing-name{
   font-weight: 800;
@@ -520,10 +515,10 @@ body:not(.home) .cta{
   text-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 .landing-kicker{
-  margin-top: 4px; /* tighten under name */
+  margin-top: 4px; 
 }
 
-/* Animated background glow drift */
+
 .landing-hero::before{
   animation: glowDrift 10s ease-in-out infinite;
   transform-origin: 50% 30%;
@@ -535,7 +530,7 @@ body:not(.home) .cta{
   100%{ transform: translateY(0px) scale(1); opacity: 1; }
 }
 
-/* Staggered entrance */
+
 .landing-copy, .landing-card, .scroll-cue{
   opacity: 0;
   transform: translateY(10px);
@@ -549,7 +544,7 @@ body:not(.home) .cta{
   to{ opacity: 1; transform: translateY(0px); }
 }
 
-/* Card feels alive (subtle float) */
+
 .landing-card{
   position: relative;
   overflow: hidden;
@@ -575,7 +570,7 @@ body:not(.home) .cta{
   100%{ transform: translateY(0px); }
 }
 
-/* CTA micro interaction: more obvious + premium */
+
 .landing-cta .btn{
   transition:
     transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -591,7 +586,7 @@ body:not(.home) .cta{
     0 0 26px rgba(120,255,200,0.14);
 }
 
-/* Primary button subtle sheen */
+
 .btn.primary{
   position: relative;
   overflow: hidden;
@@ -622,7 +617,7 @@ body:not(.home) .cta{
   to{ left: 120%; }
 }
 
-/* Tag pills: tiny hover so they feel interactive */
+
 .tag-pill{
   transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease;
 }
@@ -631,7 +626,7 @@ body:not(.home) .cta{
   box-shadow: 0 10px 26px rgba(0,0,0,0.25);
 }
 
-/* Respect reduced-motion settings */
+
 @media (prefers-reduced-motion: reduce){
   .landing-hero::before,
   .landing-card,
@@ -646,13 +641,13 @@ body:not(.home) .cta{
   }
 }
 
-/* ===== Landing hero layout fix (prevents overflow) ===== */
+
 .landing-hero{
   position: relative;
   padding: 34px 0 26px;
 }
 
-/* Real panel so content doesn't look like it's leaking out */
+
 .landing-hero-inner{
   position: relative;
   max-width: 1100px;
@@ -665,7 +660,7 @@ body:not(.home) .cta{
   overflow: hidden;
 }
 
-/* Keep the glow inside the hero panel */
+
 .landing-hero::before{
   content: "";
   position: absolute;
@@ -684,9 +679,9 @@ body:not(.home) .cta{
   z-index: -1;
 }
 
-/* Make sure text wraps instead of breaking layout */
+
 .landing-copy{
-  min-width: 0; /* critical for grid overflow issues */
+  min-width: 0; 
 }
 
 .landing-title{
@@ -699,7 +694,7 @@ body:not(.home) .cta{
   max-width: 62ch;
 }
 
-/* Grid should behave nicely */
+
 .landing-hero-inner{
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -707,7 +702,7 @@ body:not(.home) .cta{
   align-items: start;
 }
 
-/* Ensure right card doesn't force overflow */
+
 .landing-card{
   min-width: 0;
 }
@@ -722,7 +717,7 @@ body:not(.home) .cta{
   }
 }
 
-/* ===== JS-driven reveal animations ===== */
+
 .reveal{
   opacity: 0;
   transform: translateY(14px);
@@ -735,7 +730,7 @@ body:not(.home) .cta{
   transform: translateY(0px);
 }
 
-/* Slight stagger for landing hero only */
+
 .landing-copy.reveal{ transition-delay: 0ms; }
 .landing-card.reveal{ transition-delay: 120ms; }
 .scroll-cue.reveal{ transition-delay: 240ms; }
@@ -744,7 +739,7 @@ body:not(.home) .cta{
   align-self: start;
 }
 
-/* ---------- Hero ---------- */
+
 .hero { padding: 22px 0 8px; }
 .hero h1 { font-size: 46px; margin: 18px 0 10px; letter-spacing: -0.5px; }
 .hero p { margin: 0; color: var(--muted); font-size: 18px; max-width: 72ch; }
@@ -759,7 +754,7 @@ body:not(.home) .cta{
   background: rgba(255,255,255,0.03);
 }
 
-/* ---------- Sections ---------- */
+
 .section {
   padding: 26px 0;
   border-top: 1px solid var(--line);
@@ -769,7 +764,7 @@ body:not(.home) .cta{
 .section-title h2 { margin: 0; font-size: 26px; }
 .section-title p { margin: 8px 0 0; color: var(--muted); }
 
-/* ---------- Cards / Grids ---------- */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -777,11 +772,9 @@ body:not(.home) .cta{
   margin-top: 16px;
 }
 
-/* ---------- Cards (original layout & sizing — unchanged) ---------- */
-.card{
-  /* ⬇️ KEEP EVERYTHING YOU HAD BEFORE ⬇️ */
 
-  /* examples (yours may differ — keep YOUR values): */
+.card{
+
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -790,10 +783,10 @@ body:not(.home) .cta{
   flex-direction: column;
   gap: 8px;
 
-  /* ⬆️ KEEP EVERYTHING YOU HAD BEFORE ⬆️ */
+
 }
 
-/* --- Card image header (Minesweeper test) --- */
+
 .card-media{
   position: relative;
   height: 140px;
@@ -814,7 +807,6 @@ body:not(.home) .cta{
               opacity 320ms ease;
 }
 
-/* dark blend + slight accent tint so it matches your theme */
 .card-media::after{
   content: "";
   position: absolute;
@@ -831,7 +823,7 @@ body:not(.home) .cta{
 }
 
 
-/* card internal structure (leave as-is) */
+
 .card-top{
   display: flex;
   align-items: center;
@@ -857,12 +849,10 @@ body:not(.home) .cta{
   margin: 0 0 6px;
 }
 
-/* ================================================================== */
-/* === Hover + Glow Addon (NEW — does NOT affect layout or sizing) === */
-/* ================================================================== */
+
 
 .card{
-  position: relative; /* required for glow */
+  position: relative; 
   cursor: pointer;
 
   transition:
@@ -871,7 +861,7 @@ body:not(.home) .cta{
     border-color 260ms ease;
 }
 
-/* glow layer (visual only, no layout impact) */
+
 .card::after{
   content: "";
   position: absolute;
@@ -888,7 +878,7 @@ body:not(.home) .cta{
     0 0 70px rgba(120, 255, 200, 0.2);
 }
 
-/* hover state */
+
 .card:hover{
   transform: translateY(-8px) scale(1.02);
   border-color: var(--accent-line);
@@ -899,12 +889,12 @@ body:not(.home) .cta{
   opacity: 1;
 }
 
-/* pressed (click) feedback */
+
 .card:active{
   transform: translateY(-2px) scale(0.99);
 }
 
-/* keyboard accessibility */
+
 .card:focus-visible{
   outline: none;
   border-color: var(--accent-line);
@@ -936,7 +926,7 @@ body:not(.home) .cta{
 .link { color: var(--accent); }
 .dot { opacity: 0.5; }
 
-/* ---------- Two column panels ---------- */
+
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -955,12 +945,12 @@ body:not(.home) .cta{
 .panel ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
 .panel li { margin: 8px 0; }
 
-/* ---------- Contact / Footer ---------- */
+
 .contact { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
 .footnote { margin-top: 16px; color: rgba(255,255,255,0.55); font-size: 13px; }
 .footer { padding: 24px; color: rgba(255,255,255,0.55); }
 
-/* ---------- Responsive ---------- */
+
 @media (max-width: 820px) {
   .grid { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; }
@@ -971,7 +961,7 @@ body:not(.home) .cta{
   .avatar{ width: 48px; height: 48px; }
 }
 
-/* ---------- Clickable avatar ---------- */
+
 .avatar-link { display: inline-flex; border-radius: 999px; }
 .avatar-link:hover { opacity: 1; }
 .avatar-link:focus {
@@ -979,7 +969,7 @@ body:not(.home) .cta{
   outline-offset: 3px;
 }
 
-/* ---------- About page photo grid ---------- */
+
 .photo-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -987,7 +977,7 @@ body:not(.home) .cta{
   margin-top: 16px;
 }
 
-/* Photo tile with hover overlay */
+
 .photo{
   margin: 0;
   position: relative;
@@ -1005,7 +995,6 @@ body:not(.home) .cta{
   transition: opacity 220ms ease, transform 320ms ease, filter 220ms ease;
 }
 
-/* Overlay caption (hidden by default) */
 .photo figcaption{
   position: absolute;
   inset: 0;
@@ -1035,7 +1024,7 @@ body:not(.home) .cta{
   max-width: 32ch;
 }
 
-/* Hover/focus: fade image back, show overlay */
+
 .photo:hover img,
 .photo:focus-within img{
   opacity: 0.25;
@@ -1049,7 +1038,7 @@ body:not(.home) .cta{
   transform: translateY(0);
 }
 
-/* Responsive photo grid */
+
 @media (max-width: 900px){
   .photo-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .photo img{ height: 220px; }
@@ -1060,7 +1049,7 @@ body:not(.home) .cta{
   .photo img{ height: 260px; }
 }
 
-/* Mobile: no hover -> show text under image */
+
 @media (hover: none){
   .photo figcaption{
     position: static;
@@ -1101,7 +1090,7 @@ body:not(.home) .cta{
   border: 0;
 }
 
-/* If you use the local <video> option */
+
 .video-native{
   width: 100%;
   border-radius: 14px;
@@ -1110,7 +1099,7 @@ body:not(.home) .cta{
 }
 
 
-/* ---------- Case Study Layout + Components ---------- */
+
 
 .skip-link{
   position: absolute;
@@ -1317,13 +1306,13 @@ body:not(.home) .cta{
   border-top: 1px solid rgba(255,255,255,0.10);
 }
 
-/* Improve focus visibility globally */
+
 a:focus, button:focus, .btn:focus{
   outline: 2px solid var(--accent-focus);
   outline-offset: 3px;
 }
 
-/* Responsive */
+
 @media (max-width: 980px){
   .quick-scan{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-layout{ grid-template-columns: 1fr; }
@@ -1334,7 +1323,7 @@ a:focus, button:focus, .btn:focus{
   .stats{ grid-template-columns: 1fr; }
 }
 
-/* Case study top bar (replaces full site header) */
+
 .case-topbar{
   display: flex;
   align-items: center;
@@ -1384,7 +1373,7 @@ a:focus, button:focus, .btn:focus{
 }
 
 
-/* --- Doodlenaut hero compare (A vs B) --- */
+
 .hero-compare{
   margin: 18px 0 22px;
   display: grid;
@@ -1414,18 +1403,18 @@ a:focus, button:focus, .btn:focus{
   background: rgba(0,0,0,0.18);
 }
 
-/* Mobile: stack instead of side-by-side */
+
 @media (max-width: 900px){
   .hero-compare{
     grid-template-columns: 1fr;
   }
 }
 
-/* --- Responsive YouTube embed --- */
+
 .video-wrapper{
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
+  padding-top: 56.25%; 
   margin-top: 16px;
 
   border-radius: 18px;
@@ -1443,19 +1432,19 @@ a:focus, button:focus, .btn:focus{
 }
 
 
-/* ===== HERO: make the big box hug its content ===== */
+
 .landing-hero{
-  padding: 18px 0 12px; /* reduces vertical space around the hero */
+  padding: 18px 0 12px; 
 }
 
 .landing-hero-inner{
-  padding: 22px;        /* smaller padding inside the big box */
+  padding: 22px;        
   height: auto;
   min-height: 0;
-  align-items: start;   /* prevents any stretching behavior */
+  align-items: start;   
 }
 
-/* Scroll cue should sit below the big box, not inside it */
+
 .scroll-cue{
   margin-top: 12px;
 }
@@ -1501,7 +1490,7 @@ a:focus, button:focus, .btn:focus{
   color: rgba(255,255,255,0.6);
 }
 
-/* Design preview inside cards */
+
 .design-preview{
   margin-top: 12px;
   border-radius: 14px;
@@ -1533,9 +1522,7 @@ a:focus, button:focus, .btn:focus{
 }
 
 
-/* =========================================
-   Minesweeper page: make cards static
-   ========================================= */
+
 body.minesweeper .card{
   cursor: default;
   transition: none;
@@ -1570,7 +1557,7 @@ body.minesweeper .card:hover::after{
 }
 
 
-/* Remove stray section divider on portfolio code page */
+
 .portfolio-code .section::before,
 .portfolio-code .section::after,
 .portfolio-code .section {
@@ -1590,14 +1577,14 @@ body.minesweeper .card:hover::after{
   text-align: center;
 }
 
-/* About section button (matches theme) */
+
 .about-cta{
   margin-top: 18px;
   display: flex;
   justify-content: center;
 }
 
-/* Optional: give it the same premium hover feel as other clickable things */
+
 .about-cta .btn{
   transition:
     transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -1612,7 +1599,7 @@ body.minesweeper .card:hover::after{
   box-shadow:
     0 16px 46px rgba(0,0,0,0.35),
     0 0 26px rgba(120,255,200,0.14);
-  opacity: 1; /* prevents your global a:hover opacity from washing it out */
+  opacity: 1; 
 }
 
 .about-more{
@@ -1633,7 +1620,7 @@ body.minesweeper .card:hover::after{
 .about-link:hover{
   color: rgba(210,255,235,0.95);
   border-bottom-color: rgba(120,255,190,0.75);
-  opacity: 1; /* avoids global a:hover opacity washout */
+  opacity: 1; 
 }
 
 .about-link:focus-visible{
