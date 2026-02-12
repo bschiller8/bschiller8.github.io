@@ -7,9 +7,9 @@
     <meta name="description" content="About Benjamin Schiller — photos and fun facts." />
     <link rel="stylesheet" href="assets/style.css" />
 
-    <!-- Carousel add-on styles (safe to keep here or move into style.css) -->
+
     <style>
-      /* ===== Photo carousel (infinite scroll) ===== */
+
       .photo-carousel {
         margin-top: 16px;
         border: 1px solid var(--line);
@@ -20,7 +20,7 @@
         position: relative;
       }
 
-      /* subtle glow layer */
+
       .photo-carousel::before{
         content:"";
         position:absolute;
@@ -44,19 +44,19 @@
         width: max-content;
         align-items: center;
 
-        /* animation */
+
         animation: carouselScroll 26s linear infinite;
         will-change: transform;
       }
 
-      /* Pause on hover (feels premium) */
+
       .photo-carousel:hover .carousel-track{
         animation-play-state: paused;
       }
 
       @keyframes carouselScroll{
         from { transform: translateX(0); }
-        to   { transform: translateX(-50%); } /* because we duplicate the slides */
+        to   { transform: translateX(-50%); } 
       }
 
       .carousel-item{
@@ -83,20 +83,20 @@
         background: rgba(0,0,0,0.18);
       }
 
-      /* nice hint text */
+
       .carousel-hint{
         margin-top: 10px;
         font-size: 13px;
         color: rgba(255,255,255,0.6);
       }
 
-      /* Responsive */
+
       @media (max-width: 700px){
         .carousel-item{ width: 210px; }
         .carousel-item img{ height: 150px; }
       }
 
-      /* Respect reduced motion */
+
       @media (prefers-reduced-motion: reduce){
         .carousel-track{ animation: none; }
       }
@@ -124,7 +124,7 @@
         </p>
       </section>
 
-      <!-- ===== Carousel 1: Photo highlights (auto-scroll) ===== -->
+
       <section class="section">
         <div class="section-title">
           <h2>Photo highlights</h2>
@@ -134,7 +134,7 @@
         <div class="photo-carousel" aria-label="Photo highlights carousel">
           <div class="carousel-viewport">
             <div class="carousel-track">
-              <!-- Set 1 -->
+
 
               <figure class="carousel-item">
                 <img src="assets/photos/ski.jpg" alt="Ski trip in the mountains" loading="lazy" />
@@ -161,7 +161,7 @@
                 <figcaption class="cap">Hiking in Colorado</figcaption>
               </figure>
 
-              <!-- Set 2 (duplicate for seamless loop) -->
+
 
               <figure class="carousel-item" aria-hidden="true">
                 <img src="assets/photos/ski.jpg" alt="" loading="lazy" />
@@ -194,7 +194,7 @@
         </div>
       </section>
 
-      <!-- ===== Fun facts (in the middle) ===== -->
+
       <section class="section">
         <div class="section-title">
           <h2>Fun facts</h2>
@@ -221,7 +221,7 @@
         </div>
       </section>
 
-      <!-- ===== Carousel 2: Photography (auto-scroll like carousel 1) ===== -->
+
       <section class="section">
         <div class="section-title">
           <h2>Photography</h2>
@@ -255,7 +255,7 @@
                 <img src="assets/photos/photog-6.jpg" alt="Photography sample 6" loading="lazy" />
               </figure>
 
-              <!-- Set 2 (duplicate for seamless loop) -->
+
               <figure class="carousel-item" aria-hidden="true">
                 <img src="assets/photos/photog-1.jpg" alt="" loading="lazy" />
               </figure>
