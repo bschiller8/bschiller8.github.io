@@ -139,7 +139,7 @@ body {
   /* YOUR CODE: display flex, gap, wrap behavior */
   display: flex;
   gap: var(--spacing-md);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .list-item {
@@ -148,12 +148,12 @@ body {
   border-radius: 0.5rem;
   border: 1px solid var(--color-border);
   /* YOUR CODE: flex-basis or width for sizing */
-  display: flex; /*finish this and down*/
+  display: flex; 
   gap: var(--spacing-md);
-  flex-basis: 32%; /* might have to change this */
+  flex-basis: 32%; /* i might need to come back to this */
 }
 
-/* -----classes I have added from here down ------*/
+/* my classes from here down */
 .image-placeholder {
   background: var(--color-border);
   width: 100px;
@@ -188,7 +188,7 @@ body {
   line-height: 1.5;
   margin-top: var(--spacing-sm);
 }
-/*-----classes I have added from here up^^^^--------*/
+/*my classes from here up*/
 
 /* ===========================================
    TASK 4: RESPONSIVE BREAKPOINT
