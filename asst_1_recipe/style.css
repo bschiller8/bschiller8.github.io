@@ -278,6 +278,14 @@ body {
         align-items:center;
     }
 
+    .ingredients-window{
+        width: 85%;
+    }
+
+    .instructions-window{
+        width: 85%
+    }
+
     .recipe-footer {
         display: flex;
         flex-direction: row;
