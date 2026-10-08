@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <div class = "restaurant-cuisine">${resto.cuisine}</div>
                 <div class = "restaurant-rating">Rating: ${resto.rating}</div>
                 <div class = "restaurant-price">${resto.priceRange}</div>
-            </div>`; //added class to div
+            </div>`; //added class to divs
         }
         );
         console.log('Displayed all restaurants using forEach');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <div class = "restaurant-rating">Rating: ${resto.rating}</div>
                 <div class = "restaurant-price">${resto.priceRange}</div>
             </div>
-            `; //added class to div
+            `; //added class to divs
         });
         //end step 2
 
