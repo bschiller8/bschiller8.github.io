@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // ============================================
     // METHOD 1: forEach - DO SOMETHING WITH EACH ITEM
     // ============================================
+    //SUCCESS!!!!!!!!!!!!!!!!!!
     
     // Goal: Display all restaurants in the list area
     // forEach is like Tutorial 4's single element work, but for ALL items
@@ -115,23 +116,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
         restaurantList.innerHTML = '';
 
         // Step 2: Use forEach to go through each restaurant
-        restaurants.forEach((resto, index) => {
-            restaurantList.innerHTML += `<div>${resto.name}</div>`
-        })
+        //THIS WAS GIVEN so I commented it out since I used some of it in step 3
+        //restaurants.forEach((resto, index) => {
+        //    restaurantList.innerHTML += `<div>${resto.name}</div>`
+        //})
         
         // Step 3: For each restaurant, create HTML and add it to the list
         // Hint: Create a div with restaurant.name and restaurant.cuisine
         // Hint: Use restaurantList.innerHTML += to add each one
         
         // YOUR CODE HERE:
-        
-        
+        //wrapped in a div with class for styling
+        restaurants.forEach((resto, index) => {
+            restaurantList.innerHTML += `
+            <div class = "restaurant-item">
+                <div class= "restaurant-name">${resto.name}</div>
+                <div class = "restaurant-cuisine">${resto.cuisine}</div>
+                <div class = "restaurant-rating">Rating: ${resto.rating}</div>
+                <div class = "restaurant-price">${resto.priceRange}</div>
+            </div>`; //added class to div
+        }
+        );
         console.log('Displayed all restaurants using forEach');
     });
     
     // ============================================
     // METHOD 2: filter - GET ITEMS THAT MATCH CRITERIA
     // ============================================
+    //SUCCESS!!!!!!!!!!!!!!!!!!
     
     // Goal: Show only restaurants with "$" or "$$" price range
     // filter creates a NEW array with only items that match your condition
@@ -148,14 +160,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Hint: Use forEach on the cheapRestaurants array
         
         // YOUR CODE HERE:
-        
-        
+        //begin step 1
+        const cheapRestaurants = restaurants.filter((restaurant) => { //from hint
+            return restaurant.priceRange === '$' || restaurant.priceRange === '$$'; //the condition is if it's $ OR $$
+        }); //end step 1
+        //begin step 2
+        filteredList.innerHTML = ''; //clear existing content (taken from method 1) so that each time you click button it doesn't regenerate the content
+        cheapRestaurants.forEach((resto) => {
+            filteredList.innerHTML += `
+            <div class = "restaurant-item">
+                <div class = "restaurant-name">${resto.name}</div>
+                <div class = "restaurant-cuisine">${resto.cuisine}</div>
+                <div class = "restaurant-rating">Rating: ${resto.rating}</div>
+                <div class = "restaurant-price">${resto.priceRange}</div>
+            </div>
+            `; //added class to div
+        });
+        //end step 2
+
         console.log('Showed cheap restaurants using filter');
     });
     
     // ============================================
     // METHOD 3: map - TRANSFORM EACH ITEM TO GET SPECIFIC DATA
     // ============================================
+    //SUCCESS!!!!!!!!!!!!!!!!!!
     
     // Goal: Get just the names of all restaurants
     // map creates a NEW array by transforming each item
@@ -172,14 +201,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Hint: You can use forEach on the names array, or join() method
         
         // YOUR CODE HERE:
-        
-        
+        //beginning step 1
+        const names = restaurants.map((restaurant) => { //from hint
+            return restaurant.name; //returns just the names
+        }); //end step 1
+        //beginning step 2
+        //mappedList.innerHTML = ''; //actually realized I don't need this in this case because the next line replaces the content inside mappedList anyways
+        mappedList.innerHTML = '<ul class = "name-list">'; //added CSS class to unordered list
+        names.forEach((name) => { // in this case, forEach loops through each name and adds it to the list
+            mappedList.innerHTML += `<li>${name}</li>`; //adds to the list
+        });
+        mappedList.innerHTML += '</ul>'; //end step 2
+
         console.log('Showed restaurant names using map');
     });
     
     // ============================================
     // METHOD 4: find - GET ONE SPECIFIC ITEM
     // ============================================
+    //SUCCESS!!!!!!!!!!!!!!!!!!
     
     // Goal: Find the restaurant with the highest rating (4.8)
     // find returns the FIRST item that matches your condition
@@ -197,8 +237,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Hint: Show the name, cuisine, and rating
         
         // YOUR CODE HERE:
-        
-        
+        //beginning step 1
+        const bestRestaurant = restaurants.find((restaurant) => { //from hint
+            return restaurant.rating === 4.8; //the condition is if the rating is 4.8 (checking)
+        }); //end step 1
+        //beginning step 2
+        if (bestRestaurant) {
+            //wrapped in a div with class for styling
+            foundItem.innerHTML = `<div class = "found-restaurant">
+                <div class = "restaurant-name">${bestRestaurant.name}</div>
+                <div class = "restaurant-cuisine">${bestRestaurant.cuisine}</div>
+                <div class = "restaurant-rating">${bestRestaurant.rating}</div>
+                <div class = "restaurant-price">${bestRestaurant.priceRange}</div>
+                <div class = "restaurant-neighborhood">${bestRestaurant.neighborhood}</div>
+            </div>`; //wrapped in a div with class for styling (the style makes the background green but I don't want to change the rating color because, for the sake of the assignment, I don't want to edit the CSS file)
+        } //end step 2
+
         console.log('Found best restaurant using find');
     });
     
