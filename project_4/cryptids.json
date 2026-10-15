@@ -1,0 +1,54 @@
+[
+    {
+        "id": "a-bao-a-qu",
+        "name": "Á Bao A Qu",
+        "location": "Tower of Victory, Chittorgarh, India",
+        "description": "A creature from Malay mythology that follows visitors up the Tower of Victory. It becomes more solid and glows blue as it climbs, but can only achieve perfection by reaching the top with a spiritually enlightened person.",
+        "image": "https://static.wikia.nocookie.net/cryptidz/images/f/f2/A_bao_a_qu.png/revision/latest?cb=20160227150112",
+        "source": "https://cryptidz.fandom.com/wiki/%C3%81_Bao_A_Qu"
+    },
+
+    {
+        "id": "a-mi-kuk",
+        "name": "A-Mi-Kuk",
+        "location": "Coastal regions of Alaska",
+        "description": "A creature from Yup’ik oral traditions described as massive and heavy-bodied, with smooth, slimy skin and four human-like arms instead of legs. It is said to travel through water and underground, emerging in lakes or coastal areas. Stories portray it as a fearsome predator and a warning about dangerous waters.",
+        "image": null,
+        "source": null
+    },
+
+    {
+        "id": "aatxe",
+        "name": "Aatxe",
+        "location": "Basque Country",
+        "description": "A cave-dwelling spirit from Basque mythology whose name means \"Young Bull.\" It usually appears as a young red bull but can shapeshift into a man. It emerges at night, especially during storms, to attack criminals and malevolent people. It also protects people by keeping them home when danger is near and is sometimes associated with the goddess Mari.",
+        "image": "https://static.wikia.nocookie.net/cryptidz/images/2/28/Aatxe.png/revision/latest?cb=20161209164446",
+        "source": "https://cryptidz.fandom.com/wiki/Aatxe"
+    },
+
+    {
+        "id": "abada",
+        "name": "Abada",
+        "location": "Angola and the Congo, Africa",
+        "description": "A legendary African unicorn with varying descriptions. One account describes a creature larger than a horse, with a deer-like head and two horns, one on its forehead and another on its nose. Another describes an ox-sized animal whose males have a single forehead horn. The name was also an old Portuguese term for a rhinoceros.",
+        "image": null,
+        "source": "https://cryptidz.fandom.com/wiki/Abada"
+    },
+    {
+        "id": "abaia",
+        "name": "Abaia",
+        "location": "Freshwater lakes in Fiji, the Solomon Islands, and Vanuatu",
+        "description": "A huge magical eel from Melanesian mythology that considers the creatures in its lake its children. It fiercely protects them, using its powerful tail to create waves that overwhelm people attempting to catch fish. In another version, it summons rainstorms and floods to punish anyone who harms the lake's creatures.",
+        "image": "https://static.wikia.nocookie.net/cryptidz/images/f/f1/Abaia.jpg/revision/latest?cb=20170403125126",
+        "source": "https://cryptidz.fandom.com/wiki/Abaia"
+    },
+    {
+        "id": "abarimon",
+        "name": "Abarimon",
+        "location": "Himalayan Mountains, India",
+        "description": "A legendary race of humanoids with backward-facing feet who could run at great speed. They were said to live alongside wild animals in a Himalayan valley and fiercely resist capture. According to folklore, they could breathe only the special air of their own valley, preventing them from leaving.",
+        "image": "https://static.wikia.nocookie.net/cryptidz/images/c/cc/Abarimon.jpg/revision/latest?cb=20171219091036",
+        "source": "https://cryptidz.fandom.com/wiki/Abarimon"
+    }
+
+]
