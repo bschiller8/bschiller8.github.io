@@ -1,0 +1,39 @@
+/* Visual */
+.header {
+    color: #333;
+}
+
+.title {
+    /*code for font from Google*/
+    font-family: "Road Rage", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    /* end of code for font from Google*/
+    font-size: 100px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.search-cntnr{
+    
+}
+
+.search-box{
+
+}
+
+.viewAll-btn{
+
+}
+
+.mainContent-cntnr{
+
+}
+
+.cards-cntnr{
+
+}
+
+.countryName{
+
+}
