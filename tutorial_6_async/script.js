@@ -12,8 +12,8 @@ let restaurants = [];
 // TODO 1: A CALLBACK THAT RUNS LATER
 // When the button is clicked, use setTimeout to write "Ready!" into #ready-output
 // after 2 seconds. Predict first: which reaches the log first, "Waiting..." or "Ready!"?
-// My prediction:
-// ============================================
+// MY PREDICTION:
+// I predict that "Waiting..." will reach the log first. 
 
 document.querySelector('#run-todo-1').addEventListener('click', () => {
   startLog('#log-todo-1');
@@ -21,7 +21,11 @@ document.querySelector('#run-todo-1').addEventListener('click', () => {
   // YOUR CODE HERE
   // Hint: setTimeout(() => { ...write 'Ready!' to the page, and log('#log-todo-1', 'Ready!') }, 2000);
 
-  log('#log-todo-1', 'Waiting...');
+  setTimeout(() => {document.querySelector('#ready-output').textContent = 'Ready!';
+  log('#log-todo-1', 'Ready!') }, 2000); //from hint
+
+log('#log-todo-1', 'Waiting...');
+
 });
 
 // ============================================
@@ -41,6 +45,14 @@ document.querySelector('#load-then').addEventListener('click', () => {
   //   .then((data) => {
   //     ...save data into restaurants, log how many arrived, and call setCountButton(true)
   //   });
+
+  fetch('./restaurants.json')
+    .then((response) => response.json())
+    .then((data) => {
+      restaurants = data; //variable to update = value saving
+      log('#log-then', 'The callback got '+restaurants.length+' restaurants'); //restaurants.length calculates the length of the restaurants array (AKA: how many restaurants there are)
+      setCountButton(true); //from hint
+    })
 
   log('#log-then', 'This line comes after fetch() in the code');
 });
@@ -62,6 +74,17 @@ document.querySelector('#load-await').addEventListener('click', async () => {
   // } catch (error) {
   //   ...console.error the error, then showStatus('error', ...) with a friendly message
   // }
+  showStatus('loading', 'Loading restaurants...'); //from hint
+  try{
+    const response = await fetch('./restaurants.json'); //from hint
+    if (!response.ok) { throw new Error(`HTTP error: ${response.status}`); } //from hint
+    const data = await response.json(); //from hint
+    restaurants = data;
+    showStatus('success', 'Loaded '+restaurants.length+' restaurants');
+    setCountButton(true)
+  } catch (error) {
+    console.error(error), showStatus('error', 'Error loading restaurants.')
+    } 
 });
 
 // ============================================
