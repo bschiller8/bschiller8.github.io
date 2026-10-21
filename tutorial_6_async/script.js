@@ -102,6 +102,10 @@ document.querySelector('#count-by-price').addEventListener('click', () => {
   //   counts[restaurant.priceRange] = (counts[restaurant.priceRange] || 0) + 1;
   // });
 
+  restaurants.forEach((restaurant) => {
+    counts[restaurant.priceRange] = (counts[restaurant.priceRange] || 0) + 1;
+  }); //from hint
+
   showCountTable('#count-output', counts);
 });
 
