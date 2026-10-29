@@ -29,6 +29,15 @@ document.querySelector('#make-lists').addEventListener('click', () => {
   // Hint: priceLabels = Object.keys(priceCounts);    gives ['$$', '$$$', ...]
   // Hint: priceNumbers = Object.values(priceCounts); gives [3, 2, ...]
 
+  //my code start//
+  restaurants.forEach((restaurant) => {
+    priceCounts[restaurant.priceRange] = (priceCounts[restaurant.priceRange] || 0) + 1;
+  });
+
+  priceLabels = Object.keys(priceCounts);
+  priceNumbers = Object.values(priceCounts);
+  //^^^my code end^^^
+
   showShape('#lists-output', `labels  = ${toText(priceLabels)}\nnumbers = ${toText(priceNumbers)}`);
   setButton('#draw-bar', true);
   setButton('#order-bars', true);
@@ -45,23 +54,23 @@ document.querySelector('#draw-bar').addEventListener('click', () => {
   // YOUR CODE HERE
   // Hint: uncomment this, and replace each ??? with the right thing
   //
-  // drawChart('#bar-chart', {
-  //   type: '???',
-  //   data: {
-  //     labels: ???,
-  //     datasets: [{ label: 'Restaurants', data: ??? }]
-  //   },
-  //   options: {
-  //     plugins: { title: { display: true, text: '???' } },
-  //     scales: {
-  //       x: { title: { display: true, text: '???' } },
-  //       y: { title: { display: true, text: '???' }, beginAtZero: true }
-  //     }
-  //   }
-  // });
-  //
+   drawChart('#bar-chart', {
+     type: 'bar',
+     data: {
+       labels: priceLabels,
+       datasets: [{ label: 'Restaurants', data: priceNumbers }]
+     },
+     options: {
+       plugins: { title: { display: true, text: 'Number of Restaurants by Price' } },
+       scales: {
+         x: { title: { display: true, text: 'Price' } },
+         y: { title: { display: true, text: 'Number of Restaurants' }, beginAtZero: true }
+       }
+     }
+   });
+  
   // Then write your sentence:
-  // document.querySelector('#bar-summary').textContent = '...';
+   document.querySelector('#bar-summary').textContent = 'The bar chart shows the number of restaurants in each price range.';
 });
 
 // ============================================
@@ -81,6 +90,11 @@ document.querySelector('#order-bars').addEventListener('click', () => {
   //   return ???;   (look the price up in priceCounts)
   // });
 
+  priceLabels = priceOrder;
+  priceNumbers = priceOrder.map((price) => {
+    return priceCounts[price];
+  });
+
   showShape('#order-output', `labels  = ${toText(priceLabels)}\nnumbers = ${toText(priceNumbers)}`);
 });
 
@@ -96,11 +110,29 @@ document.querySelector('#draw-scatter').addEventListener('click', () => {
   // Hint: const points = restaurants.map((restaurant) => {
   //   return { x: ???, y: ??? };
   // });
+  const points = restaurants.map((restaurant) => {
+      return { x: restaurant.priceRange.length, y: restaurant.rating};
+  });
   // Hint: showShape('#points-output', `points = ${toText(points)}`); lets you see what you made
+  showShape('#points-output', `points = ${toText(points)}`);
   // Hint: then draw it like TODO 3, with type: 'scatter' and
   //       data: { datasets: [{ label: 'Restaurants', data: points }] }
   //       (a scatter chart has no labels list: each point carries its own x and y)
+     drawChart('#scatter-chart', {
+     type: 'scatter',
+     data: {
+       datasets: [{ label: 'Restaurants', data: points}]
+     },
+     options: {
+       plugins: { title: { display: true, text: 'Restaurant Prices and Ratings' } },
+       scales: {
+         x: { title: { display: true, text: 'Price Level' } },
+         y: { title: { display: true, text: 'Rating' }, beginAtZero: true }
+       }
+     }
+   });
   // Hint: and write a sentence into #scatter-summary
+  document.querySelector('#scatter-summary').textContent = 'The scatter chart shows each point representing a single restaurant and its price level and rating.';
 });
 
 // ============================================
