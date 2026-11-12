@@ -30,11 +30,11 @@ function showCharts(data) {
                 <div class="charts-grid">
                     <figure class="chart-figure">
                         <canvas id="chart-one"></canvas>
-                        <figcaption class="chart-summary">This chart shows the number of inspections for each type of restaurant.</figcaption>
+                        <figcaption class="chart-summary">Chain fast food businesses had the most inspections: 29 of the 150 inspections in this dataset.</figcaption>
                     </figure>
                     <figure class="chart-figure">
                         <canvas id="chart-two"></canvas>
-                        <figcaption class="chart-summary">This chart shows how the 150 inspections are distributed across different reported outcomes of the inspections.</figcaption>
+                        <figcaption class="chart-summary">“Non-Compliant - Violations Observed” was the most common reported outcome which accounted for 42 of the 150 inspections.</figcaption>
                     </figure>
                 </div>
             `;
@@ -72,13 +72,25 @@ function drawCharts(data) {
          datasets: [{ label: 'Number of inspections', data: numbers }]
        },
        options: {
+        aspectRatio: 1, //added so that the chart fills the whole container 
          plugins: { 
           title: { 
             display: true, 
             text: 'Inspections by type of business' } },
          scales: {
-           x: { title: { display: true, text: 'Type of business' } },
-           y: { title: { display: true, text: 'Inspections' }, beginAtZero: true }
+           x: { 
+            title: { 
+            display: true, 
+            text: 'Type of business' } },
+           y: { 
+            title: { 
+            display: true, 
+            text: 'Inspections' }, 
+            beginAtZero: true, 
+            ticks: {
+              stepSize: 1 //added so that the axis counts by 1 (charts.js still hides some numbers if the chart is too small to show all of them)
+            }
+          }
          }
        }
      });
@@ -103,7 +115,9 @@ function drawCharts(data) {
     type: 'pie',
     data: {
       labels: outcomeLabels,
-      datasets: [{ label: 'Number of inspections', data: outcomeNumbers }]
+      datasets: [{ 
+        label: 'Number of inspections', 
+        data: outcomeNumbers }]
     },
     options: {
       plugins: { 
