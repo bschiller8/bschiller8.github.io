@@ -1,32 +1,80 @@
-/* Visual */
+
+/* GENERAL */
+body {
+    background-image: url(Images/bkgd.png); /* SOURCE: I made this image in Canva from Canva clipart*/
+    background-size: cover;
+}
+
 .header {
     color: #333;
 }
 
+.hidden{
+    display: none;
+}
+
+/*TITLE*/
 .title {
     /*code for font from Google*/
     font-family: "Road Rage", sans-serif;
     font-weight: 400;
     font-style: normal;
     /* end of code for font from Google*/
-    font-size: 100px;
-    letter-spacing: 3px;
+    font-size: 150px;
+    letter-spacing: 5px;
     text-align: center;
 }
 
+/*LANDING PAGE DECORATIONS*/
+.main-screen{
+    position: relative;
+}
+.coffee-stain{
+    position: absolute;
+    width: 200px;
+    top: 30px;
+    right: 30px;
+    pointer-events: none;
+}
+
+
+
+
+/*SEARCHING FUNCTIONS*/
 .search-cntnr{
-    
+    display: grid;
+    place-items: center;
 }
 
 .search-box{
 
 }
 
-.viewAll-btn{
+.searchInput{
+    height: 30px;
+    width: 300px;
+    border-radius: 0px;
+}
+
+.searchInput:hover{
 
 }
 
+.viewAll-btn{
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+
+/*JOURNALS*/
 .mainContent-cntnr{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
 
 }
 
@@ -34,6 +82,120 @@
 
 }
 
+.journal-cover_1{
+    width: 250px;
+    aspect-ratio: 735 / 979;
+    background-image: url("Images/journal_1.jpg"); /*SOURCE: https://ca.pinterest.com/pin/825918019198101727/ */
+    background-size: cover;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0;
+    cursor: pointer; /*makes it so the cursor changes to pointer when hovering*/
+}
+.journal-cover_1:hover{
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+
+.journal-cover_2{
+    width: 250px;
+    aspect-ratio: 735 / 979;
+    background-image: url("Images/journal_2.jpg"); /*SOURCE: https://ca.pinterest.com/pin/809944314280828728/ */
+    background-size: cover;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0;
+    cursor: pointer; /*makes it so the cursor changes to pointer when hovering*/
+}
+.journal-cover_2:hover{
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+
+.journal-cover_3{
+    width: 250px;
+    aspect-ratio: 735 / 979;
+    background-image: url("Images/journal_3.jpg"); /*SOURCE: https://ca.pinterest.com/pin/825918019198101718/ */
+    background-size: cover;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0;
+    cursor: pointer; /*makes it so the cursor changes to pointer when hovering*/
+}
+.journal-cover_3:hover{
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+
 .countryName{
 
+}
+
+/*WHEN ONE JOURNAL IS CLICKED*/
+#journal-view{
+}
+
+#inside-journals{
+
+}
+.journalCover-clicked{
+    width: 500px;
+    aspect-ratio: 735 / 979;
+    background-size: cover;
+    border: none;
+    box-sizing: border-box; /*makes it so the padding doesn't mess up the size of the image*/
+    padding: 0px;
+    cursor: pointer; /*makes it so the cursor changes to pointer when hovering*/
+
+}
+
+.journal-page{
+    width: 500px;
+    aspect-ratio: 735 / 979;
+    background-image: url("Images/journal-page.jpg"); /*SOURCE: https://ca.pinterest.com/pin/714453928400940781/ */
+    background-size: cover;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.journal-page p{
+    text-align: center;
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(54, 54, 54)
+}
+.journal-page h2{
+    text-align: center;
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(54, 54, 54)
+}
+
+.journal-position{
+    display: flex;
+    justify-content: center;
+}
+
+.cover-one{
+    background-image: url("Images/journal_1.jpg");
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cover-two{
+    background-image: url("Images/journal_2.jpg");
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cover-three{
+    background-image: url("Images/journal_3.jpg");
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

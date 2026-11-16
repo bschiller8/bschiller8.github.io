@@ -10,48 +10,86 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Road+Rage&display=swap" rel="stylesheet">
         <!--end of code for font from Google-->
+        <!--code for font from Google for main content-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <!--end of code for font from Google for main content-->
     </head>
 
 
-    <body> 
-        <!--header-->
-        <header class="header">
-            <h1 class="title">Cryptids</h1>
-        </header>
+    <body>
+        <!--MAIN SCREEN VIEW-->
+        <section class="main-screen">
+            <!--header-->
+            <header class="header">
+                <h1 class="title">Cryptids</h1>
+            </header>
+
+            <img class="coffee-stain" src="Images/coffee-stain.png" alt="coffee stain decoration"> <!--SOURCE: https://ca.pinterest.com/pin/386324474291811071/-->
 
 
+            <!--searching functions-->
+            <div class="search-cntnr"> 
+                <div class="search-box">
+                    <input
+                        class="searchInput"
+                        type="search"
+                        id="cryptidSearch"
+                        placeholder="search for a cryptid..."
+                    >
+                </div>
 
-        <!--searching functions-->
-        <div class="search-cntnr"> 
-            <div class="search-box">
-                <input
-                    type="search"
-                    id="cryptidSearch"
-                    placeholder="search for a cryptid..."
-                >
+                <button class="viewAll-btn" type="button">View All</button>
+
             </div>
 
-            <button class="viewAll-btn" type="button">View All</button>
+            <!--journals-->
+            <div class="mainContent-cntnr"> 
+                <button class="journal-cover_1" type="button"> <!--journal 1-->
+                    <span class="continentName"></span>
+                </button>
+                <button class="journal-cover_2" type="button"> <!--journal 2-->
+                    <span class="continentName"></span>
+                </button>
+                <button class="journal-cover_3" type="button"> <!--journal 3-->
+                    <span class="continentName"></span>
+                </button>
 
-        </div>
+            </div>
 
+        </section>
 
-
-        <!--main content-->
-        <div class="mainContent-cntnr"> 
-
-            <button class="cards-cntnr" type="button">
-                <span class="countryName">country</span>
+        <!--ON-CLICK JOURNAL VIEW-->
+        <section id="journal-view" class="hidden">
+            <button type="button" id="back-button">
+                Back
             </button>
+            <div class="journal-position"> <!--new div to make a class in order to control the position of the journal when it is in the opened state-->
+                <div id="inside-journals">
+                    <div class="journalCover-clicked pages"></div>
+                    <div class ="journal-page pages">
+                        <h2>Cryptid Name</h2>
+                        <p>description of cryptid blah blah blah</p>
+                    </div>
 
-        </div>
+                    <div class ="journal-page pages">
+                        <h2>Cryptid Name</h2>
+                        <p>description of cryptid blah blah blah</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+    <!--links stPageFlip to html file-->
+    <script src="Libraries/page-flip.browser.js">
 
+    </script>
 
+    <!-- links script.js to html file (placed here because it needs to be loaded after the html has been loaded and html reads top to bottom)-->
+    <script src="script.js"> 
 
-
-
-
+    </script>
 
     </body>
 

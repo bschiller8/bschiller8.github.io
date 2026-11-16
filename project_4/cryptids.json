@@ -3,8 +3,9 @@
         "id": "a-bao-a-qu",
         "name": "Á Bao A Qu",
         "location": "Tower of Victory, Chittorgarh, India",
+        "continent": "Asia",
         "description": "A creature from Malay mythology that follows visitors up the Tower of Victory. It becomes more solid and glows blue as it climbs, but can only achieve perfection by reaching the top with a spiritually enlightened person.",
-        "image": "https://static.wikia.nocookie.net/cryptidz/images/f/f2/A_bao_a_qu.png/revision/latest?cb=20160227150112",
+        "image": "Images/Cryptids/a-bao-a-qu.png",
         "source": "https://cryptidz.fandom.com/wiki/%C3%81_Bao_A_Qu"
     },
 
@@ -12,6 +13,7 @@
         "id": "a-mi-kuk",
         "name": "A-Mi-Kuk",
         "location": "Coastal regions of Alaska",
+        "continent": "North America",
         "description": "A creature from Yup’ik oral traditions described as massive and heavy-bodied, with smooth, slimy skin and four human-like arms instead of legs. It is said to travel through water and underground, emerging in lakes or coastal areas. Stories portray it as a fearsome predator and a warning about dangerous waters.",
         "image": null,
         "source": null
@@ -21,6 +23,7 @@
         "id": "aatxe",
         "name": "Aatxe",
         "location": "Basque Country",
+        "continent": "Europe",
         "description": "A cave-dwelling spirit from Basque mythology whose name means \"Young Bull.\" It usually appears as a young red bull but can shapeshift into a man. It emerges at night, especially during storms, to attack criminals and malevolent people. It also protects people by keeping them home when danger is near and is sometimes associated with the goddess Mari.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/2/28/Aatxe.png/revision/latest?cb=20161209164446",
         "source": "https://cryptidz.fandom.com/wiki/Aatxe"
@@ -30,6 +33,7 @@
         "id": "abada",
         "name": "Abada",
         "location": "Angola and the Congo, Africa",
+        "continent": "Africa",
         "description": "A legendary African unicorn with varying descriptions. One account describes a creature larger than a horse, with a deer-like head and two horns, one on its forehead and another on its nose. Another describes an ox-sized animal whose males have a single forehead horn. The name was also an old Portuguese term for a rhinoceros.",
         "image": null,
         "source": "https://cryptidz.fandom.com/wiki/Abada"
@@ -39,6 +43,7 @@
         "id": "abaia",
         "name": "Abaia",
         "location": "Freshwater lakes in Fiji, the Solomon Islands, and Vanuatu",
+        "continent": "Oceania",
         "description": "A huge magical eel from Melanesian mythology that considers the creatures in its lake its children. It fiercely protects them, using its powerful tail to create waves that overwhelm people attempting to catch fish. In another version, it summons rainstorms and floods to punish anyone who harms the lake's creatures.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/f/f1/Abaia.jpg/revision/latest?cb=20170403125126",
         "source": "https://cryptidz.fandom.com/wiki/Abaia"
@@ -48,6 +53,7 @@
         "id": "abarimon",
         "name": "Abarimon",
         "location": "Himalayan Mountains, India",
+        "continent":"Asia",
         "description": "A legendary race of humanoids with backward-facing feet who could run at great speed. They were said to live alongside wild animals in a Himalayan valley and fiercely resist capture. According to folklore, they could breathe only the special air of their own valley, preventing them from leaving.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/c/cc/Abarimon.jpg/revision/latest?cb=20171219091036",
         "source": "https://cryptidz.fandom.com/wiki/Abarimon"
@@ -57,6 +63,7 @@
         "id": "abath",
         "name": "Abath",
         "location": "Indonesia and Phuket Island, Thailand",
+        "continent": "Asia",
         "description": "A supposed unicorn associated with Indonesia, described as having a single brown-gray horn on its forehead that was believed to counteract poison. Historical accounts mention horns purchased on what is now Phuket Island. The creature is explained as a misidentified rhinoceros, with its name derived from the Malay word for rhinoceros.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/7/75/Abath.jpg/revision/latest?cb=20160529210645",
         "source": "https://cryptidz.fandom.com/wiki/Abath"
@@ -66,6 +73,7 @@
         "id": "abbagoochie",
         "name": "Abbagoochie",
         "location": "Costa Rica and West Virginia, United States",
+        "continent": "North America",
         "description": "A likely hoax creature resembling a mixture of an owl, a fox, and a deer. Nicknamed a \"dry land piranha,\" it supposedly eats animals much larger than itself and consumes itself if cornered. A story claims thirteen were introduced from Costa Rica into West Virginia in 1999 to control predators, but multiplied and began attacking livestock.",
         "image": null,
         "source": null
@@ -75,6 +83,7 @@
         "id": "aberdeen-carcass",
         "name": "Aberdeen Carcass",
         "location": "Near Aberdeen, Scotland",
+        "continent": "Europe",
         "description": "A mysterious carcass reportedly measuring 40 feet long that was found washed ashore near Aberdeen on July 21, 2011. Although some speculated that it belonged to a surviving prehistoric creature, veterinarians consulted by the Scottish Agricultural College believed it was a juvenile pilot whale.",
         "image": null,
         "source": null
@@ -84,6 +93,7 @@
         "id": "aberdeen-wildman",
         "name": "Aberdeen Wildman",
         "location": "Aberdeen, Maryland, United States",
+        "continent": "North America",
         "description": "An ape-like humanoid reportedly encountered in the 1980s. Witness Frank Bennett described a roughly six-foot-tall figure with bulging eyes, wearing a white dress shirt and blue slacks. It allegedly screamed, thrashed, and jumped ten feet into the trees before swinging away. A later search found no physical evidence.",
         "image": null,
         "source": null
@@ -93,6 +103,7 @@
         "id": "abnauayu",
         "name": "Abnauayu",
         "location": "Caucasus Mountains, Russia",
+        "continent": "Asia",
         "description": "A Bigfoot-like humanoid associated with remote woodlands and glaciers around the Caucasus Mountains. It is described as muscular and human-sized, with reddish-black hair, a low brow, reddish eyes, and high cheekbones. Reports describe garbled vocalizations and occasional use of sticks and rocks as tools or weapons.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/8/85/XYJ1tOY.jpg/revision/latest?cb=20140611213718",
         "source": "https://cryptidz.fandom.com/wiki/Abnauayu"
@@ -102,6 +113,7 @@
         "id": "abominable-swamp-slob",
         "name": "Abominable Swamp Slob",
         "location": "Swamplands of the United States, including reports from Murphysboro, Illinois",
+        "continent": "North America",
         "description": "A regional name for Bigfoot-like creatures also called Skunk Apes. Reports describe a nocturnal humanoid between four and a half and twelve feet tall that inhabits wooded areas near streams and emits piercing shrieks. It allegedly chases or attacks people, while reported footprints vary considerably in size and number of toes.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/1/17/Abominable_swamp_slob.jpg/revision/latest?cb=20160205141856",
         "source": "https://cryptidz.fandom.com/wiki/Abominable_Swamp_Slob"
@@ -111,6 +123,7 @@
         "id": "abura-akago",
         "name": "Abura Akago",
         "location": "Omi Province, Japan",
+        "continent": "Asia",
         "description": "A yokai whose name means \"oil baby.\" It appears as a floating fireball, enters houses, and transforms into a human child to lick oil from lamps or paper lanterns before departing as a fireball again. Folklore describes these beings as ghosts of people who stole oil during their lives and went unpunished.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/a/a1/Abura-akago.jpg/revision/latest?cb=20170505164724",
         "source": "https://cryptidz.fandom.com/wiki/Abura_Akago"
@@ -120,6 +133,7 @@
         "id": "abura-sumashi",
         "name": "Abura Sumashi",
         "location": "Kusazumigoe mountain pass, Amakusa, Kumamoto Prefecture, Japan",
+        "continent": "Asia",
         "description": "A spirit whose name means \"oil wringer,\" associated with a mountain pass on Amakusa. In a traditional story, it appears after an old woman tells her grandchild about it, declaring that it still visits the area. A popular illustrated depiction gives it a straw raincoat and a stony, potato-shaped head.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/6/6c/Abura-Sumashii.png/revision/latest?cb=20150406185822",
         "source": "https://cryptidz.fandom.com/wiki/Abura_Sumashi"
@@ -129,6 +143,7 @@
         "id": "abyssal-rainbow-gar",
         "name": "Abyssal Rainbow Gar",
         "location": "North Atlantic Ocean off Bermuda, approximately 2,500 feet deep",
+        "continent": "North America",
         "description": "An unidentified fish reported by William Beebe during a bathysphere dive in the early 1930s. He described four slender fish about four inches long, with pointed jaws, scarlet heads, blue bodies, and yellow tails, swimming upright together. Suggested explanations include an unidentified species or an optical illusion caused by condensation on the bathysphere window.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/5/53/Hidetoshi1.jpg/revision/latest?cb=20241205005452",
         "source": "https://cryptidz.fandom.com/wiki/Abyssal_Rainbow_Gar"
@@ -138,6 +153,7 @@
         "id": "achiyalabopa",
         "name": "Achiyalabopa",
         "location": "Pueblo traditions, United States",
+        "continent": "North America",
         "description": "A huge celestial bird god from Pueblo mythology, described as having rainbow-colored feathers as sharp as knives. It is associated with the sky and creation and is said to kill those who disrespect it with a flap of its wings. Some interpretations connect it with the Thunderbird.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/e/eb/Water_Phoenix_by_Anglerfish5.jpg/revision/latest?cb=20150412001944",
         "source": "https://cryptidz.fandom.com/wiki/Achiyalabopa"
@@ -147,6 +163,7 @@
         "id": "achlis",
         "name": "Achlis",
         "location": null,
+        "continent": "Unknown",
         "description": "An elk-like creature described by Pliny the Elder, said to have an oversized upper lip that forced it to graze backward. Its hind legs supposedly lacked joints, requiring it to sleep standing or leaning against trees. Hunters allegedly trapped it by partially cutting through its sleeping tree, causing it to fall and leaving it unable to rise quickly.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/0/0a/44739125_p.jpg/revision/latest?cb=20150412002511",
         "source": "https://cryptidz.fandom.com/wiki/Achlis"
@@ -156,6 +173,7 @@
         "id": "adam-ayu",
         "name": "Adam-Ayu",
         "location": "Mountains of Central Asia",
+        "continent": "Asia",
         "description": "A hairy wildman associated with the Almas, described as more human-like than ape-like, with a cone-shaped head, sparse body hair, large human-like teeth, and a strong unpleasant smell. Reports claim it can run as fast as a horse and swim in swift currents. It is said to be mainly nocturnal, live in ground holes with its mate, and eat small animals and vegetables.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/5/5e/Adam-ayu.png/revision/latest?cb=20140611214429",
         "source": "https://cryptidz.fandom.com/wiki/Adam-ayu"
@@ -165,6 +183,7 @@
         "id": "adam-dzhapais",
         "name": "Adam-Dzhapais",
         "location": "Eastern Pamir Mountains, Tajikistan, and the Kunlun Mountains and southern Xinjiang, China",
+        "continent": "Asia",
         "description": "A hairy, human-like creature from Central Asia that may be a type of Almas. It reportedly communicates through muttering sounds, has sharp hearing, and is an excellent runner and swimmer. Accounts describe it making primitive tools from sticks and stones and washing its infants in clean, cold springs.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/a/a0/Apeman1.jpg/revision/latest?cb=20160516225841",
         "source": "https://cryptidz.fandom.com/wiki/Adam-Dzhapais"
@@ -174,6 +193,7 @@
         "id": "adar-llwch-gwin",
         "name": "Adar Llwch Gwin",
         "location": "Wales",
+        "continent": "Europe",
         "description": "Giant griffin-like birds from Welsh tradition, given to the warrior Drudwas ap Tryffin by his fairy wife. They understood human speech and obeyed their master's commands. When ordered to kill the first man to enter a battle against Arthur, they killed Drudwas himself after Arthur was delayed.",
         "image": "https://static.wikia.nocookie.net/cryptidz/images/3/3e/Adar_llwch_gwin_by_thegreatomegadragon-d6gnmas.png/revision/latest?cb=20150323180013",
         "source": "https://cryptidz.fandom.com/wiki/Adar_Llwch_Gwin"
